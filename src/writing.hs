@@ -14,7 +14,7 @@ import Lucid
 import Data.Monoid ((<>), mempty, mconcat)
 import Data.List (intersperse)
 
-import AuthorData (Author, authors)
+import Authors (Author, authors)
 import WebsiteTools (AuthorCat(..), classify, doiToLink, sHtml)
 
 

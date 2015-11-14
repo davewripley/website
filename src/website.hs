@@ -2,6 +2,8 @@
 {-# LANGUAGE ExtendedDefaultRules #-}
 {-# LANGUAGE FlexibleContexts #-}
 
+module Website (websiteMain) where
+
 import Data.Monoid ((<>), mempty, mconcat)
 import Data.Text (Text)
 import Data.Text.Lazy.IO (writeFile)
@@ -310,8 +312,8 @@ pieceSort p1 p2 =
 dirPrefix :: FilePath
 dirPrefix = "./for-upload/"
 
-main :: IO ()
-main = do
+websiteMain :: IO ()
+websiteMain = do
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "index.html") (renderText indexPage)
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "teaching.html") (renderText teachingPage)
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "presentations.html") (renderText presentationPage)

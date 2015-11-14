@@ -1,5 +1,6 @@
 module Main where
 
+import Website (websiteMain)
+
 main :: IO ()
-main = do
-  putStrLn "hello world"
+main = websiteMain
