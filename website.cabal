@@ -28,3 +28,4 @@ executable website
                      , text
                      , containers
                      , bytestring
+                     , directory

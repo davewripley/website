@@ -8,6 +8,7 @@ import Data.Monoid ((<>), mempty, mconcat)
 import Data.Text (Text)
 import Data.Text.Lazy.IO (writeFile)
 import Data.List (intersperse, sortBy)
+import System.Directory (createDirectoryIfMissing)
 import Lucid
 import Lucid.Bootstrap
 
@@ -314,6 +315,7 @@ dirPrefix = "./for-upload/"
 
 websiteMain :: IO ()
 websiteMain = do
+  System.Directory.createDirectoryIfMissing True dirPrefix
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "index.html") (renderText indexPage)
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "teaching.html") (renderText teachingPage)
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "presentations.html") (renderText presentationPage)
