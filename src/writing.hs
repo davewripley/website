@@ -1,11 +1,12 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Writing (writing, Piece, pieceTitle, pieceAuthorTags, pieceUrl, pieceVenue, pieceYear, pieceAuthorCat) where
+module Writing (writing, Piece, pieceTitle, pieceAuthorTags, pieceUrl, pieceVenue, pieceYear, pieceAuthorCat, bibTeXify) where
 
 import Data.Aeson
 import Control.Applicative ((<$>), (<*>))
 import Control.Monad (mzero)
 import Data.Text (Text)
+import qualified Data.Text as T
 import Data.ByteString.Lazy (readFile, ByteString)
 import Data.Map (Map)
 import qualified Data.Map as M
@@ -14,7 +15,7 @@ import Lucid
 import Data.Monoid ((<>), mempty, mconcat)
 import Data.List (intersperse)
 
-import Authors (Author, authors)
+import Authors (Author(..), authors)
 import WebsiteTools (AuthorCat(..), classify, doiToLink, sHtml)
 
 
@@ -131,6 +132,89 @@ pieceVenue (C chp) = "In "
                        <> ", "
                        <> (sHtml $ yearC cpd)
                        <> "."
+
+authname :: Text -> Maybe Text
+authname t = name <$> M.lookup t authors
+
+getText :: Maybe Text -> Text
+getText m =
+  case m of
+    Just t -> t
+    Nothing -> mempty
+
+bibTeXauths :: Piece -> Text
+bibTeXauths = btChars . T.intercalate " and " . map (getText . authname) . pieceAuthorTags
+
+btChars :: Text -> Text
+btChars = T.concatMap cleanup
+  where
+    cleanup c =
+      case c of
+        '\225' -> "{\\'{a}}"
+        '\233' -> "{\\'{e}}"
+        '\237' -> "{\\'{i}}"
+        '\252' -> "{\\\"{u}}"
+        _      -> T.singleton c
+
+
+bibTeXify :: Piece -> Text
+bibTeXify (A a) = T.concat $
+  [ "@article{your:tag:here,\n   Author = {"
+  , bibTeXauths (A a)
+  , "}\n   Title = {"
+  , titleA a
+  , "}\n   Journal = {"
+  , journalA a
+  , "}\n   "
+  ] ++ rest ++
+  [ "}\n\n" ]
+  where
+    apd = pdA a
+    rest = case apd of
+      ForthcomingAPD -> [ "Note = {Forthcoming}\n   " ]
+      _ ->
+        [ "Year = {"
+        , T.pack $ show (yearA apd)
+        , "}\n   Volume = {"
+        , T.pack $ show (volumeA apd)
+        , "}\n   Number = {"
+        , nmb
+        , "}\n   Pages = {"
+        , pgs
+        , "}\n"
+        ]
+    nmb = case numberA apd of
+            Nothing -> mempty
+            Just n  -> T.pack $ show n
+    pgs = T.pack $ (show $ startpageA apd) ++ "--" ++ (show $ endpageA apd)  
+bibTeXify (C c) = T.concat $
+  [ "@incollection{your:tag:here,\n   Author = {"
+  , bibTeXauths (C c)
+  , "}\n   Title = {"
+  , titleC c
+  , "}\n   Booktitle = {"
+  , booktitleC c
+  , "}\n   Editor = {"
+  , btChars . T.intercalate " and " $ editorC c
+  , "}\n   Publisher = {"
+  , publisherC c
+  , "}\n   "
+  ] ++ rest ++
+  [ "}\n\n" ]
+  where
+    cpd = pdC c
+    rest = case cpd of
+      ForthcomingCPD -> [ "Note = {Forthcoming}\n   " ]
+      _ ->
+        [ "Year = {"
+        , T.pack $ show (yearC cpd)
+        , "}\n   Pages = {"
+        , pgs
+        , "}\n"
+        ]
+    pgs = T.pack $ (show $ startpageC cpd) ++ "--" ++ (show $ endpageC cpd)
+
+
 
 
 
