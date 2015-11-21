@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
-module Authors (Author, authors, makeAuthorLink) where
+module Authors (Author(..), authors, makeAuthorLink) where
 
-import Data.Text.Internal (Text)
+import Data.Text (Text)
 import Data.Map (Map)
 import qualified Data.Map as M
 import Data.Maybe (fromJust)
