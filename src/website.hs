@@ -21,6 +21,10 @@ import Presentations (Presentation(..), extrasMarks, presentations, presLinkList
 
 --SECTION: General template pieces
 
+topLabel :: Html () -> Html ()
+topLabel lab = container_ (h1_ [class_ "toplabel"] lab)
+
+
 htmlHeadBits :: Html ()
 htmlHeadBits = meta_ [charset_ "utf-8"]
                <> meta_ [httpEquiv_ "X-UA-Compatible", content_ "IE=edge"]
@@ -187,9 +191,6 @@ teachingBody =
 
 presentationPage :: Html ()
 presentationPage = pageFrom presentationBody (navbarJS "presentationlink")
-
-topLabel :: Html () -> Html ()
-topLabel lab = container_ (h1_ [class_ "toplabel"] lab)
 
 
 presentationAuthors :: AuthorCat -> Html ()
