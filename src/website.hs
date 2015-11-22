@@ -6,6 +6,7 @@ module Website (websiteMain) where
 
 import Data.Monoid ((<>), mempty, mconcat)
 import Data.Text (Text)
+import qualified Data.Text as T
 import Data.Text.Lazy.IO (writeFile)
 import Data.List (intersperse, sortBy)
 import System.Directory (createDirectoryIfMissing)
@@ -15,7 +16,7 @@ import Lucid.Bootstrap
 import WebsiteTools (AuthorCat(..), Parity(..), classify, listItems, pileUp, lk)
 import Links
 import Authors (Author, authors, makeAuthorLink)
-import Writing (writing, Piece, pieceTitle, pieceAuthorTags, pieceUrl, pieceVenue, pieceYear, pieceAuthorCat)
+import Writing (writing, Piece, pieceTitle, pieceAuthorTags, pieceUrl, pieceVenue, pieceYear, pieceAuthorCat, bibTeXify)
 import Presentations (Presentation(..), extrasMarks, presentations, presLinkList)
 
 
@@ -269,7 +270,7 @@ writingBody = do
         div_ [class_ "col-md-3 searchbar"]
             (searchBar <> searchSort <> searchFilters <> philpapersBit)
         div_ [class_ "col-md-9 searchresults"]
-            (ul_ [class_ "writingdisplay"] (pileUp $ map makeEntry (sortBy pieceSort writing)))
+            (ul_ [class_ "writingdisplay"] (pileUp $ map makeEntry (zip (sortBy pieceSort writing) [1..])))
 
 paperTitleHead :: Piece -> Html ()
 paperTitleHead p =
@@ -281,14 +282,30 @@ paperTitleHead p =
              ] pt
   where pt = toHtml (pieceTitle p)
 
-makeEntry :: Piece -> Html ()
-makeEntry p = 
+makeEntry :: (Piece, Int) -> Html ()
+makeEntry (p, n) = 
   let cls = "paperbubble " <> (classify $ pieceAuthorCat p)
       auths = map makeAuthorLink (pieceAuthorTags p)
+      ci = "citation" <> (T.pack $ show n)
+      ai = "abstract" <> (T.pack $ show n)
+      bi = "bibtex" <> (T.pack $ show n)
   in li_ [class_ cls] $ do
          p_ [class_ "ptitle"] (paperTitleHead p)
          p_ [class_ "pauthors"] (mconcat $ intersperse ", " auths)
-         p_ [class_ "pvenue"] (pieceVenue p)
+         (ul_ [class_ "nav nav-pills", term "role" "tablist"] $ do
+           li_ [term "role" "presentation", class_ "active"]
+             (a_ [href_ ("#" <> ci), term "aria-controls" "citation", term "role" "tab", term "data-toggle" "pill"] "Citation info")
+           li_ [term "role" "presentation"]
+             (a_ [href_ ("#" <> ai), term "aria-controls" "abstract", term "role" "tab", term "data-toggle" "pill"] "Abstract")
+           li_ [term "role" "presentation"]
+             (a_ [href_ ("#" <> bi), term "aria-controls" "bibtex", term "role" "tab", term "data-toggle" "pill"] "BibTeX"))
+         (div_ [class_ "tab-content"] $ do
+           div_ [term "role" "tabpanel", class_ "tab-pane active", id_ ci]
+             (p_ [class_ "pvenue"] (pieceVenue p))
+           div_ [term "role" "tabpanel", class_ "tab-pane", id_ ai]
+             (p_ [class_ "abstract"] "Abstract")
+           div_ [term "role" "tabpanel", class_ "tab-pane", id_ bi]
+             (p_ [class_ "bibtex"] (pre_ [] (toHtml $ bibTeXify p))))
 
 
 pieceSort :: Piece -> Piece -> Ordering

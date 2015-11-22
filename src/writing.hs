@@ -35,6 +35,7 @@ data Article = Article { titleA   :: Text
                        , authorcatA :: AuthorCat
                        , urlA :: Text
                        , pdA  :: ArticlePublicationData
+                       , bibtagA :: Text
                        } deriving (Show)
 
 data ChapterPublicationData =
@@ -53,6 +54,7 @@ data Chapter = Chapter { titleC :: Text
                        , publisherC :: Text
                        , urlC :: Text
                        , pdC :: ChapterPublicationData
+                       , bibtagC :: Text
                        } deriving (Show)
 
 data Piece = A Article | C Chapter deriving (Show)
@@ -159,27 +161,29 @@ btChars = T.concatMap cleanup
 
 bibTeXify :: Piece -> Text
 bibTeXify (A a) = T.concat $
-  [ "@article{your:tag:here,\n   Author = {"
+  [ "@article{"
+  , bibtagA a
+  , ",\n   author = {"
   , bibTeXauths (A a)
-  , "}\n   Title = {"
+  , "},\n   title = {"
   , titleA a
-  , "}\n   Journal = {"
+  , "},\n   journal = {"
   , journalA a
-  , "}\n   "
+  , "},\n   "
   ] ++ rest ++
   [ "}\n\n" ]
   where
     apd = pdA a
     rest = case apd of
-      ForthcomingAPD -> [ "Note = {Forthcoming}\n   " ]
+      ForthcomingAPD -> [ "note = {Forthcoming}\n" ]
       _ ->
-        [ "Year = {"
+        [ "year = {"
         , T.pack $ show (yearA apd)
-        , "}\n   Volume = {"
+        , "},\n   volume = {"
         , T.pack $ show (volumeA apd)
-        , "}\n   Number = {"
+        , "},\n   number = {"
         , nmb
-        , "}\n   Pages = {"
+        , "},\n   pages = {"
         , pgs
         , "}\n"
         ]
@@ -188,27 +192,29 @@ bibTeXify (A a) = T.concat $
             Just n  -> T.pack $ show n
     pgs = T.pack $ (show $ startpageA apd) ++ "--" ++ (show $ endpageA apd)  
 bibTeXify (C c) = T.concat $
-  [ "@incollection{your:tag:here,\n   Author = {"
+  [ "@incollection{"
+  , bibtagC c
+  , ",\n   author = {"
   , bibTeXauths (C c)
-  , "}\n   Title = {"
+  , "},\n   title = {"
   , titleC c
-  , "}\n   Booktitle = {"
+  , "},\n   booktitle = {"
   , booktitleC c
-  , "}\n   Editor = {"
+  , "},\n   editor = {"
   , btChars . T.intercalate " and " $ editorC c
-  , "}\n   Publisher = {"
+  , "},\n   publisher = {"
   , publisherC c
-  , "}\n   "
+  , "},\n   "
   ] ++ rest ++
   [ "}\n\n" ]
   where
     cpd = pdC c
     rest = case cpd of
-      ForthcomingCPD -> [ "Note = {Forthcoming}\n   " ]
+      ForthcomingCPD -> [ "note = {Forthcoming}\n" ]
       _ ->
-        [ "Year = {"
+        [ "year = {"
         , T.pack $ show (yearC cpd)
-        , "}\n   Pages = {"
+        , "},\n   pages = {"
         , pgs
         , "}\n"
         ]
@@ -227,7 +233,8 @@ writing = [ A (Article
               "Notre Dame Journal of Formal Logic"
               Solo
               "./papers/blurring.pdf"
-              ForthcomingAPD)
+              ForthcomingAPD
+              "ripley:blurring")
           , A (Article
               "How mathematics can make a difference"
               "Philosophers' Imprint"
@@ -236,31 +243,36 @@ writing = [ A (Article
                      , "davidRipley"
                      ])
               ""
-              ForthcomingAPD)
+              ForthcomingAPD
+              "bcr:hmmd")
           , A (Article
               "Naive set theory and nontransitive logic"
               "Review of Symbolic Logic"
               Solo
               "./papers/nstntl.pdf"
-              (APD 2015 8 (Just 3) 553 571 ""))
+              (APD 2015 8 (Just 3) 553 571 "")
+              "ripley:nstntl")
           , A (Article
               "Contractions of noncontractive consequence relations"
               "Review of Symbolic Logic"
               (Other ["rohanFrench", "davidRipley"])
               "./papers/cncr.pdf"
-              (APD 2015 8 (Just 3) 506 528 ""))
+              (APD 2015 8 (Just 3) 506 528 "")
+              "fr:cncr")
           , A (Article
               "Comparing substructural theories of truth"
               "Ergo"
               Solo
               "http://dx.doi.org/10.3998/ergo.12405314.0002.013"
-              (APD 2015 2 (Just 13) 299 328 "10.3998/ergo.12405314.0002.013"))
+              (APD 2015 2 (Just 13) 299 328 "10.3998/ergo.12405314.0002.013")
+              "ripley:cstt")
           , A (Article
               "Contraction and closure"
               "Thought"
               Solo
               "./papers/cc.pdf"
-              (APD 2015 4 (Just 2) 131 138 "10.1002/tht3.166"))
+              (APD 2015 4 (Just 2) 131 138 "10.1002/tht3.166")
+              "ripley:cc")
           , A (Article
               "Tolerating gluts"
               "Mind"
@@ -271,7 +283,8 @@ writing = [ A (Article
                      , "markColyvan"
                      ])
                "http://mind.oxfordjournals.org/cgi/reprint/fzu057?ijkey=nQCUytimlfdBzuz&keytype=ref"
-               (APD 2014 123 (Just 491) 813 828 mempty))
+               (APD 2014 123 (Just 491) 813 828 mempty)
+               "wrphc:tg")
           , C (Chapter
               "Bilateralism, coherence, warrant"
               Solo
@@ -279,7 +292,8 @@ writing = [ A (Article
               ["Friederike Moltmann", "Mark Textor"]
               "Oxford University Press"
               "./papers/bcw.pdf"
-              ForthcomingCPD)
+              ForthcomingCPD
+              "ripley:bcw")
           , C (Chapter
               "Priest's motorbike and tolerant identity"
               CERvR
@@ -290,25 +304,29 @@ writing = [ A (Article
               ]
               "Springer"
               "./papers/pmti.pdf"
-              (CPD 2014 75 85 ""))
+              (CPD 2014 75 85 "")
+              "cervr:pmti")
           , A (Article
               "Anything goes"
               "Topoi"
               Solo
               "./papers/ag.pdf"
-              (APD 2015 34 (Just 1) 25 36 "10.1007/s11245-014-9261-8"))
+              (APD 2015 34 (Just 1) 25 36 "10.1007/s11245-014-9261-8")
+              "ripley:ag")
           , A (Article
               "Pragmatic interpretations of vague expressions"
               "Journal of Philosophical Logic"
               CERvR
               "./papers/pive.pdf"
-              (APD 2015 44 (Just 4) 375 393 "10.1007/s10992-014-9325-7"))
+              (APD 2015 44 (Just 4) 375 393 "10.1007/s10992-014-9325-7")
+              "cervr:pive")
           , A (Article
               "Paraconsistent logic"
               "Journal of Philosophical Logic"
               Solo
               "./papers/pl.pdf"
-              ForthcomingAPD)
+              ForthcomingAPD
+              "ripley:pl")
           , C (Chapter
               "Experimental philosophical logic"
               Solo
@@ -318,7 +336,8 @@ writing = [ A (Article
               ]
               "Wiley"
               "./papers/xpl.pdf"
-              ForthcomingCPD)
+              ForthcomingCPD
+              "ripley:xpl")
           , C (Chapter
               "Vagueness, truth, and permissive consequence"
               CERvR
@@ -330,7 +349,8 @@ writing = [ A (Article
               ]
               "Springer"
               "./papers/vtpc.pdf"
-              (CPD 2015 409 430 "http://www.springer.com/us/book/9789401796729"))
+              (CPD 2015 409 430 "http://www.springer.com/us/book/9789401796729")
+              "cervr:vtpc")
           , C (Chapter
               "Nonclassical theories of truth"
               (Other [ "jcBeall", "davidRipley" ])
@@ -338,7 +358,8 @@ writing = [ A (Article
               [ "Michael Glanzberg" ]
               "Oxford University Press"
               ""
-              ForthcomingCPD)
+              ForthcomingCPD
+              "br:nctt")
           , C (Chapter
               "Embedding denial"
               Solo
@@ -348,37 +369,43 @@ writing = [ A (Article
               ]
               "Oxford University Press"
               "./papers/ed.pdf"
-              (CPD 2015 289 309 "http://global.oup.com/academic/product/foundations-of-logical-consequence-9780198715696"))
+              (CPD 2015 289 309 "http://global.oup.com/academic/product/foundations-of-logical-consequence-9780198715696")
+              "ripley:ed")
           , A (Article
               "Vagueness and order effects in color categorization"
               "Journal of Logic, Language, and Information"
               (Other [ "paulEgre", "vincentDeGardelle", "davidRipley" ])
               "./papers/voe.pdf"
-              (APD 2013 22 (Just 4) 391 420 "10.1007/s10849-013-9183-7"))
+              (APD 2013 22 (Just 4) 391 420 "10.1007/s10849-013-9183-7")
+              "egr:voe")
           , A (Article
               "Reaching transparent truth"
               "Mind"
               CERvR
               "http://mind.oxfordjournals.org/cgi/reprint/fzt110?ijkey=xGKyG7colWYSJzh&keytype=ref"
-              (APD 2013 122 (Just 488) 841 866 "10.1093/mind/fzt110"))
+              (APD 2013 122 (Just 488) 841 866 "10.1093/mind/fzt110")
+              "cervr:rtt")
           , A (Article
               "Identity, Leibniz's law, and nontransitive reasoning"
               "Metaphysica"
               CERvR
               "./papers/ill.pdf"
-              (APD 2013 14 (Just 2) 253 264 "10.1007/s12133-013-0125-2"))
+              (APD 2013 14 (Just 2) 253 264 "10.1007/s12133-013-0125-2")
+              "cervr:illntr")
           , A (Article
               "Revising up"
               "Philosophers' Imprint"
               Solo
               "http://quod.lib.umich.edu/cgi/p/pod/dod-idx/revising-up-strengthening-classical-logic-in-the-face.pdf?c=phimp;idno=3521354.0013.005"
-              (APD 2013 13 (Just 5) 1 13 ""))
+              (APD 2013 13 (Just 5) 1 13 "")
+              "ripley:ru")
           , A (Article
               "Paradoxes and failures of cut"
               "Australasian Journal of Philosophy"
               Solo
               "./papers/pafc.pdf"
-              (APD 2013 91 (Just 1) 139 164 ""))
+              (APD 2013 91 (Just 1) 139 164 "")
+              "ripley:pafc")
           , C (Chapter
               "Sorting out the sorites"
               Solo
@@ -389,31 +416,36 @@ writing = [ A (Article
               ]
               "Springer"
               "./papers/sos.pdf"
-              (CPD 2013 329 348 mempty))
+              (CPD 2013 329 348 mempty)
+              "ripley:ss")
           , A (Article
               "Explaining the abstract/concrete paradoxes in moral psychology"
               "Review of Philosophy and Psychology"
               (Other [ "ericMandelbaum", "davidRipley" ])
               "./papers/nbar.pdf"
-              (APD 2012 3 (Just 3) 351 368 ""))
+              (APD 2012 3 (Just 3) 351 368 "")
+              "mr:nbar")
           , A (Article
               "Structures and circumstances"
               "Synthese"
               Solo
               "./papers/sc.pdf"
-              (APD 2012 189 (Just 1) 97 118 ""))
+              (APD 2012 189 (Just 1) 97 118 "")
+              "ripley:sc")
           , A (Article
               "Tolerance and mixed consequence in the s'valuationist setting"
               "Studia Logica"
               CERvR
               "./papers/tmcsv.pdf"
-              (APD 2012 100 (Just 4) 855 877 ""))
+              (APD 2012 100 (Just 4) 855 877 "")
+              "cervr:tmcss")
           , A (Article
               "Conservatively extending classical logic with transparent truth"
               "Review of Symbolic Logic"
               Solo
               "./papers/cecltt.pdf"
-              (APD 2012 5 (Just 2) 354 378 ""))
+              (APD 2012 5 (Just 2) 354 378 "")
+              "ripley:cecltt")
           , A (Article
               "On the ternary relation and conditionality"
               "Journal of Philosophical Logic"
@@ -430,13 +462,15 @@ writing = [ A (Article
                      , "richardSylvan"
                      ])
               "./papers/ternary.pdf"
-              (APD 2012 41 (Just 3) 595 612 ""))
+              (APD 2012 41 (Just 3) 595 612 "")
+              "ternary")
           , A (Article
               "Tolerant, classical, strict"
               "Journal of Philosophical Logic"
               CERvR
               "http://link.springer.com/content/pdf/10.1007%2Fs10992-010-9165-z.pdf"
-              (APD 2012 41 (Just 2) 347 385 ""))
+              (APD 2012 41 (Just 2) 347 385 "")
+              "cervr:tcs")
           , C (Chapter
               "Inconstancy and inconsistency"
               Solo
@@ -448,13 +482,15 @@ writing = [ A (Article
               ]
               "College Publications"
               "./papers/ii.pdf"
-              (CPD 2011 41 58 ""))
+              (CPD 2011 41 58 "")
+              "ripley:ii")
           , A (Article
               "Negation, denial, and rejection"
               "Philosophy Compass"
               Solo
               "./papers/ndr.pdf"
-              (APD 2011 6 (Just 9) 622 629 ""))
+              (APD 2011 6 (Just 9) 622 629 "")
+              "ripley:ndr")
           , C (Chapter
               "Contradictions at the borders"
               Solo
@@ -466,17 +502,20 @@ writing = [ A (Article
               ]
               "Springer"
               "./papers/catb.pdf"
-              (CPD 2011 169 188 ""))
+              (CPD 2011 169 188 "")
+              "ripley:catb")
           , A (Article
               "Responsibility and the brain sciences"
               "Ethical Theory and Moral Practice"
               (Other [ "felipeDeBrigard", "ericMandelbaum", "davidRipley" ])
               "./papers/rbs.pdf"
-              (APD 2009 12 (Just 5) 511 524 ""))
+              (APD 2009 12 (Just 5) 511 524 "")
+              "dbmr:rbs")
           , A (Article
               "Analetheism and dialetheism"
               "Analysis"
               (Other [ "jcBeall", "davidRipley" ])
               "./papers/ad.pdf"
-              (APD 2004 64 (Just 1) 30 35 ""))
+              (APD 2004 64 (Just 1) 30 35 "")
+              "br:ad")
           ]
