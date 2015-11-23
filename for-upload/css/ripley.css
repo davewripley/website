@@ -1,0 +1,210 @@
+body {
+    /* color: #245B78; */
+    color: #333333;
+    background-color: #e7eee7;
+    padding-top: 70px;
+}
+
+.footer a {
+    color: #007700;
+}
+
+.mainbits a {
+    color: #00aa00;
+}
+
+.toplabel {
+    padding-bottom: 20px;
+}
+
+.good-morning {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.writingcat {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+
+.tags {
+    text-align: center;
+}
+
+
+.talktitle {
+    font-size : large;
+}
+
+.ptitle {
+    font-size: x-large;
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+    line-height: 100%;
+}
+
+.pauthors {
+    margin-bottom: 5px;
+}
+
+
+.splashimg {
+    width: 100%;
+}
+
+.footer {
+    margin: 40px;
+    padding: 40px;
+    background-color: #bbbbbb;
+    border-radius: 20px;
+}
+
+.lastmod {
+    text-align: center;
+    padding: 20px;
+    margin: 30px;
+}
+
+.odd {
+    padding-top: 5px;
+    background-color: #dddddd;
+    border-radius: 5px;
+}
+
+.even {
+    padding-top: 5px;
+    border-radius: 5px;
+}
+
+.address {
+    padding:0px;
+    margin:0px;
+}
+
+.contact-icon {
+    padding-right:10px;
+    vertical-align: top;
+}
+
+
+.searchcheck {
+    padding: 0px;
+    margin: 0px;
+}
+
+.writingdisplay {
+    list-style-type: none;
+}
+
+.paperbubble {
+    color: #eeeeee;
+    background-color: #333333;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.paperbubble a {
+    color: #ccccff;
+}
+
+.searchbarhide {
+    display: none;
+}
+
+.searchauthorhide {
+    display: none;
+}
+
+.filterhead {
+    margin-bottom: 0px;
+}
+
+.talktitle {
+    line-height: 100%;
+}
+
+
+.presentation-link {
+    display: inline;
+    padding-left: 15px;
+    padding-right: 15px;
+    list-style-type: none;
+}
+
+
+.presentation-row {
+}
+
+.pres-bubble {
+    color: #eeeeee;
+    background-color: #333333;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.pres-bubble a {
+    color: #ccccff;
+}
+
+.pres-bubble hr {
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 5px;
+}
+
+.pres-with-extras {
+    background-color: #005500;
+}
+
+.pres-extras-legend {
+    color: #008800;
+}
+
+.searchbar {
+    margin-bottom: 50px;
+}
+
+.philpapers {
+    margin-top: 30px;
+}
+
+.bibtex {
+    background-color: #e7eee7;
+}
+
+.abstract {
+    background-color: #e7eee7;
+    color: #333333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.paperinfo {
+    background-color: #444444;
+    border-radius : 10px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.nav > li > a, {
+    padding: 5px 15px;
+}
+
+.nav > li > a:hover {
+    background-color: #e7eee7;
+    color: #333333;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    color: #eeeeee;
+    background-color: #333333;
+}
