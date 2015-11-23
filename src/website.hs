@@ -16,7 +16,7 @@ import Lucid.Bootstrap
 import WebsiteTools (AuthorCat(..), Parity(..), classify, listItems, pileUp, lk)
 import Links
 import Authors (Author, authors, makeAuthorLink)
-import Writing (writing, Piece, pieceTitle, pieceAuthorTags, pieceUrl, pieceVenue, pieceYear, pieceAuthorCat, bibTeXify)
+import Writing (writing, Piece, pieceTitle, pieceAuthorTags, pieceUrl, pieceVenue, pieceYear, pieceAuthorCat, pieceAbstract, bibTeXify)
 import Presentations (Presentation(..), extrasMarks, presentations, presLinkList)
 
 
@@ -80,7 +80,7 @@ pageFooter =
               (td_ (p_ [class_ "address"] "101 Manchester Hall")))
             (tr_ $ do
               (td_ [class_ "contact-icon"] "")
-              (td_ (p_ [class_ "address"] "344 Mansfield Rd")))
+              (td_ (p_ [class_ "address"] "344 Mansfield Rd, Unit 1054")))
             (tr_ $ do
               (td_ [class_ "contact-icon"] "")
               (td_ (p_ [class_ "address"] "Storrs, CT 06269 USA"))))
@@ -289,23 +289,33 @@ makeEntry (p, n) =
       ci = "citation" <> (T.pack $ show n)
       ai = "abstract" <> (T.pack $ show n)
       bi = "bibtex" <> (T.pack $ show n)
+      ali1 = case pieceAbstract p of
+               Nothing -> mempty
+               Just _  ->
+                 li_ [term "role" "presentation"]
+                   (a_ [href_ ("#" <> ai), term "aria-controls" "abstract", term "role" "tab", term "data-toggle" "pill"] "Abstract")
+      ali2 = case pieceAbstract p of
+               Nothing -> mempty
+               Just ab ->
+                 div_ [term "role" "tabpanel", class_ "tab-pane", id_ ai]
+                   (p_ [class_ "abstract"] (toHtml ab))
   in li_ [class_ cls] $ do
          p_ [class_ "ptitle"] (paperTitleHead p)
          p_ [class_ "pauthors"] (mconcat $ intersperse ", " auths)
-         (ul_ [class_ "nav nav-pills", term "role" "tablist"] $ do
-           li_ [term "role" "presentation", class_ "active"]
-             (a_ [href_ ("#" <> ci), term "aria-controls" "citation", term "role" "tab", term "data-toggle" "pill"] "Citation info")
-           li_ [term "role" "presentation"]
-             (a_ [href_ ("#" <> ai), term "aria-controls" "abstract", term "role" "tab", term "data-toggle" "pill"] "Abstract")
-           li_ [term "role" "presentation"]
-             (a_ [href_ ("#" <> bi), term "aria-controls" "bibtex", term "role" "tab", term "data-toggle" "pill"] "BibTeX"))
-         (div_ [class_ "tab-content"] $ do
-           div_ [term "role" "tabpanel", class_ "tab-pane active", id_ ci]
-             (p_ [class_ "pvenue"] (pieceVenue p))
-           div_ [term "role" "tabpanel", class_ "tab-pane", id_ ai]
-             (p_ [class_ "abstract"] "Abstract")
-           div_ [term "role" "tabpanel", class_ "tab-pane", id_ bi]
-             (p_ [class_ "bibtex"] (pre_ [] (toHtml $ bibTeXify p))))
+         div_ [class_ "row"]
+           (div_ [class_ "col-sm-11 paperinfo"] $ do
+             (div_ [class_ "col-sm-10"]
+               (div_ [class_ "tab-content"] $ do
+                 div_ [term "role" "tabpanel", class_ "tab-pane active", id_ ci] (p_ [class_ "pvenue"] (pieceVenue p))
+                 ali2
+                 div_ [term "role" "tabpanel", class_ "tab-pane", id_ bi] (p_ [class_ "bibtex"] (pre_ [class_ "bibtex"] (toHtml $ bibTeXify p)))))
+             (div_ [class_ "col-sm-2"]
+               (ul_ [class_ "nav nav-pills", term "role" "tablist"] $ do
+                 li_ [term "role" "presentation", class_ "active"]
+                   (a_ [href_ ("#" <> ci), term "aria-controls" "citation", term "role" "tab", term "data-toggle" "pill"] "Citation")
+                 ali1
+                 li_ [term "role" "presentation"]
+                   (a_ [href_ ("#" <> bi), term "aria-controls" "bibtex", term "role" "tab", term "data-toggle" "pill"] "BibTeX"))))
 
 
 pieceSort :: Piece -> Piece -> Ordering
