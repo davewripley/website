@@ -47,6 +47,16 @@ presentations =
       [ "Experimental work in formal semantics, Pacific APA, April 2016" ]
       []
       []
+  , P "Dialetheism is an empirical hypothesis"
+      Solo
+      [ (lk "http://www.illc.uva.nl/AC/AC2015/" "20th Amsterdam Colloquium") <> ", Amsterdam, December 2015" ]
+      []
+      []
+  , P "\'Consequentialism\'?"
+      Solo
+      [ "Inferentialism Workshop, Arche, University of St. Andrews, November 2015" ]
+      []
+      []
   , P "Axiomatisation without cut"
       Solo
       [ (lk "http://http://www.sadaf.org.ar" "SADAF") <> ", Buenos Aires, August 2015" ]
