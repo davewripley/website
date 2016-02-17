@@ -47,6 +47,11 @@ presentations =
       [ "Experimental work in formal semantics, Pacific APA, April 2016" ]
       []
       []
+  , P "Classical recapture via conflation"
+      Solo
+      [ "Logic and Metaphysics Workshop, CUNY Graduate Center, February 2016" ]
+      []
+      []
   , P "Dialetheism is an empirical hypothesis"
       Solo
       [ (lk "http://www.illc.uva.nl/AC/AC2015/" "20th Amsterdam Colloquium") <> ", Amsterdam, December 2015" ]
