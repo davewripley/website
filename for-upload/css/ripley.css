@@ -2,11 +2,14 @@ body {
     /* color: #245B78; */
     color: #333333;
     background-color: #e7eee7;
-    padding-top: 70px;
 }
 
 .footer a {
     color: #007700;
+}
+
+.navbar {
+    border-radius: 0px;
 }
 
 .mainbits a {
