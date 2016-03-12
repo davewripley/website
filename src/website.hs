@@ -38,21 +38,6 @@ htmlHeadBits = meta_ [charset_ "utf-8"]
                <> link_ [rel_ "stylesheet", href_ "./css/ripley.css"]
 
 
-pageHeaderx :: Html ()
-pageHeaderx =
-  div_ [class_ "header"] $
-    container_ $
-      row_ $
-        nav_ [class_ "navbar navbar-fixed-top navbar-inverse"] $
-          container_ $ do
-            div_ [id_ "navbar", class_ "navbar-collapse collapse"]
-              (ul_ [class_ "nav navbar-nav"]
-                   ((li_ [class_ "navbar-header indexlink"] (a_ [class_ "navbar-brand", href_ "./index.html"] "David Ripley"))
-                 <> (li_ [class_ "writinglink"] (a_ [href_ "./writing.html"] "Writing"))
-                 <> (li_ [class_ "presentationlink"] (a_ [href_ "./presentations.html"] "Presentations"))  
-                 <> (li_ [class_ "teachinglink"] (a_ [href_ "./teaching.html"] "Teaching"))
-                 <> (li_ [class_ "cvlink"] (a_ [href_ "./ripleyCV.pdf", target_ "_blank"] "CV"))))
-
 pageHeader :: Html ()
 pageHeader =
   nav_ [class_ "navbar navbar-inverse"] $
