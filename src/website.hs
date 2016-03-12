@@ -181,7 +181,7 @@ classes = [("Phil 1102", "Philosophy and logic", ["Spring 2016"
           ,("Phil 2211Q", "Symbolic Logic I", ["Spring 2016"])
           ,("Phil 3241", "Philosophy of language", ["Fall 2015"])
           ,("Phil 5344", "Seminar in philosophical logic", ["Spring 2014"])
-          ,("Phil 5397", "Seminar in probability", [a_ [href_ "./fall_2014/phil5397.html"] "Fall 2014"])
+          ,("Phil 5397", "Seminar in probability", ["Fall 2014"])
           ]
 
 teachingBody :: Html ()
