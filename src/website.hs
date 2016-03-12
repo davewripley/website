@@ -38,8 +38,8 @@ htmlHeadBits = meta_ [charset_ "utf-8"]
                <> link_ [rel_ "stylesheet", href_ "./css/ripley.css"]
 
 
-pageHeader :: Html ()
-pageHeader =
+pageHeaderx :: Html ()
+pageHeaderx =
   div_ [class_ "header"] $
     container_ $
       row_ $
@@ -53,6 +53,26 @@ pageHeader =
                  <> (li_ [class_ "teachinglink"] (a_ [href_ "./teaching.html"] "Teaching"))
                  <> (li_ [class_ "cvlink"] (a_ [href_ "./ripleyCV.pdf", target_ "_blank"] "CV"))))
 
+pageHeader :: Html ()
+pageHeader =
+  nav_ [class_ "navbar navbar-inverse"] $
+    div_ [class_ "container-fluid"] $ do
+      div_ [class_ "navbar-header"] $ (do
+        button_ [ type_ "button"
+                , class_ "navbar-toggle collapsed"
+                , (term "data-toggle") "collapse"
+                , (term "data-target") "#dr-headmenu"
+                , (term "aria-expanded") "false"
+                ]
+          (span_ [class_ "sr-only"] "Toggle navigation" <> mconcat (replicate 3 (span_ [class_ "icon-bar"] "")))
+        a_ [class_ "navbar-brand", href_ "#"] "David Ripley")
+      div_ [class_ "collapse navbar-collapse", id_ "dr-headmenu"]
+        (ul_ [class_ "nav navbar-nav"]
+                   ((li_ [class_ "indexlink"] (a_ [href_ "./index.html"] "Home"))
+                 <> (li_ [class_ "writinglink"] (a_ [href_ "./writing.html"] "Writing"))
+                 <> (li_ [class_ "presentationlink"] (a_ [href_ "./presentations.html"] "Presentations"))  
+                 <> (li_ [class_ "teachinglink"] (a_ [href_ "./teaching.html"] "Teaching"))
+                 <> (li_ [class_ "cvlink"] (a_ [href_ "./ripleyCV.pdf", target_ "_blank"] "CV"))))
 
 pageFooter :: Html ()
 pageFooter =
