@@ -50,11 +50,10 @@ pageHeader =
                 , (term "aria-expanded") "false"
                 ]
           (span_ [class_ "sr-only"] "Toggle navigation" <> mconcat (replicate 3 (span_ [class_ "icon-bar"] "")))
-        a_ [class_ "navbar-brand", href_ "#"] "David Ripley")
+        a_ [class_ "navbar-brand indexlink", href_ "./index.html"] "David Ripley")
       div_ [class_ "collapse navbar-collapse", id_ "dr-headmenu"]
         (ul_ [class_ "nav navbar-nav"]
-                   ((li_ [class_ "indexlink"] (a_ [href_ "./index.html"] "Home"))
-                 <> (li_ [class_ "writinglink"] (a_ [href_ "./writing.html"] "Writing"))
+                   ((li_ [class_ "writinglink"] (a_ [href_ "./writing.html"] "Writing"))
                  <> (li_ [class_ "presentationlink"] (a_ [href_ "./presentations.html"] "Presentations"))  
                  <> (li_ [class_ "teachinglink"] (a_ [href_ "./teaching.html"] "Teaching"))
                  <> (li_ [class_ "cvlink"] (a_ [href_ "./ripleyCV.pdf", target_ "_blank"] "CV"))))
