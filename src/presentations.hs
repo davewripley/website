@@ -45,8 +45,8 @@ presentations =
   [ P "Conditionals with impossible antecedents"
       Solo
       [ "Experimental work in formal semantics, Pacific APA, April 2016" ]
-      []
-      []
+      [ (lk "./docs/cia-handout-apa.pdf" "Handout")]
+      [ HasHandout ]
   , P "Classical recapture via conflation"
       Solo
       [ "Logic and Metaphysics Workshop, CUNY Graduate Center, February 2016" ]
