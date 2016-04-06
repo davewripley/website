@@ -51,6 +51,16 @@ body {
     margin-bottom: 5px;
 }
 
+.extra-marks {
+/*    background-color: #cccccc; */
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+
+.extra-marks a {
+    color: #333333;
+}
+
 
 .splashimg {
     width: 100%;
@@ -58,7 +68,7 @@ body {
 
 .footer {
     margin: 40px;
-    padding: 40px;
+    padding: 20px;
     background-color: #bbbbbb;
     border-radius: 20px;
 }

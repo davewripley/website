@@ -17,7 +17,7 @@ import WebsiteTools (AuthorCat(..), Parity(..), classify, listItems, pileUp, lk)
 import Links
 import Authors (Author, authors, makeAuthorLink)
 import Writing (writing, Piece, pieceTitle, pieceAuthorTags, pieceUrl, pieceVenue, pieceYear, pieceAuthorCat, pieceAbstract, bibTeXify)
-import Presentations (Presentation(..), extrasMarks, presentations, presLinkList)
+import Presentations (Presentation(..), extrasMarks, presentations)
 
 
 --SECTION: General template pieces
@@ -195,14 +195,13 @@ presentationAuthors (Other as) = p_ [class_ "presentation-authors" ] (mconcat $ 
 presRow :: Presentation -> Html ()
 presRow p =
   row_ [class_ "presentation-row"] $ do
-    div_ [class_ "col-md-11 pres-bubble"] $ do
+    div_ [class_ "col-md-10 pres-bubble"] $ do
         div_ [class_ "col-md-5"]
             ((p_ [class_ "talktitle"] (toHtml $ presTitle p))
              <> presentationAuthors (presAuthors p))
         div_ [class_ "col-md-7"]
              (ul_ [class_ "presentation-venue"]
              (listItems [class_ "presentation-venue"] (presLocations p)))
-        presLinkList p
     extrasMarks p
 
 
