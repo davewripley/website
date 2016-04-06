@@ -55,11 +55,11 @@ presentations =
   , P "Dialetheism is an empirical hypothesis"
       Solo
       [ (lk "http://www.illc.uva.nl/AC/AC2015/" "20th Amsterdam Colloquium") <> ", Amsterdam, December 2015" ]
-      []
+      [ PE Slides (Link "./docs/deh-slides-ac.pdf" "Slides") ]
   , P "\'Consequentialism\'?"
       Solo
       [ "Inferentialism Workshop, Arche, University of St. Andrews, November 2015" ]
-      []
+      [ PE Slides (Link "./docs/cons-slides-arche.pdf" "Slides") ]
   , P "Axiomatisation without cut"
       Solo
       [ (lk "http://http://www.sadaf.org.ar" "SADAF") <> ", Buenos Aires, August 2015" ]
@@ -141,7 +141,7 @@ presentations =
   , P "Why I am not a noncontractivist"
       Solo
       [ "SILFS Satellite Workshop, Roma Tre University, June 2014" ]
-      []
+      [ PE Slides (Link "./docs/whynot-slides-silfs.pdf" "Slides") ]
   , P "Conflation and contradiction"
       Solo
       [ (lk "http://www.paraconsistency2014.philosophie.uni-muenchen.de/index.html"
@@ -182,7 +182,7 @@ presentations =
       [ "Presidential address, " <> aalLinkFull
         <> ", University of Melbourne, June 2013"
       ]
-      []
+      [ PE Slides (Link "./docs/63neg-slides-aal.pdf" "Slides") ]
   , P "Confusion and collapse"
       Solo
       [ "University of Sydney, May 2013"
