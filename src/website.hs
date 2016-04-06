@@ -60,48 +60,36 @@ pageHeader =
 
 pageFooter :: Html ()
 pageFooter =
-  div_ [class_ "footer"] $
     container_ $
       row_ $ do
-        div_ [class_ "col-md-4"]
-          (table_ $ do
-            (tr_ $ do
-              (td_ [class_ "contact-icon"] (span_ [class_ "fa fa-fw fa-inbox"] ""))
-              (td_ (emailLink "davewripley@gmail.com")))
-            (tr_ $ do 
-              (td_ [class_ "contact-icon"] (span_ [class_ "fa fa-fw fa-twitter"] ""))
-              (td_ (twitterLink "@davewripley"))))
-        div_ [class_ "col-md-4"]
-          (table_ $ do
-            (tr_ $ do
-              (td_ [class_ "contact-icon"] (span_ [class_ "fa fa-fw fa-envelope"] ""))
-              (td_ (uconnPhilLink "Department of Philosophy")))
-            (tr_ $ do
-              (td_ [class_ "contact-icon"] "")
-              (td_ (uconnLink "University of Connecticut")))
-            (tr_ $ do
-              (td_ [class_ "contact-icon"] "")
-              (td_ (p_ [class_ "address"] "101 Manchester Hall")))
-            (tr_ $ do
-              (td_ [class_ "contact-icon"] "")
-              (td_ (p_ [class_ "address"] "344 Mansfield Rd, Unit 1054")))
-            (tr_ $ do
-              (td_ [class_ "contact-icon"] "")
-              (td_ (p_ [class_ "address"] "Storrs, CT 06269 USA"))))
-        div_ [class_ "col-md-4"]
-          (table_ $ do
-            (tr_ $ do
-              (td_ [class_ "contact-icon"] (span_ [class_ "fa fa-fw fa-smile-o"] ""))
-              (td_ (p_ ("Site made with "
-                      <> (lk "https://www.haskell.org" "Haskell")
-                      <> ", "
-                      <> (lk "https://github.com/chrisdone/lucid" "Lucid")
-                      <> ", "
-                      <> (lk "http://getbootstrap.com" "Bootstrap")
-                      <> ", "
-                      <> (lk "http://jquery.com" "jQuery")
-                      <> ", "
-                      <> (lk "http://fontawesome.io" "Font Awesome"))))))
+        div_ [class_ "col-md-2"] mempty
+        div_ [class_ "col-md-8 footer"] $ do
+          div_ [class_ "col-md-6"]
+            (table_ $ do
+              (tr_ $ do
+                (td_ [class_ "contact-icon"] (span_ [class_ "fa fa-fw fa-inbox"] ""))
+                (td_ (emailLink "davewripley@gmail.com")))
+              (tr_ $ do 
+                (td_ [class_ "contact-icon"] (span_ [class_ "fa fa-fw fa-twitter"] ""))
+                (td_ (twitterLink "@davewripley"))))
+          div_ [class_ "col-md-6"]
+            (table_ $ do
+              (tr_ $ do
+                (td_ [class_ "contact-icon"] (span_ [class_ "fa fa-fw fa-envelope"] ""))
+                (td_ (uconnPhilLink "Department of Philosophy")))
+              (tr_ $ do
+                (td_ [class_ "contact-icon"] "")
+                (td_ (uconnLink "University of Connecticut")))
+              (tr_ $ do
+                (td_ [class_ "contact-icon"] "")
+                (td_ (p_ [class_ "address"] "101 Manchester Hall")))
+              (tr_ $ do
+                (td_ [class_ "contact-icon"] "")
+                (td_ (p_ [class_ "address"] "344 Mansfield Rd, Unit 1054")))
+              (tr_ $ do
+                (td_ [class_ "contact-icon"] "")
+                (td_ (p_ [class_ "address"] "Storrs, CT 06269 USA"))))
+        div_ [class_ "col-md-2"] mempty
                  
 
 scriptImports :: Html ()
