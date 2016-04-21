@@ -342,7 +342,7 @@ writing = [ A (Article
               "Journal of Philosophical Logic"
               Solo
               "./papers/pl.pdf"
-              ForthcomingAPD
+              (APD 2015 44 (Just 6) 771 780 "10.1007/s10992-015-9358-6")
               "ripley:pl"
               (Just "In  some  logics, anything  whatsoever  follows  from  a  contradiction;  call these logics explosive. Paraconsistent logics are logics that are not explosive. Paraconsistent logics have a long and fruitful history, and no doubt a long and fruitful future. To give some sense of the situation, I spend Section 1 exploring exactly what it takes for a logic to be paraconsistent. It will emerge that there is considerable open texture to the idea. In Section 2, I give some examples of techniques for developing paraconsistent logics. In Section 3, I discuss what seem to me to be some promising applications of certain paraconsistent logics. In fact, however, I don’t think there’s all that much to the concept ‘paraconsistent’ itself; the collection of paraconsistent logics is far too heterogenous to be very productively dealt with under a single label. Perhaps that will emerge as we go."))
           , C (Chapter
