@@ -44,7 +44,15 @@ extrasMarks p
 
 presentations :: [Presentation]
 presentations =
-  [ P "Conditionals with impossible antecedents"
+  [ P "Towards a naive type theory"
+      Solo
+      [ "History and Philosophy of Logic Session, ASL North American meeting 2016, University of Connecticut, May 2016" ]
+      []
+  , P "Vagueness is a kind of conflation"
+      Solo
+      [ "Society for Exact Philosophy, University of Miami, May 2016" ]
+      []
+  , P "Conditionals with impossible antecedents"
       Solo
       [ "Experimental work in formal semantics, Pacific APA, April 2016" ]
       [ PE Handout (Link "./docs/cia-handout-apa.pdf" "Handout") ]
