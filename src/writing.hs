@@ -234,7 +234,17 @@ bibTeXify (C c) = T.concat $
 
 
 writing :: [Piece]
-writing = [ A (Article
+writing = [ C (Chapter
+              "'Transitivity' of consequence relations"
+              Solo
+              "Logic, Rationality, and Interaction: Proceedings of LORI V"
+              [ "Wiebe van der Hoek, Wesley Holliday, Wen-Fang Wang" ]
+              "Springer"
+              "./papers/tocr.pdf"
+              (CPD 2015 328 340 "www.springer.com/us/book/9783662485606")
+              "ripley:tocr"
+              (Just "The relations logicians tend to think of as consequence relations are almost never transitive, at least not in the usual relation-theoretic sense of 'transitive'. Yet it is common to hear them described as 'transitive', and to see rules impose to ensure 'transitivity' of these relations. This paper attempts to clarify the situation."))
+          , A (Article
               "Blurring: an approach to conflation"
               "Notre Dame Journal of Formal Logic"
               Solo
@@ -249,7 +259,7 @@ writing = [ A (Article
                      , "markColyvan"
                      , "davidRipley"
                      ])
-              ""
+              "./papers/hmmd.pdf"
               ForthcomingAPD
               "bcr:hmmd"
               Nothing)
@@ -377,7 +387,7 @@ writing = [ A (Article
               "the Oxford Handbook of Truth"
               [ "Michael Glanzberg" ]
               "Oxford University Press"
-              ""
+              "./papers/nctt.pdf"
               ForthcomingCPD
               "br:nctt"
               Nothing)
