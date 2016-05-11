@@ -46,7 +46,9 @@ presentations :: [Presentation]
 presentations =
   [ P "Towards a naive type theory"
       Solo
-      [ "History and Philosophy of Logic Session, ASL North American meeting 2016, University of Connecticut, May 2016" ]
+      [ "History and Philosophy of Logic Session, ASL North American meeting 2016, University of Connecticut, May 2016"
+      , "Australasian Association for Logic 2016 meeting, July 2016"
+      ]
       []
   , P "Vagueness is a kind of conflation"
       Solo
