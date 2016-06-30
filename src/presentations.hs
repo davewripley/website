@@ -49,7 +49,7 @@ presentations =
       [ "History and Philosophy of Logic Session, ASL North American meeting 2016, University of Connecticut, May 2016"
       , "Australasian Association for Logic 2016 meeting, July 2016"
       ]
-      [ PE Slides (Link "./docs/tntt-slides-asl.pdf" "Slides") ]
+      [ PE Slides (Link "./docs/tntt-slides-aal.pdf" "Slides") ]
   , P "Vagueness is a kind of conflation"
       Solo
       [ "Society for Exact Philosophy, University of Miami, May 2016" ]
