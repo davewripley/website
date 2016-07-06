@@ -44,7 +44,11 @@ extrasMarks p
 
 presentations :: [Presentation]
 presentations =
-  [ P "Towards a naive type theory"
+  [ P "Methods of dogwhistling"
+      Solo
+      [ aapLinkFull <> " 2016, Monash University, July 2016" ]
+      [ PE Slides (Link "./docs/dw-slides-aap.pdf" "Slides") ]
+  , P "Towards a naive type theory"
       Solo
       [ "History and Philosophy of Logic Session, ASL North American meeting 2016, University of Connecticut, May 2016"
       , "Australasian Association for Logic 2016 meeting, July 2016"

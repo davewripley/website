@@ -234,7 +234,15 @@ bibTeXify (C c) = T.concat $
 
 
 writing :: [Piece]
-writing = [ C (Chapter
+writing = [ A (Article
+              "Vagueness is a kind of conflation"
+              "Logic and Logical Philosophy"
+              Solo
+              ""
+              ForthcomingAPD
+              "ripley:vkc"
+              (Just "This paper sketches an understanding of conflation and vagueness according to which the latter is a special kind of the former. First, I sketch a particular understanding of conflation. Then, I go on to argue that vague concepts fit directly into this understanding. This picture of vagueness is related, but not identical, to a number of existing accounts."))
+          , C (Chapter
               "'Transitivity' of consequence relations"
               Solo
               "Logic, Rationality, and Interaction: Proceedings of LORI V"
