@@ -234,11 +234,27 @@ bibTeXify (C c) = T.concat $
 
 
 writing :: [Piece]
-writing = [ A (Article
+writing = [ C (Chapter
+              "Comparing some substructural strategies dealing with vagueness"
+              CERvR
+              "Information Processing and Management of Uncertainty in Knowlede-Based Systems, Part II: Proceedings of IPMU 2016"
+              [ "Joao Paolo Carvalho"
+              , "Marie-Jeanne Lesot"
+              , "Uzay Kaymak"
+              , "Susana Vieira"
+              , "Bernadette Bouchon-Meunier"
+              , "Ronald R. Yager"
+              ]
+              "Springer"
+              "./papers/cssv.pdf"
+              (CPD 2016 161 172 "www.springer.com/us/book/9783319405803")
+              "cervr:cssv"
+              (Just "We compare some nonmonotonic and nontransitive logical approaches to vague predicates, exploring ways to build nonmonotonic logics sensitive to at least some pragmatic constraints on top of our earlier work on nontransitive logics."))
+          , A (Article
               "Vagueness is a kind of conflation"
               "Logic and Logical Philosophy"
               Solo
-              ""
+              "./papers/vkc.pdf"
               ForthcomingAPD
               "ripley:vkc"
               (Just "This paper sketches an understanding of conflation and vagueness according to which the latter is a special kind of the former. First, I sketch a particular understanding of conflation. Then, I go on to argue that vague concepts fit directly into this understanding. This picture of vagueness is related, but not identical, to a number of existing accounts."))
@@ -246,7 +262,10 @@ writing = [ A (Article
               "'Transitivity' of consequence relations"
               Solo
               "Logic, Rationality, and Interaction: Proceedings of LORI V"
-              [ "Wiebe van der Hoek, Wesley Holliday, Wen-Fang Wang" ]
+              [ "Wiebe van der Hoek"
+              , "Wesley Holliday"
+              , "Wen-Fang Wang"
+              ]
               "Springer"
               "./papers/tocr.pdf"
               (CPD 2015 328 340 "www.springer.com/us/book/9783662485606")
