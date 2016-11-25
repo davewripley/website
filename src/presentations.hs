@@ -44,7 +44,11 @@ extrasMarks p
 
 presentations :: [Presentation]
 presentations =
-  [ P "Methods of dogwhistling"
+  [ P "Naive validity"
+      Solo
+      [ "SADAF, November 2016" ]
+      [ PE Slides (Link "./docs/nv-slides.pdf" "Slides") ]
+  , P "Methods of dogwhistling"
       Solo
       [ aapLinkFull <> " 2016, Monash University, July 2016" ]
       [ PE Slides (Link "./docs/dw-slides-aap.pdf" "Slides") ]
