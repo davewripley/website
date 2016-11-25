@@ -234,7 +234,15 @@ bibTeXify (C c) = T.concat $
 
 
 writing :: [Piece]
-writing = [ C (Chapter
+writing = [ A (Article
+              "On the 'transitivity' of consequence relations"
+              "Journal of Logic and Computation"
+              Solo
+              "./papers/otocr.pdf"
+              ForthcomingAPD
+              "ripley:otocr"
+              (Just "The relations logicians tend to think of as consequence relations are almost never transitive, at least not in the usual relation-theoretic sense of 'transitive'. Yet it is common to hear them described as 'transitive', and to see rules impose to ensure 'transitivity' of these relations. This paper attempts to clarify the situation."))
+          , C (Chapter
               "Comparing some substructural strategies dealing with vagueness"
               CERvR
               "Information Processing and Management of Uncertainty in Knowlede-Based Systems, Part II: Proceedings of IPMU 2016"
