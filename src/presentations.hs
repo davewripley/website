@@ -44,7 +44,11 @@ extrasMarks p
 
 presentations :: [Presentation]
 presentations =
-  [ P "Naive validity"
+  [ P "Paradoxes and the structure of reasoning"
+      Solo
+      [ "Alice Ambrose Lazerowitz/Thomas Tymoczko Logic Lecture, Smith College, December 2016" ]
+      [ PE Slides (Link "./docs/psr-slides-smith.pdf" "Slides") ]
+  , P "Naive validity"
       Solo
       [ "SADAF, November 2016" ]
       [ PE Slides (Link "./docs/nv-slides.pdf" "Slides") ]
