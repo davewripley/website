@@ -47,7 +47,7 @@ presentations =
   [ P "On the supposed unity of soritical and semantic paradox"
       Solo
       [ "Diaphora workshop, MCMP, December 2016" ]
-      [ PE Slides (Link ".docs/unity-slides-mcmp.pdf" "Slides") ]
+      [ PE Slides (Link "./docs/unity-slides-mcmp.pdf" "Slides") ]
   , P "Paradoxes and the structure of reasoning"
       Solo
       [ "Alice Ambrose Lazerowitz/Thomas Tymoczko Logic Lecture, Smith College, December 2016" ]
