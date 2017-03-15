@@ -44,7 +44,18 @@ extrasMarks p
 
 presentations :: [Presentation]
 presentations =
-  [ P "On the supposed unity of soritical and semantic paradox"
+  [ P "Uncut"
+      Solo
+      [ "Logics of Consequence, Concordia, March 2017"
+      , "University of Auckland, March 2017"
+      , "University of Sydney, May 2017"
+      , "University of Navarra, May 2017" ]
+      [ PE Slides (Link "./docs/uncut-slides.pdf" "Slides") ]
+  , P "There is such a thing as a substructural approach to paradox"
+      Solo
+      [ "Non-classical solutions to the paradoxes, MCMP, February 2017" ]
+      []
+  , P "On the supposed unity of soritical and semantic paradox"
       Solo
       [ "Diaphora workshop, MCMP, December 2016" ]
       [ PE Slides (Link "./docs/unity-slides-mcmp.pdf" "Slides") ]
