@@ -44,11 +44,17 @@ extrasMarks p
 
 presentations :: [Presentation]
 presentations =
-  [ P "Uncut"
+  [ P "Conflation: logic and applications"
+      Solo
+      [ "Monash University, June 2017"
+      , "University of Melbourne, May 2017"
+      , "University of Sydney, May 2017"
+      ]
+      [ PE Slides (Link "./docs/cla-slides.pdf" "Slides") ]
+  , P "Uncut"
       Solo
       [ "Logics of Consequence, Concordia, March 2017"
       , "University of Auckland, March 2017"
-      , "University of Sydney, May 2017"
       , "University of Navarra, May 2017" ]
       [ PE Slides (Link "./docs/uncut-slides.pdf" "Slides") ]
   , P "There is such a thing as a substructural approach to paradox"
