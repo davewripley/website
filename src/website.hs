@@ -201,7 +201,7 @@ presRow p =
              <> presentationAuthors (presAuthors p))
         div_ [class_ "col-md-7"]
              (ul_ [class_ "presentation-venue"]
-             (listItems [class_ "presentation-venue"] (presLocations p)))
+             (listItems [class_ "presentation-venue"] (map toHtml $ presLocations p)))
     extrasMarks p
 
 

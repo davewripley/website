@@ -17,7 +17,7 @@ data PresExtras = PE PresExtraType Link
 
 data Presentation = P { presTitle :: Text
                       , presAuthors :: AuthorCat
-                      , presLocations :: [ Html () ]
+                      , presLocations :: [ Text ]
                       , presExtras :: [ PresExtras ]
                       } 
 
@@ -75,7 +75,7 @@ presentations =
       [ PE Slides (Link "./docs/nv-slides.pdf" "Slides") ]
   , P "Methods of dogwhistling"
       Solo
-      [ aapLinkFull <> " 2016, Monash University, July 2016" ]
+      [ "AAP 2016, Monash University, July 2016" ]
       [ PE Slides (Link "./docs/dw-slides-aap.pdf" "Slides") ]
   , P "Towards a naive type theory"
       Solo
@@ -97,7 +97,7 @@ presentations =
       []
   , P "Dialetheism is an empirical hypothesis"
       Solo
-      [ (lk "http://www.illc.uva.nl/AC/AC2015/" "20th Amsterdam Colloquium") <> ", Amsterdam, December 2015" ]
+      [ "20th Amsterdam Colloquium, Amsterdam, December 2015" ]
       [ PE Slides (Link "./docs/deh-slides-ac.pdf" "Slides") ]
   , P "\'Consequentialism\'?"
       Solo
@@ -105,28 +105,25 @@ presentations =
       [ PE Slides (Link "./docs/cons-slides-arche.pdf" "Slides") ]
   , P "Axiomatisation without cut"
       Solo
-      [ (lk "http://http://www.sadaf.org.ar" "SADAF") <> ", Buenos Aires, August 2015" ]
+      [ "SADAF, Buenos Aires, August 2015" ]
       []
   , P "Commitment consequence"
       Solo
-      [ (lk "http://http://www.sadaf.org.ar" "SADAF") <> ", Buenos Aires, August 2015" ]
+      [ "SADAF, Buenos Aires, August 2015" ]
       []
   , P "Vagueness, tolerance, and substructural logic"
       Solo
-      [ aapLinkFull <> " 2015, Macquarie University, July 2015" ]
+      [ "AAP 2015, Macquarie University, July 2015" ]
       []
   , P "Uniqueness without reflexivity or transitivity"
       Solo
-      [ (lk "http://www.uni-log.org/wk5-NCAL.html" "Non-classical Abstract Logics")
-        <> ", " <>
-        (lk "http://www.uni-log.org/start5.html" "Unilog 5")
-        <> ", June 2015"
+      [ "Non-classical Abstract Logics, Unilog 5, June 2015"
       , "Melbourne Logic Group, University of Melbourne, October 2011"
       ]
       []      
   , P "'Transitivity'"
       Solo
-      [ aalLinkFull <> " 2015, University of Sydney, July 2015"
+      [ "AAL 2015, University of Sydney, July 2015"
       , "GroLog, University of Groningen, June 2015"
       ]
       [ PE Slides (Link "./docs/transitivity-slides-aal.pdf" "Slides")
@@ -134,16 +131,12 @@ presentations =
       ]
   , P "What is the self?"
       (Other [ "killripLemistery" ])
-      [ (lk "http://arena.org.au/tag/tinnie-talks" "Tinnie Talks")
-        <> ", " <>
-        (lk "http://arena.org.au" "Arena")
-        <> ", Melbourne, May 2015"
+      [ "Tinnie Talks, Arena, Melbourne, May 2015"
       ]
       []      
   , P "Meaning, bounds, social kinds"
       Solo
-      [ (lk "http://philrsss.anu.edu.au/regular-seminars/philsoc-seminars"
-            "ANU Philsoc Seminar") <> ", May 2015"
+      [ "ANU Philsoc Seminar, May 2015"
       ]
       [ PE Slides (Link "./docs/mbsk-slides-anu.pdf" "Slides") ]
   , P "From conversation to inference, via commitment"
@@ -167,19 +160,18 @@ presentations =
   , P "Contraction and closure"
       Solo
       [ "Melbourne Logic Group, University of Melbourne, April 2015"
-      , (lk "https://sites.google.com/site/otagologic/logic-in-nz" "Pukeko Logic Group")
-        <> ", March 2015"
+      , "Pukeko Logic Group, March 2015"
       ]
       []
   , P "Tolerance and degrees of truth"
       CERvR
-      [ (lk "http://sydney.edu.au/arts/philosophy/research/conferences.shtml" "Vagueness via nonclassical logics") <> ", University of Sydney, December 2014"
+      [ "Vagueness via nonclassical logics, University of Sydney, December 2014"
       , "Trivalent Logics and their Applications, ESSLLI 2012, August 2012"
       ]
       []
   , P "What do the liar and sorites have in common?"
       Solo
-      [ aapLinkFull <> " 2014, ANU, July 2014" ]
+      [ "AAP 2014, ANU, July 2014" ]
       []
   , P "Why I am not a noncontractivist"
       Solo
@@ -187,17 +179,13 @@ presentations =
       [ PE Slides (Link "./docs/whynot-slides-silfs.pdf" "Slides") ]
   , P "Conflation and contradiction"
       Solo
-      [ (lk "http://www.paraconsistency2014.philosophie.uni-muenchen.de/index.html"
-            "Paraconsistent Reasoning in Science and Mathematics")
-        <> ", " <> mcmpLinkFull <> ", June 2014"
+      [ "Paraconsistent Reasoning in Science and Mathematics, MCMP, June 2014"
       , "Symposium on the principle of non-contradiction, Pacific APA, April 2014" ]
       []      
   , P "Contractions of noncontractive consequence relations"
       (Other [ "rohanFrench", "davidRipley" ])
-      [ (lk "http://logic.uconn.edu/" "UConn Logic Group") <> ", UConn, January 2014"
-      , (lk "http://www.paradoxandtruth2013.philosophie.uni-muenchen.de/index.html"
-            "Truth and Paradox Workshop")
-        <> ", " <> mcmpLinkFull <> ", May 2013"
+      [ "UConn Logic Group, UConn, January 2014"
+      , "Truth and Paradox Workshop, MCMP, May 2013"
       ]
       [ PE Video (Link "https://itunes.apple.com/itunes-u/id654728467" "Video (no. 38)")
       , PE Handout (Link "./docs/cncr_handout.pdf" "Handout (needed with video)")
@@ -218,12 +206,11 @@ presentations =
       []
   , P "Avoiding ad hoc approaches to paradox"
       Solo
-      [ aapLinkFull <> " 2013, University of Queensland, July 2013" ]
+      [ "AAP 2013, University of Queensland, July 2013" ]
       []
   , P "63 negations"
       Solo
-      [ "Presidential address, " <> aalLinkFull
-        <> ", University of Melbourne, June 2013"
+      [ "Presidential address, AAL, University of Melbourne, June 2013"
       ]
       [ PE Slides (Link "./docs/63neg-slides-aal.pdf" "Slides") ]
   , P "Confusion and collapse"
@@ -261,9 +248,8 @@ presentations =
       []
   , P "Anything goes"
       Solo
-      [ aapLinkFull <> " 2012, University of Wollongong, July 2012"
-      , (lk "https://sites.google.com/site/mcmpparadox2012/home" "Paradox and Logical Revision")
-        <> ", " <> mcmpLinkFull <> ", July 2012"
+      [ "AAP 2012, University of Wollongong, July 2012"
+      , "Paradox and Logical Revision, MCMP, July 2012"
       ]
       [ PE Video (Link "https://itunes.apple.com/us/itunes-u/mcmp-mathematical-philosophy/id439913748" "Video (no. 59)") ]
   , P "Vagueness as confusion"
@@ -291,12 +277,12 @@ presentations =
   , P "Bilateralism and paradox"
       Solo
       [ "Massey University, August 2011"
-      , aapLinkFull <> " 2011, University of Otago, July 2011"
+      , "AAP 2011, University of Otago, July 2011"
       ]
       []
   , P "Tonk, tolerance, and nontransitivity"
       Solo
-      [ mcmpLinkFull <> ", August 2011"
+      [ "MCMP, August 2011"
       ]
       [ PE Video (Link "https://itunes.apple.com/itunes-u/id439913748" "Video (no. 211)") ]
   , P "Nonclassical theories of vagueness (mini-course)"
@@ -325,7 +311,7 @@ presentations =
   , P "Tolerant and strict truth"
       CERvR
       [ "Truth be Told, ILLC, March 2011"
-      , ijnLinkFull <> ", March 2011"
+      , "Institut Jean-Nicod, March 2011"
       ]
       []
   , P "Circumstantialism and identity"
@@ -355,28 +341,28 @@ presentations =
       []
   , P "Explaining the abstract/concrete paradoxes in moral psychology"
       (Other [ "ericMandelbaum", "davidRipley" ])
-      [ ijnLinkFull <> ", June 2010"
+      [ "Institut Jean-Nicod, June 2010"
       , "Arche/CSMN Graduate Conference, University of St. Andrews, 2009"
       ]
       []
   , P "Arbitrariness, vagueness, and the liar"
       Solo
-      [ (aalLink "Australasian Association for Logic") <> ", July 2010"
+      [ "AAL, July 2010"
       , "Arche, University of St. Andrews, May 2010"
       ]
       []
   , P "Tolerant, classical, strict"
       CERvR
-      [ (aapLink "AAP") <> " 2010, University of New South Wales, July 2010"
+      [ "AAP 2010, University of New South Wales, July 2010"
       , "NIP, University of Aberdeen, May 2010"
       , "Vagueness and Similarity, Insitut Jean-Nicod, May 2010"
       ]
       []
   , P "Against structured propositions"
       Solo
-      [ ijnLinkFull <> ", April 2010"
+      [ "Institut Jean-Nicod, April 2010"
       , "Semantics and Philosophy in Europe 3, ENS/IHPST, May 2010"
-      , (aapLink "AAP") <> " 2009, University of Melbourne, 2009"
+      , "AAP 2009, University of Melbourne, 2009"
       ]
       []
   , P "Semantic possibility"
@@ -390,7 +376,7 @@ presentations =
       [ "2nd Paris-Barcelona Picasso Workshop, ENS, 2009"
       , "Amsterdam Graduate Philosophy Conference, Universiteit van Amsterdam, 2009"
       , "Melbourne Logic Group, University of Melbourne, 2009"
-      , "Philosophy and Psychology of Vagueness, " <> ijnLinkFull <> ", 2008"
+      , "Philosophy and Psychology of Vagueness, Institut Jean-Nicod, 2008"
       ]
       []
   , P "Sorting out the sorites"
