@@ -13,7 +13,10 @@ data Link = Link Text (Html ())
 
 data PresExtraType = Slides | Handout | Video | OtherExtra deriving (Eq)
 
-data PresExtras = PE PresExtraType Link 
+
+type PELinkURL = Text
+type PELinkWord = Text
+data PresExtras = PE PresExtraType PELinkURL PELinkWord
 
 data Presentation = P { presTitle :: Text
                       , presAuthors :: AuthorCat
@@ -30,10 +33,10 @@ extraMark pe = span_ [class_ ("fa fa-fw " <> pec)] ""
                    OtherExtra -> "fa-chain"
 
 extraRow :: PresExtras -> Html ()
-extraRow (PE ty (Link ur tx)) =
+extraRow (PE ty ur tx) =
     (tr_ $ do
        (td_ [class_ "contact-icon"]  (a_ [href_ ur, target_ "_blank"] (extraMark ty)))
-       (td_ (a_ [href_ ur, target_ "_blank"] tx)))
+       (td_ (a_ [href_ ur, target_ "_blank"] $ toHtml tx)))
 
 extrasMarks :: Presentation -> Html ()
 extrasMarks p
@@ -50,13 +53,13 @@ presentations =
       , "University of Melbourne, May 2017"
       , "University of Sydney, May 2017"
       ]
-      [ PE Slides (Link "./docs/cla-slides.pdf" "Slides") ]
+      [ PE Slides "./docs/cla-slides.pdf" "Slides" ]
   , P "Uncut"
       Solo
       [ "Logics of Consequence, Concordia, March 2017"
       , "University of Auckland, March 2017"
       , "University of Navarra, May 2017" ]
-      [ PE Slides (Link "./docs/uncut-slides.pdf" "Slides") ]
+      [ PE Slides "./docs/uncut-slides.pdf" "Slides" ]
   , P "There is such a thing as a substructural approach to paradox"
       Solo
       [ "Non-classical solutions to the paradoxes, MCMP, February 2017" ]
@@ -64,25 +67,25 @@ presentations =
   , P "On the supposed unity of soritical and semantic paradox"
       Solo
       [ "Diaphora workshop, MCMP, December 2016" ]
-      [ PE Slides (Link "./docs/unity-slides-mcmp.pdf" "Slides") ]
+      [ PE Slides "./docs/unity-slides-mcmp.pdf" "Slides" ]
   , P "Paradoxes and the structure of reasoning"
       Solo
       [ "Alice Ambrose Lazerowitz/Thomas Tymoczko Logic Lecture, Smith College, December 2016" ]
-      [ PE Slides (Link "./docs/psr-slides-smith.pdf" "Slides") ]
+      [ PE Slides "./docs/psr-slides-smith.pdf" "Slides" ]
   , P "Naive validity"
       Solo
       [ "SADAF, November 2016" ]
-      [ PE Slides (Link "./docs/nv-slides.pdf" "Slides") ]
+      [ PE Slides "./docs/nv-slides.pdf" "Slides" ]
   , P "Methods of dogwhistling"
       Solo
       [ "AAP 2016, Monash University, July 2016" ]
-      [ PE Slides (Link "./docs/dw-slides-aap.pdf" "Slides") ]
+      [ PE Slides "./docs/dw-slides-aap.pdf" "Slides" ]
   , P "Towards a naive type theory"
       Solo
       [ "History and Philosophy of Logic Session, ASL North American meeting 2016, University of Connecticut, May 2016"
       , "Australasian Association for Logic 2016 meeting, July 2016"
       ]
-      [ PE Slides (Link "./docs/tntt-slides-aal.pdf" "Slides") ]
+      [ PE Slides "./docs/tntt-slides-aal.pdf" "Slides" ]
   , P "Vagueness is a kind of conflation"
       Solo
       [ "Society for Exact Philosophy, University of Miami, May 2016" ]
@@ -90,7 +93,7 @@ presentations =
   , P "Conditionals with impossible antecedents"
       Solo
       [ "Experimental work in formal semantics, Pacific APA, April 2016" ]
-      [ PE Handout (Link "./docs/cia-handout-apa.pdf" "Handout") ]
+      [ PE Handout "./docs/cia-handout-apa.pdf" "Handout" ]
   , P "Classical recapture via conflation"
       Solo
       [ "Logic and Metaphysics Workshop, CUNY Graduate Center, February 2016" ]
@@ -98,11 +101,11 @@ presentations =
   , P "Dialetheism is an empirical hypothesis"
       Solo
       [ "20th Amsterdam Colloquium, Amsterdam, December 2015" ]
-      [ PE Slides (Link "./docs/deh-slides-ac.pdf" "Slides") ]
+      [ PE Slides "./docs/deh-slides-ac.pdf" "Slides" ]
   , P "\'Consequentialism\'?"
       Solo
       [ "Inferentialism Workshop, Arche, University of St. Andrews, November 2015" ]
-      [ PE Slides (Link "./docs/cons-slides-arche.pdf" "Slides") ]
+      [ PE Slides "./docs/cons-slides-arche.pdf" "Slides" ]
   , P "Axiomatisation without cut"
       Solo
       [ "SADAF, Buenos Aires, August 2015" ]
@@ -126,8 +129,8 @@ presentations =
       [ "AAL 2015, University of Sydney, July 2015"
       , "GroLog, University of Groningen, June 2015"
       ]
-      [ PE Slides (Link "./docs/transitivity-slides-aal.pdf" "Slides")
-      , PE Handout (Link "./docs/transitivity-handout-gro.pdf" "Handout")
+      [ PE Slides "./docs/transitivity-slides-aal.pdf" "Slides"
+      , PE Handout "./docs/transitivity-handout-gro.pdf" "Handout"
       ]
   , P "What is the self?"
       (Other [ "killripLemistery" ])
@@ -138,25 +141,25 @@ presentations =
       Solo
       [ "ANU Philsoc Seminar, May 2015"
       ]
-      [ PE Slides (Link "./docs/mbsk-slides-anu.pdf" "Slides") ]
+      [ PE Slides "./docs/mbsk-slides-anu.pdf" "Slides" ]
   , P "From conversation to inference, via commitment"
       Solo
       [ "Charles Sturt University, May 2015" ]
-      [ PE Slides (Link "./docs/cic-slides-csu.pdf" "Slides") ]
+      [ PE Slides "./docs/cic-slides-csu.pdf" "Slides" ]
   , P "Commitment and implicit assertion"
       Solo
       [ "De La Salle University, April 2015"
       , "University of Melbourne, April 2015"
       , "Melbourne Logic Group, University of Melbourne, August 2014"
       ]
-      [ PE Slides (Link "./docs/cia-slides-dlsu.pdf" "Slides") ]
+      [ PE Slides "./docs/cia-slides-dlsu.pdf" "Slides" ]
   , P "Setting the bounds"
       (Solo)
       [ "University of Waikato, March 2015"
       , "Victoria University of Wellington, March 2015"
       , "University of Auckland, March 2015"
       ]
-      [ PE Slides (Link "./docs/stb-slides-wellington.pdf" "Slides") ]      
+      [ PE Slides "./docs/stb-slides-wellington.pdf" "Slides" ]      
   , P "Contraction and closure"
       Solo
       [ "Melbourne Logic Group, University of Melbourne, April 2015"
@@ -176,7 +179,7 @@ presentations =
   , P "Why I am not a noncontractivist"
       Solo
       [ "SILFS Satellite Workshop, Roma Tre University, June 2014" ]
-      [ PE Slides (Link "./docs/whynot-slides-silfs.pdf" "Slides") ]
+      [ PE Slides "./docs/whynot-slides-silfs.pdf" "Slides" ]
   , P "Conflation and contradiction"
       Solo
       [ "Paraconsistent Reasoning in Science and Mathematics, MCMP, June 2014"
@@ -187,13 +190,13 @@ presentations =
       [ "UConn Logic Group, UConn, January 2014"
       , "Truth and Paradox Workshop, MCMP, May 2013"
       ]
-      [ PE Video (Link "https://itunes.apple.com/itunes-u/id654728467" "Video (no. 38)")
-      , PE Handout (Link "./docs/cncr_handout.pdf" "Handout (needed with video)")
+      [ PE Video "https://itunes.apple.com/itunes-u/id654728467" "Video (no. 38)"
+      , PE Handout "./docs/cncr_handout.pdf" "Handout (needed with video)"
       ]
   , P "Nonclassical logics (mini-course)"
       Solo
       [ "James Madison University, May 2014" ]
-      [ PE Handout (Link "./docs/jmu-handouts.pdf" "Handouts") ]
+      [ PE Handout "./docs/jmu-handouts.pdf" "Handouts" ]
   , P "Confusion, collapse, tolerance, borderlines"
       Solo
       [ "VII Navarra Workshop on Vagueness, Universidad de Navarra, December 2013"
@@ -212,7 +215,7 @@ presentations =
       Solo
       [ "Presidential address, AAL, University of Melbourne, June 2013"
       ]
-      [ PE Slides (Link "./docs/63neg-slides-aal.pdf" "Slides") ]
+      [ PE Slides "./docs/63neg-slides-aal.pdf" "Slides" ]
   , P "Confusion and collapse"
       Solo
       [ "University of Sydney, May 2013"
@@ -251,7 +254,7 @@ presentations =
       [ "AAP 2012, University of Wollongong, July 2012"
       , "Paradox and Logical Revision, MCMP, July 2012"
       ]
-      [ PE Video (Link "https://itunes.apple.com/us/itunes-u/mcmp-mathematical-philosophy/id439913748" "Video (no. 59)") ]
+      [ PE Video "https://itunes.apple.com/us/itunes-u/mcmp-mathematical-philosophy/id439913748" "Video (no. 59)" ]
   , P "Vagueness as confusion"
       Solo
       [ "Universiteit Gent, July 2012"
@@ -284,7 +287,7 @@ presentations =
       Solo
       [ "MCMP, August 2011"
       ]
-      [ PE Video (Link "https://itunes.apple.com/itunes-u/id439913748" "Video (no. 211)") ]
+      [ PE Video "https://itunes.apple.com/itunes-u/id439913748" "Video (no. 211)" ]
   , P "Nonclassical theories of vagueness (mini-course)"
       CERvR
       [ "ESSLLI 2011, August 2011" ]
