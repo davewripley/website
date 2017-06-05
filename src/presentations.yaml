@@ -1,0 +1,535 @@
+- presLocations:
+  - Monash University, June 2017
+  - University of Melbourne, May 2017
+  - University of Sydney, May 2017
+  presTitle: ! 'Conflation: logic and applications'
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/cla-slides.pdf
+    - Slides
+- presLocations:
+  - Logics of Consequence, Concordia, March 2017
+  - University of Auckland, March 2017
+  - University of Navarra, May 2017
+  presTitle: Uncut
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/uncut-slides.pdf
+    - Slides
+- presLocations:
+  - Non-classical solutions to the paradoxes, MCMP, February 2017
+  presTitle: There is such a thing as a substructural approach to paradox
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Diaphora workshop, MCMP, December 2016
+  presTitle: On the supposed unity of soritical and semantic paradox
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/unity-slides-mcmp.pdf
+    - Slides
+- presLocations:
+  - Alice Ambrose Lazerowitz/Thomas Tymoczko Logic Lecture, Smith College, December
+    2016
+  presTitle: Paradoxes and the structure of reasoning
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/psr-slides-smith.pdf
+    - Slides
+- presLocations:
+  - SADAF, November 2016
+  presTitle: Naive validity
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/nv-slides.pdf
+    - Slides
+- presLocations:
+  - AAP 2016, Monash University, July 2016
+  presTitle: Methods of dogwhistling
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/dw-slides-aap.pdf
+    - Slides
+- presLocations:
+  - History and Philosophy of Logic Session, ASL North American meeting 2016, University
+    of Connecticut, May 2016
+  - Australasian Association for Logic 2016 meeting, July 2016
+  presTitle: Towards a naive type theory
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/tntt-slides-aal.pdf
+    - Slides
+- presLocations:
+  - Society for Exact Philosophy, University of Miami, May 2016
+  presTitle: Vagueness is a kind of conflation
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Experimental work in formal semantics, Pacific APA, April 2016
+  presTitle: Conditionals with impossible antecedents
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Handout
+    - ./docs/cia-handout-apa.pdf
+    - Handout
+- presLocations:
+  - Logic and Metaphysics Workshop, CUNY Graduate Center, February 2016
+  presTitle: Classical recapture via conflation
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - 20th Amsterdam Colloquium, Amsterdam, December 2015
+  presTitle: Dialetheism is an empirical hypothesis
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/deh-slides-ac.pdf
+    - Slides
+- presLocations:
+  - Inferentialism Workshop, Arche, University of St. Andrews, November 2015
+  presTitle: ! '''Consequentialism''?'
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/cons-slides-arche.pdf
+    - Slides
+- presLocations:
+  - SADAF, Buenos Aires, August 2015
+  presTitle: Axiomatisation without cut
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - SADAF, Buenos Aires, August 2015
+  presTitle: Commitment consequence
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - AAP 2015, Macquarie University, July 2015
+  presTitle: Vagueness, tolerance, and substructural logic
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Non-classical Abstract Logics, Unilog 5, June 2015
+  - Melbourne Logic Group, University of Melbourne, October 2011
+  presTitle: Uniqueness without reflexivity or transitivity
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - AAL 2015, University of Sydney, July 2015
+  - GroLog, University of Groningen, June 2015
+  presTitle: ! '''Transitivity'''
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/transitivity-slides-aal.pdf
+    - Slides
+  - - Handout
+    - ./docs/transitivity-handout-gro.pdf
+    - Handout
+- presLocations:
+  - Tinnie Talks, Arena, Melbourne, May 2015
+  presTitle: What is the self?
+  presAuthors:
+    Other:
+    - killripLemistery
+  presExtras: []
+- presLocations:
+  - ANU Philsoc Seminar, May 2015
+  presTitle: Meaning, bounds, social kinds
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/mbsk-slides-anu.pdf
+    - Slides
+- presLocations:
+  - Charles Sturt University, May 2015
+  presTitle: From conversation to inference, via commitment
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/cic-slides-csu.pdf
+    - Slides
+- presLocations:
+  - De La Salle University, April 2015
+  - University of Melbourne, April 2015
+  - Melbourne Logic Group, University of Melbourne, August 2014
+  presTitle: Commitment and implicit assertion
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/cia-slides-dlsu.pdf
+    - Slides
+- presLocations:
+  - University of Waikato, March 2015
+  - Victoria University of Wellington, March 2015
+  - University of Auckland, March 2015
+  presTitle: Setting the bounds
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/stb-slides-wellington.pdf
+    - Slides
+- presLocations:
+  - Melbourne Logic Group, University of Melbourne, April 2015
+  - Pukeko Logic Group, March 2015
+  presTitle: Contraction and closure
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Vagueness via nonclassical logics, University of Sydney, December 2014
+  - Trivalent Logics and their Applications, ESSLLI 2012, August 2012
+  presTitle: Tolerance and degrees of truth
+  presAuthors:
+    CERvR: []
+  presExtras: []
+- presLocations:
+  - AAP 2014, ANU, July 2014
+  presTitle: What do the liar and sorites have in common?
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - SILFS Satellite Workshop, Roma Tre University, June 2014
+  presTitle: Why I am not a noncontractivist
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/whynot-slides-silfs.pdf
+    - Slides
+- presLocations:
+  - Paraconsistent Reasoning in Science and Mathematics, MCMP, June 2014
+  - Symposium on the principle of non-contradiction, Pacific APA, April 2014
+  presTitle: Conflation and contradiction
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - UConn Logic Group, UConn, January 2014
+  - Truth and Paradox Workshop, MCMP, May 2013
+  presTitle: Contractions of noncontractive consequence relations
+  presAuthors:
+    Other:
+    - rohanFrench
+    - davidRipley
+  presExtras:
+  - - Video
+    - https://itunes.apple.com/itunes-u/id654728467
+    - Video (no. 38)
+  - - Handout
+    - ./docs/cncr_handout.pdf
+    - Handout (needed with video)
+- presLocations:
+  - James Madison University, May 2014
+  presTitle: Nonclassical logics (mini-course)
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Handout
+    - ./docs/jmu-handouts.pdf
+    - Handouts
+- presLocations:
+  - VII Navarra Workshop on Vagueness, Universidad de Navarra, December 2013
+  - Vagueness Seminar, NYU, November 2013
+  presTitle: Confusion, collapse, tolerance, borderlines
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Substructural Approaches to Paradox, Universitat de Barcelona, November 2013
+  presTitle: Nonmonotonicity and partiality
+  presAuthors:
+    CERvR: []
+  presExtras: []
+- presLocations:
+  - AAP 2013, University of Queensland, July 2013
+  presTitle: Avoiding ad hoc approaches to paradox
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Presidential address, AAL, University of Melbourne, June 2013
+  presTitle: 63 negations
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/63neg-slides-aal.pdf
+    - Slides
+- presLocations:
+  - University of Sydney, May 2013
+  - Melbourne Logic Group, University of Melbourne, March 2013
+  - University of Auckland, March 2013
+  - Victoria University of Wellington, March 2013
+  - University of Otago, March 2013
+  presTitle: Confusion and collapse
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - AAPNZ 2012, Victoria University of Wellington, December 2012
+  - 2nd Propositions and Same-Saying Workshop, University of Sydney, July 2010
+  presTitle: Multigrain entailment
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - University of Melbourne, October 2012
+  - Charles Sturt University, September 2012
+  presTitle: Bilateralism, coherence, warrant
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Melbourne Logic Group, University of Melbourne, September 2012
+  presTitle: Some substructural arithmetic
+  presAuthors:
+    Other:
+    - oleHjortland
+    - davidRipley
+  presExtras: []
+- presLocations:
+  - Melbourne Logic Group, University of Melbourne, September 2012
+  presTitle: Comparing substructural theories of truth
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Logic and Cognition, ESSLLI 2012, August 2012
+  presTitle: Vagueness and hysteresis
+  presAuthors:
+    Other:
+    - paulEgre
+    - vincentDeGardelle
+    - davidRipley
+  presExtras: []
+- presLocations:
+  - AAP 2012, University of Wollongong, July 2012
+  - Paradox and Logical Revision, MCMP, July 2012
+  presTitle: Anything goes
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Video
+    - https://itunes.apple.com/us/itunes-u/mcmp-mathematical-philosophy/id439913748
+    - Video (no. 59)
+- presLocations:
+  - Universiteit Gent, July 2012
+  - Pamplona Workshop for Vagueness and Similarity, Universidad de Navarra, May 2012
+  presTitle: Vagueness as confusion
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Melbourne Logic Group, University of Melbourne, March 2012
+  presTitle: Naive set theory and nontransitive logic
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Northern Illinois University, February 2012
+  - Yale University, January 2012
+  - University of Connecticut, January 2012
+  - University of Otago, October 2011
+  presTitle: Vagueness, tolerance, contradiction
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Australian Metaphysics Conference, ANU Kioloa, November 2011
+  presTitle: Coordination and propositions
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Massey University, August 2011
+  - AAP 2011, University of Otago, July 2011
+  presTitle: Bilateralism and paradox
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - MCMP, August 2011
+  presTitle: Tonk, tolerance, and nontransitivity
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Video
+    - https://itunes.apple.com/itunes-u/id439913748
+    - Video (no. 211)
+- presLocations:
+  - ESSLLI 2011, August 2011
+  presTitle: Nonclassical theories of vagueness (mini-course)
+  presAuthors:
+    CERvR: []
+  presExtras: []
+- presLocations:
+  - Truth at Work, IHPST, June 2011
+  presTitle: Tolerant truth and permissive consequence
+  presAuthors:
+    CERvR: []
+  presExtras: []
+- presLocations:
+  - 7th Barcelona Workshop on Issues in the Theory of Reference, Universitat de Barcelona,
+    June 2011
+  presTitle: Sorites and the liar
+  presAuthors:
+    CERvR: []
+  presExtras: []
+- presLocations:
+  - Melbourne Logic Group, University of Melbourne, May 2011
+  presTitle: Harmony without cut
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Monash University, May 2011
+  - ANU, May 2011
+  - Arche, University of St. Andrews, April 2011
+  presTitle: Revising up
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Truth be Told, ILLC, March 2011
+  - Institut Jean-Nicod, March 2011
+  presTitle: Tolerant and strict truth
+  presAuthors:
+    CERvR: []
+  presExtras: []
+- presLocations:
+  - AAPNZ 2010, University of Waikato, December 2010
+  - Kioloa Metaphysics Retreat, ANU Kioloa, November 2010
+  presTitle: Circumstantialism and identity
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Melbourne Logic Group, University of Melbourne, October 2010
+  presTitle: Conservatively extending classical logic with transparent truth
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - North Island Logic Group, Victoria University of Wellington, September 2010
+  presTitle: Strict and tolerant
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - University of Melbourne, August 2010
+  presTitle: Inconstancy and inconsistency
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - ! 'PALMYR 9: Logic and the Use of Language, ILLC, June 2010'
+  - Propositional Content and Proposition-Related Acts, ENS, March 2010
+  - Logic of Denial, Arche, University of St. Andrews, 2009
+  presTitle: Embedding denial
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Institut Jean-Nicod, June 2010
+  - Arche/CSMN Graduate Conference, University of St. Andrews, 2009
+  presTitle: Explaining the abstract/concrete paradoxes in moral psychology
+  presAuthors:
+    Other:
+    - ericMandelbaum
+    - davidRipley
+  presExtras: []
+- presLocations:
+  - AAL, July 2010
+  - Arche, University of St. Andrews, May 2010
+  presTitle: Arbitrariness, vagueness, and the liar
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - AAP 2010, University of New South Wales, July 2010
+  - NIP, University of Aberdeen, May 2010
+  - Vagueness and Similarity, Insitut Jean-Nicod, May 2010
+  presTitle: Tolerant, classical, strict
+  presAuthors:
+    CERvR: []
+  presExtras: []
+- presLocations:
+  - Institut Jean-Nicod, April 2010
+  - Semantics and Philosophy in Europe 3, ENS/IHPST, May 2010
+  - AAP 2009, University of Melbourne, 2009
+  presTitle: Against structured propositions
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Logos, Universitat de Barcelona, February 2010
+  - 1st Propositions and Same-Saying Workshop, Macquarie University, January 2010
+  presTitle: Semantic possibility
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - 2nd Paris-Barcelona Picasso Workshop, ENS, 2009
+  - Amsterdam Graduate Philosophy Conference, Universiteit van Amsterdam, 2009
+  - Melbourne Logic Group, University of Melbourne, 2009
+  - Philosophy and Psychology of Vagueness, Institut Jean-Nicod, 2008
+  presTitle: Contradictions at the borders
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Carnegie Mellon University, 2008
+  - University of Queensland, 2008
+  - 4th World Congress of Paraconsistency, University of Melbourne, 2008
+  presTitle: Sorting out the sorites
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Logica 2010, June 2010
+  - Melbourne Logic Group, University of Melbourne, 2008
+  presTitle: Weak negations and neighborhood semantics
+  presAuthors:
+    Solo: []
+  presExtras: []
+- presLocations:
+  - Ethical Theory and Moral Practice, Vrije Universiteit Amsterdam, 2008
+  - Mind, Brain, and Experience, University of Colorado, Denver, 2008
+  presTitle: Responsibility and the brain sciences
+  presAuthors:
+    Other:
+    - felipeDeBrigard
+    - ericMandelbaum
+    - davidRipley
+  presExtras: []
