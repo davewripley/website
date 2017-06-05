@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE OverloadedStrings, TemplateHaskell #-}
 
 module Writing (writing, Piece, pieceTitle, pieceAuthorTags, pieceUrl, pieceVenue, pieceYear, pieceAuthorCat, pieceAbstract, bibTeXify) where
 
@@ -14,6 +14,9 @@ import Data.Maybe (fromJust)
 import Lucid
 import Data.Monoid ((<>), mempty, mconcat)
 import Data.List (intersperse)
+
+import Data.Aeson
+import Data.Aeson.TH
 
 import Authors (Author(..), authors)
 import WebsiteTools (AuthorCat(..), classify, doiToLink, sHtml)
@@ -61,6 +64,11 @@ data Chapter = Chapter { titleC :: Text
 
 data Piece = A Article | C Chapter deriving (Show)
 
+deriveJSON defaultOptions ''ArticlePublicationData
+deriveJSON defaultOptions ''Article
+deriveJSON defaultOptions ''ChapterPublicationData
+deriveJSON defaultOptions ''Chapter
+deriveJSON defaultOptions{sumEncoding = ObjectWithSingleField} ''Piece
 
 
 --Accessors:
