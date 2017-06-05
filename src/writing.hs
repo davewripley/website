@@ -232,6 +232,65 @@ paperBibtex p = case aorc p of
           , "}\n"
           ]
 
+pdFromPiece :: Piece -> Maybe PaperPubData
+pdFromPiece (A art) = case pdA art of
+  ForthcomingAPD -> Nothing
+  APD{..} -> Just $ Published { year = yearA
+                       , startPage = startpageA
+                       , endPage = endpageA
+                       }
+pdFromPiece (C cha) = case pdC cha of
+  ForthcomingCPD -> Nothing
+  CPD{..} -> Just $ Published { year = yearC
+                       , startPage = startpageC
+                       , endPage = endpageC
+                       }
+                       
+
+aorcFromPiece :: Piece -> AorC
+aorcFromPiece (A art) = Ar { journal = journalA art
+                           , volume = vol
+                           , number = num
+                           , doiLink = doi
+                           }
+  where
+    vol = case pdA art of
+            ForthcomingAPD -> Nothing
+            APD{..}        -> Just volumeA
+    num = case pdA art of
+            ForthcomingAPD -> Nothing
+            APD{..}        -> numberA
+    doi = case pdA art of
+            ForthcomingAPD -> Nothing
+            APD{..}        -> Just doiLinkA
+aorcFromPiece (C cha) = Ch { booktitle = booktitleC cha
+                           , editor = editorC cha
+                           , publisher = publisherC cha
+                           }
+
+
+
+pieceToPaper :: Piece -> Paper
+pieceToPaper p@(A art) =
+  Paper { title = titleA art
+        , authorCat = authorcatA art
+        , paperUrl = urlA art
+        , bibtag = bibtagA art
+        , abstract = abstractA art
+        , pubData = pdFromPiece p
+        , aorc = aorcFromPiece p
+        }
+pieceToPaper p@(C cha) =
+  Paper { title = titleC cha
+        , authorCat = authorcatC cha
+        , paperUrl = urlC cha
+        , bibtag = bibtagC cha
+        , abstract = abstractC cha
+        , pubData = pdFromPiece p
+        , aorc = aorcFromPiece p
+        }
+        
+
 -- Data
 
 
