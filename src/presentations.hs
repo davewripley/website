@@ -9,6 +9,7 @@ import Lucid
 import Data.Aeson
 import Data.Aeson.TH
 import qualified Data.Yaml.Aeson as Y
+import qualified Data.ByteString as BS
 
 import WebsiteTools (AuthorCat(..), listItems, lk, pileUp)
 import Links
@@ -53,6 +54,15 @@ extrasMarks p
                     (table_ $ (pileUp $ map extraRow pes))
   where pes = presExtras p
 
+presFile :: FilePath
+presFile = "./src/presentations.yaml"
+
+presentations :: IO (Maybe [Presentation])
+presentations = do
+  pData <- BS.readFile presFile
+  return (Y.decode pData)
+
+{-
 presentations :: [Presentation]
 presentations =
   [ P "Conflation: logic and applications"
@@ -409,3 +419,5 @@ presentations =
       ]
       []      
   ]
+
+-}

@@ -182,8 +182,8 @@ teachingBody =
 
 --SECTION: presentation page
 
-presentationPage :: Html ()
-presentationPage = pageFrom presentationBody (navbarJS "presentationlink")
+presentationPage :: [Presentation] -> Html ()
+presentationPage pres = pageFrom (presentationBody pres) (navbarJS "presentationlink")
 
 
 presentationAuthors :: AuthorCat -> Html ()
@@ -205,12 +205,12 @@ presRow p =
     extrasMarks p
 
 
-presentationBody :: Html ()
-presentationBody = do
+presentationBody :: [Presentation] -> Html ()
+presentationBody pres = do
   topLabel "Presentations"
   container_ $ do
     div_ [class_ "mainbits"] $ do
-        pileUp (map presRow presentations)
+        pileUp (map presRow pres)
         
 
 
@@ -337,5 +337,6 @@ websiteMain = do
   System.Directory.createDirectoryIfMissing True dirPrefix
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "index.html") (renderText indexPage)
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "teaching.html") (renderText teachingPage)
-  Data.Text.Lazy.IO.writeFile (dirPrefix <> "presentations.html") (renderText presentationPage)
+  mpres <- presentations
+  Data.Text.Lazy.IO.writeFile (dirPrefix <> "presentations.html") (renderText . presentationPage $ maybe [] id mpres)
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "writing.html") (renderText writingPage)
