@@ -27,10 +27,10 @@ authors = M.fromList
            , url = ""})
   ,("dominicHyde"
    ,Author {name = "Dominic Hyde"
-           , url = "http://hapi.uq.edu.au/dr-dominic-hyde"})
+           , url = "http://hapi.uq.edu.au/profile/388/dominic-hyde"})
   ,("edwinMares"
    ,Author {name = "Edwin Mares"
-           , url = "http://wwwictoria.ac.nz/hppi/about/staff/edwin-mares"})
+           , url = "http://www.victoria.ac.nz/hppi/about/staff/edwin-mares"})
   ,("ericMandelbaum"
    ,Author {name = "Eric Mandelbaum"
            , url = "http://www.ericmandelbaum.com"})
@@ -60,7 +60,7 @@ authors = M.fromList
            , url = "http://www.indiana.edu/~phil/people/dunn.shtml"})
   ,("oleHjortland"
    ,Author {name = "Ole Hjortland"
-           , url = "https://sites.google.com/site/olehjortland/"})
+           , url = "http://www.olehjortland.net"})
   ,("pabloCobreros"
    ,Author {name = "Pablo Cobreros"
            , url = "http://www.unav.es/adi/servlet/Cv2.ara?personid=74116"})
@@ -78,7 +78,7 @@ authors = M.fromList
            , url = "http://www.uva.nl/over-de-uva/organisatie/medewerkers/content/r/o/r.a.m.vanrooij/r.a.m.van-rooij.html"})
   ,("rohanFrench"
    ,Author {name = "Rohan French"
-           , url = "https://sites.google.com/site/rohanfrench/"})
+           , url = "http://rohan-french.github.io/"})
   ,("rossBrady"
    ,Author {name = "Ross Brady"
            , url = "http://www.latrobe.edu.au/humanities/about/staff/profile?uname=RTBrady"})
