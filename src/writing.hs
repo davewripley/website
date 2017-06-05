@@ -1,6 +1,6 @@
-{-# LANGUAGE OverloadedStrings, TemplateHaskell #-}
+{-# LANGUAGE OverloadedStrings, TemplateHaskell, RecordWildCards #-}
 
-module Writing (writing, Piece, pieceTitle, pieceAuthorTags, pieceUrl, pieceVenue, pieceYear, pieceAuthorCat, pieceAbstract, bibTeXify) where
+module Writing (writing, Piece, paperAuthorTags, paperVenue, paperYear, paperBibtex) where
 
 import Data.Aeson
 import Control.Applicative ((<$>), (<*>))
@@ -64,28 +64,40 @@ data Chapter = Chapter { titleC :: Text
 
 data Piece = A Article | C Chapter deriving (Show)
 
-deriveJSON defaultOptions ''ArticlePublicationData
-deriveJSON defaultOptions ''Article
-deriveJSON defaultOptions ''ChapterPublicationData
-deriveJSON defaultOptions ''Chapter
-deriveJSON defaultOptions{sumEncoding = ObjectWithSingleField} ''Piece
+
+data AorC =
+    Ar { journal :: Text
+       , volume :: Maybe Int
+       , number :: Maybe Int
+       , doiLink :: Maybe Text
+       }
+  | Ch { booktitle :: Text
+       , editor :: [Text]
+       , publisher :: Text
+       } deriving (Show)
+
+data PaperPubData = Published { year :: Int
+                              , startPage :: Int
+                              , endPage :: Int
+                              } deriving (Show)
+              
+data Paper = Paper { title :: Text
+                   , authorCat :: AuthorCat
+                   , paperUrl :: Text
+                   , bibtag :: Text
+                   , abstract :: Maybe Text
+                   , pubData :: Maybe PaperPubData
+                   , aorc :: AorC
+                   } deriving (Show)
 
 
 --Accessors:
 
-pieceTitle :: Piece -> Text
-pieceTitle (A a) = titleA a
-pieceTitle (C c) = titleC c
-
-pieceAuthorCat :: Piece -> AuthorCat
-pieceAuthorCat (A a) = authorcatA a
-pieceAuthorCat (C c) = authorcatC c
-
 getAuth :: Text -> Author
 getAuth tg = fromJust (M.lookup tg authors)
 
-pieceAuthorTags :: Piece -> [Text]
-pieceAuthorTags p = case ac of
+paperAuthorTags :: Paper -> [Text]
+paperAuthorTags p = case authorCat p of
                       Solo     -> ["davidRipley"]
                       CERvR    -> [ "pabloCobreros"
                                   , "paulEgre"
@@ -93,61 +105,45 @@ pieceAuthorTags p = case ac of
                                   , "robertVanRooij"
                                   ]
                       Other as -> as
-                    where
-                      ac = case p of
-                          (A art) -> authorcatA art
-                          (C chp) -> authorcatC chp
 
-pieceUrl :: Piece -> Text
-pieceUrl (A a) = urlA a
-pieceUrl (C c) = urlC c
+paperYear :: Paper -> Maybe Int
+paperYear = (fmap year) . pubData
 
-pieceYear :: Piece -> Maybe Int
-pieceYear (A a) = case pdA a of
-                    ForthcomingAPD -> Nothing
-                    ap -> Just (yearA ap)
-pieceYear (C c) = case pdC c of
-                    ForthcomingCPD -> Nothing
-                    cp -> Just (yearC cp)
-
-
-pieceVenue :: Piece -> Html ()
-pieceVenue (A art) = (i_ (toHtml $ journalA art)) <> ", " <> pubData
-  where
-    pubData = case pdA art of
-                ForthcomingAPD -> "forthcoming."
-                apd -> (sHtml $ volumeA apd)
-                           <> num
-                           <> ":"
-                           <> (sHtml $ startpageA apd)
-                           <> "-"
-                           <> (sHtml $ endpageA apd)
-                           <> ", "
-                           <> (sHtml $ yearA apd)
-                           <> "."
-                           where num = case numberA apd of
-                                         Nothing -> mempty
-                                         Just n  -> "(" <> sHtml n <> ")"
-pieceVenue (C chp) = "In "
-                     <> (i_ (toHtml $ booktitleC chp))
-                     <> ", ed "
-                     <> (toHtml $ mconcat (intersperse ", " $ editorC chp))
-                     <> ". "
-                     <> pubData
-  where
-    pubData = case pdC chp of
-                ForthcomingCPD -> "Forthcoming."
-                cpd -> "Pages "
-                       <> (sHtml $ startpageC cpd)
-                       <> "-"
-                       <> (sHtml $ endpageC cpd)
-                       <> ", "
-                       <> (sHtml $ yearC cpd)
-                       <> "."
-
-pieceAbstract :: Piece -> Maybe Text
-pieceAbstract (A a) = abstractA a
-pieceAbstract (C c) = abstractC c
+paperVenue :: Paper -> Html ()
+paperVenue p = case (aorc p) of
+  a@(Ar{..}) -> (i_ (toHtml $ journal)) <> ", " <> t
+    where
+      t = case pubData p of
+        Nothing -> "forthcoming."
+        (Just pd) -> vol <> num <> ":"
+                     <> (sHtml $ startPage pd)
+                     <> "-"
+                     <> (sHtml $ endPage pd)
+                     <> ", "
+                     <> (sHtml $ year pd)
+                     <> "."
+                     where
+                       vol = case volume of
+                               Nothing -> mempty
+                               Just v  -> sHtml v
+                       num = case number of
+                               Nothing -> mempty
+                               Just n  -> "(" <> sHtml n <> ")"
+  c@(Ch{..}) -> "In " <> (i_ (toHtml $ booktitle))
+                      <> ", ed "
+                      <> (toHtml $ mconcat (intersperse ", " $ editor))
+                      <> ". "
+                      <> t
+    where
+      t = case pubData p of
+        Nothing -> "Forthcoming."
+        (Just pd) -> "Pages "
+                     <> (sHtml $ startPage pd)
+                     <> "-"
+                     <> (sHtml $ endPage pd)
+                     <> ", "
+                     <> (sHtml $ year pd)
+                     <> "."
 
 authname :: Text -> Maybe Text
 authname t = name <$> M.lookup t authors
@@ -158,8 +154,8 @@ getText m =
     Just t -> t
     Nothing -> mempty
 
-bibTeXauths :: Piece -> Text
-bibTeXauths = btChars . T.intercalate " and " . map (getText . authname) . pieceAuthorTags
+bibTeXauths :: Paper -> Text
+bibTeXauths = btChars . T.intercalate " and " . map (getText . authname) . paperAuthorTags
 
 btChars :: Text -> Text
 btChars = T.concatMap cleanup
@@ -172,71 +168,69 @@ btChars = T.concatMap cleanup
         '\252' -> "{\\\"{u}}"
         _      -> T.singleton c
 
+write :: Show a => a -> Text
+write = T.pack . show
 
-bibTeXify :: Piece -> Text
-bibTeXify (A a) = T.concat $
-  [ "@article{"
-  , bibtagA a
-  , ",\n   author = {"
-  , bibTeXauths (A a)
-  , "},\n   title = {"
-  , titleA a
-  , "},\n   journal = {"
-  , journalA a
-  , "},\n   "
-  ] ++ rest ++
-  [ "}\n" ]
-  where
-    apd = pdA a
-    rest = case apd of
-      ForthcomingAPD -> [ "note = {Forthcoming}\n" ]
-      _ ->
-        [ "year = {"
-        , T.pack $ show (yearA apd)
-        , "},\n   volume = {"
-        , T.pack $ show (volumeA apd)
-        , "},\n   number = {"
-        , nmb
-        , "},\n   pages = {"
-        , pgs
-        , "}\n"
-        ]
-    nmb = case numberA apd of
-            Nothing -> mempty
-            Just n  -> T.pack $ show n
-    pgs = T.pack $ (show $ startpageA apd) ++ "--" ++ (show $ endpageA apd)  
-bibTeXify (C c) = T.concat $
-  [ "@incollection{"
-  , bibtagC c
-  , ",\n   author = {"
-  , bibTeXauths (C c)
-  , "},\n   title = {"
-  , titleC c
-  , "},\n   booktitle = {"
-  , booktitleC c
-  , "},\n   editor = {"
-  , btChars . T.intercalate " and " $ editorC c
-  , "},\n   publisher = {"
-  , publisherC c
-  , "},\n   "
-  ] ++ rest ++
-  [ "}\n" ]
-  where
-    cpd = pdC c
-    rest = case cpd of
-      ForthcomingCPD -> [ "note = {Forthcoming}\n" ]
-      _ ->
-        [ "year = {"
-        , T.pack $ show (yearC cpd)
-        , "},\n   pages = {"
-        , pgs
-        , "}\n"
-        ]
-    pgs = T.pack $ (show $ startpageC cpd) ++ "--" ++ (show $ endpageC cpd)
-
-
-
-
+paperBibtex :: Paper -> Text
+paperBibtex p = case aorc p of
+  a@(Ar{..}) -> T.concat $
+    [ "@article{"
+    , bibtag p
+    , ",\n   author = {"
+    , bibTeXauths p
+    , "},\n   title = {"
+    , title p
+    , "},\n   journal = {"
+    , journal
+    , "},\n   "
+    ] ++ rest ++
+    [ "}\n" ]
+    where
+      rest = case pubData p of
+        Nothing -> [ "note = {Forthcoming}\n" ]
+        (Just pd) ->
+          [ "year = {"
+          , write (year pd)
+          , "},\n   volume = {"
+          , vol
+          , "},\n   number = {"
+          , nmb
+          , "},\n   pages = {"
+          , (write $ startPage pd) <> "--" <> (write $ endPage pd)
+          , "}\n"
+          ]
+      vol = case volume of
+              Nothing -> mempty
+              Just v  -> write v
+      nmb = case number of
+              Nothing -> mempty
+              Just n  -> write n
+  c@(Ch{..}) -> T.concat $
+    [ "@incollection{"
+    , bibtag p
+    , ",\n   author = {"
+    , bibTeXauths p
+    , "},\n   title = {"
+    , title p
+    , "},\n   booktitle = {"
+    , booktitle
+    , "},\n   editor = {"
+    , btChars . T.intercalate " and " $ editor
+    , "},\n   publisher = {"
+    , publisher
+    , "},\n   "
+    ] ++ rest ++
+    [ "}\n" ]
+    where
+      rest = case pubData p of
+        Nothing -> [ "note = {Forthcoming}\n" ]
+        (Just pd) ->
+          [ "year = {"
+          , write (year pd)
+          , "},\n   pages = {"
+          , (write $ startPage pd) <> "--" <> (write $ endPage pd)
+          , "}\n"
+          ]
 
 -- Data
 
