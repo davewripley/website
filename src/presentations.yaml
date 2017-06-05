@@ -9,6 +9,19 @@
     - ./docs/cia-handout-apa.pdf
     - Handout
 
+- presTitle: Towards a naive type theory
+  presLocations:
+  - University of Western Australia, June 2017
+  - History and Philosophy of Logic Session, ASL North American meeting 2016, University
+    of Connecticut, May 2016
+  - Australasian Association for Logic 2016 meeting, July 2016
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/tntt-slides-aal.pdf
+    - Slides
+
 - presTitle: ! 'Conflation: logic and applications'
   presLocations:
   - Monash University, June 2017
@@ -79,18 +92,6 @@
   presExtras:
   - - Slides
     - ./docs/dw-slides-aap.pdf
-    - Slides
-
-- presLocations:
-  - History and Philosophy of Logic Session, ASL North American meeting 2016, University
-    of Connecticut, May 2016
-  - Australasian Association for Logic 2016 meeting, July 2016
-  presTitle: Towards a naive type theory
-  presAuthors:
-    Solo: []
-  presExtras:
-  - - Slides
-    - ./docs/tntt-slides-aal.pdf
     - Slides
 
 - presLocations:
