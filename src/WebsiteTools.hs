@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings, FlexibleContexts #-}
+{-# LANGUAGE OverloadedStrings, FlexibleContexts, TemplateHaskell #-}
 
 module WebsiteTools (AuthorCat(..), Parity(..), classify, listItems, pileUp, lk, doiToLink, sHtml) where
 
@@ -6,7 +6,12 @@ import Lucid
 import Data.Monoid ((<>), mempty)
 import Data.Text (Text)
 
+import Data.Aeson
+import Data.Aeson.TH
+
 data AuthorCat = Solo | CERvR | Other [Text] deriving (Show, Eq)
+
+deriveJSON defaultOptions ''AuthorCat
 
 data Parity = Even | Odd deriving (Eq, Show)
 

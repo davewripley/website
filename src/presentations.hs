@@ -1,10 +1,13 @@
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE OverloadedStrings, TemplateHaskell #-}
 
 module Presentations (Presentation(..), extrasMarks, presentations) where
 
 import Data.Text (Text)
 import Data.Monoid (mempty, (<>))
 import Lucid
+
+import Data.Aeson
+import Data.Aeson.TH
 
 import WebsiteTools (AuthorCat(..), listItems, lk, pileUp)
 import Links
@@ -22,7 +25,11 @@ data Presentation = P { presTitle :: Text
                       , presAuthors :: AuthorCat
                       , presLocations :: [ Text ]
                       , presExtras :: [ PresExtras ]
-                      } 
+                      }
+
+deriveJSON defaultOptions ''PresExtraType
+deriveJSON defaultOptions ''PresExtras
+deriveJSON defaultOptions ''Presentation
 
 extraMark :: PresExtraType -> Html ()
 extraMark pe = span_ [class_ ("fa fa-fw " <> pec)] ""
