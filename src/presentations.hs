@@ -8,6 +8,7 @@ import Lucid
 
 import Data.Aeson
 import Data.Aeson.TH
+import qualified Data.Yaml.Aeson as Y
 
 import WebsiteTools (AuthorCat(..), listItems, lk, pileUp)
 import Links

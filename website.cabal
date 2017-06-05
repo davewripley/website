@@ -29,3 +29,4 @@ executable website
                      , containers
                      , bytestring
                      , directory
+                     , yaml
