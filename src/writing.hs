@@ -27,7 +27,7 @@ data ArticlePublicationData =
         , numberA :: Maybe Int
         , startpageA :: Int
         , endpageA   :: Int
-        , doiLinkA   :: Html ()
+        , doiLinkA   :: Text
         } deriving (Show)
 
 data Article = Article { titleA   :: Text
@@ -44,7 +44,7 @@ data ChapterPublicationData =
   | CPD { yearC :: Int
         , startpageC :: Int
         , endpageC :: Int
-        , booklinkC :: Html ()
+        , booklinkC :: Text
         } deriving (Show)
 
                               
