@@ -11,7 +11,7 @@ import Data.Aeson.TH
 
 data AuthorCat = Solo | CERvR | Other [Text] deriving (Show, Eq)
 
-deriveJSON defaultOptions ''AuthorCat
+deriveJSON defaultOptions{sumEncoding = ObjectWithSingleField} ''AuthorCat
 
 data Parity = Even | Odd deriving (Eq, Show)
 
