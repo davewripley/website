@@ -24,50 +24,6 @@ import qualified Data.ByteString as BS
 import Authors (Author(..), authors)
 import WebsiteTools (AuthorCat(..), classify, doiToLink, sHtml)
 
-
-
-data ArticlePublicationData =
-  ForthcomingAPD  
-  | APD { yearA  :: Int
-        , volumeA :: Int
-        , numberA :: Maybe Int
-        , startpageA :: Int
-        , endpageA   :: Int
-        , doiLinkA   :: Text
-        } deriving (Show)
-
-data Article = Article { titleA   :: Text
-                       , journalA  :: Text
-                       , authorcatA :: AuthorCat
-                       , urlA :: Text
-                       , pdA  :: ArticlePublicationData
-                       , bibtagA :: Text
-                       , abstractA :: Maybe Text
-                       } deriving (Show)
-
-data ChapterPublicationData =
-  ForthcomingCPD
-  | CPD { yearC :: Int
-        , startpageC :: Int
-        , endpageC :: Int
-        , booklinkC :: Text
-        } deriving (Show)
-
-                              
-data Chapter = Chapter { titleC :: Text
-                       , authorcatC :: AuthorCat
-                       , booktitleC :: Text
-                       , editorC :: [Text]
-                       , publisherC :: Text
-                       , urlC :: Text
-                       , pdC :: ChapterPublicationData
-                       , bibtagC :: Text
-                       , abstractC :: Maybe Text
-                       } deriving (Show)
-
-data Piece = A Article | C Chapter deriving (Show)
-
-
 data AorC =
     Ar { journal :: Text
        , volume :: Maybe Int
@@ -238,42 +194,6 @@ paperBibtex p = case aorc p of
           , "}\n"
           ]
 
-pdFromPiece :: Piece -> Maybe PaperPubData
-pdFromPiece (A art) = case pdA art of
-  ForthcomingAPD -> Nothing
-  APD{..} -> Just $ Published { year = yearA
-                       , startPage = startpageA
-                       , endPage = endpageA
-                       }
-pdFromPiece (C cha) = case pdC cha of
-  ForthcomingCPD -> Nothing
-  CPD{..} -> Just $ Published { year = yearC
-                       , startPage = startpageC
-                       , endPage = endpageC
-                       }
-                       
-
-aorcFromPiece :: Piece -> AorC
-aorcFromPiece (A art) = Ar { journal = journalA art
-                           , volume = vol
-                           , number = num
-                           , doiLink = doi
-                           }
-  where
-    vol = case pdA art of
-            ForthcomingAPD -> Nothing
-            APD{..}        -> Just volumeA
-    num = case pdA art of
-            ForthcomingAPD -> Nothing
-            APD{..}        -> numberA
-    doi = case pdA art of
-            ForthcomingAPD -> Nothing
-            APD{..}        -> Just doiLinkA
-aorcFromPiece (C cha) = Ch { booktitle = booktitleC cha
-                           , editor = editorC cha
-                           , publisher = publisherC cha
-                           }
-
 paperFile :: FilePath
 paperFile = "./src/papers.yaml"
 
@@ -283,27 +203,6 @@ papers = do
   return (Y.decode pData)
 
 
-
-
-pieceToPaper :: Piece -> Paper
-pieceToPaper p@(A art) =
-  Paper { title = titleA art
-        , authorCat = authorcatA art
-        , paperUrl = urlA art
-        , bibtag = bibtagA art
-        , abstract = abstractA art
-        , pubData = pdFromPiece p
-        , aorc = aorcFromPiece p
-        }
-pieceToPaper p@(C cha) =
-  Paper { title = titleC cha
-        , authorCat = authorcatC cha
-        , paperUrl = urlC cha
-        , bibtag = bibtagC cha
-        , abstract = abstractC cha
-        , pubData = pdFromPiece p
-        , aorc = aorcFromPiece p
-        }
         
 
 -- Data
