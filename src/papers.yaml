@@ -1,0 +1,842 @@
+- aorc:
+  - Ar
+  - doiLink: null
+    volume: null
+    journal: Journal of Logic and Computation
+    number: null
+  paperUrl: ./papers/otocr.pdf
+  pubData: null
+  abstract: The relations logicians tend to think of as consequence relations are
+    almost never transitive, at least not in the usual relation-theoretic sense of
+    'transitive'. Yet it is common to hear them described as 'transitive', and to
+    see rules impose to ensure 'transitivity' of these relations. This paper attempts
+    to clarify the situation.
+  title: On the 'transitivity' of consequence relations
+  authorCat:
+    Solo: []
+  bibtag: ripley:otocr
+- aorc:
+  - Ch
+  - booktitle: ! 'Information Processing and Management of Uncertainty in Knowlede-Based
+      Systems, Part II: Proceedings of IPMU 2016'
+    publisher: Springer
+    editor:
+    - Joao Paolo Carvalho
+    - Marie-Jeanne Lesot
+    - Uzay Kaymak
+    - Susana Vieira
+    - Bernadette Bouchon-Meunier
+    - Ronald R. Yager
+  paperUrl: ./papers/cssv.pdf
+  pubData:
+    startPage: 161
+    endPage: 172
+    year: 2016
+  abstract: We compare some nonmonotonic and nontransitive logical approaches to vague
+    predicates, exploring ways to build nonmonotonic logics sensitive to at least
+    some pragmatic constraints on top of our earlier work on nontransitive logics.
+  title: Comparing some substructural strategies dealing with vagueness
+  authorCat:
+    CERvR: []
+  bibtag: cervr:cssv
+- aorc:
+  - Ar
+  - doiLink: ''
+    volume: 26
+    journal: Logic and Logical Philosophy
+    number: 1
+  paperUrl: http://apcz.pl/czasopisma/index.php/LLP/article/view/LLP.2016.020
+  pubData:
+    startPage: 115
+    endPage: 135
+    year: 2017
+  abstract: This paper sketches an understanding of conflation and vagueness according
+    to which the latter is a special kind of the former. First, I sketch a particular
+    understanding of conflation. Then, I go on to argue that vague concepts fit directly
+    into this understanding. This picture of vagueness is related, but not identical,
+    to a number of existing accounts.
+  title: Vagueness is a kind of conflation
+  authorCat:
+    Solo: []
+  bibtag: ripley:vkc
+- aorc:
+  - Ch
+  - booktitle: ! 'Logic, Rationality, and Interaction: Proceedings of LORI V'
+    publisher: Springer
+    editor:
+    - Wiebe van der Hoek
+    - Wesley Holliday
+    - Wen-Fang Wang
+  paperUrl: ./papers/tocr.pdf
+  pubData:
+    startPage: 328
+    endPage: 340
+    year: 2015
+  abstract: The relations logicians tend to think of as consequence relations are
+    almost never transitive, at least not in the usual relation-theoretic sense of
+    'transitive'. Yet it is common to hear them described as 'transitive', and to
+    see rules impose to ensure 'transitivity' of these relations. This paper attempts
+    to clarify the situation.
+  title: ! '''Transitivity'' of consequence relations'
+  authorCat:
+    Solo: []
+  bibtag: ripley:tocr
+- aorc:
+  - Ar
+  - doiLink: null
+    volume: null
+    journal: Notre Dame Journal of Formal Logic
+    number: null
+  paperUrl: ./papers/blurring.pdf
+  pubData: null
+  abstract: I consider the phenomenon of conflation---treating distinct things as
+    one---and develop logical tools for modeling it. These tools involve a purely
+    consequence-theoretic treatment,  independent of any proof or model theory, as
+    well as a four-valued valuational treatment.
+  title: ! 'Blurring: an approach to conflation'
+  authorCat:
+    Solo: []
+  bibtag: ripley:blurring
+- aorc:
+  - Ar
+  - doiLink: null
+    volume: null
+    journal: Philosophers' Imprint
+    number: null
+  paperUrl: ./papers/hmmd.pdf
+  pubData: null
+  abstract: null
+  title: How mathematics can make a difference
+  authorCat:
+    Other:
+    - samBaron
+    - markColyvan
+    - davidRipley
+  bibtag: bcr:hmmd
+- aorc:
+  - Ar
+  - doiLink: ''
+    volume: 8
+    journal: Review of Symbolic Logic
+    number: 3
+  paperUrl: ./papers/nstntl.pdf
+  pubData:
+    startPage: 553
+    endPage: 571
+    year: 2015
+  abstract: In a recent series of papers, I and others have advanced new logical approaches
+    to familiar paradoxes. The key to these approaches is to accept full classical
+    logic, and to accept the principles that cause paradox, while preventing trouble
+    by allowing a certain sort of nontransitivity. Earlier papers have treated paradoxes
+    of truth and vagueness. The present paper begins to extend the approach to deal
+    with the familiar paradoxes arising in naive set theory, pointing out some of
+    the promises and pitfalls of such an approach.
+  title: Naive set theory and nontransitive logic
+  authorCat:
+    Solo: []
+  bibtag: ripley:nstntl
+- aorc:
+  - Ar
+  - doiLink: ''
+    volume: 8
+    journal: Review of Symbolic Logic
+    number: 3
+  paperUrl: ./papers/cncr.pdf
+  pubData:
+    startPage: 506
+    endPage: 528
+    year: 2015
+  abstract: ! 'Some theorists have developed formal approaches to truth that depend
+    on counterexamples to the structural rules of contraction. Here, we study such
+    approaches, with an eye to helping them respond to a certain kind of objection.
+    We define a contractive relative of each noncontractive relation, for use in responding
+    to the objection in question, and we explore one example: the contractive relative
+    of multiplicative-additive affine logic with transparent truth, or MAALT.'
+  title: Contractions of noncontractive consequence relations
+  authorCat:
+    Other:
+    - rohanFrench
+    - davidRipley
+  bibtag: fr:cncr
+- aorc:
+  - Ar
+  - doiLink: 10.3998/ergo.12405314.0002.013
+    volume: 2
+    journal: Ergo
+    number: 13
+  paperUrl: http://dx.doi.org/10.3998/ergo.12405314.0002.013
+  pubData:
+    startPage: 299
+    endPage: 328
+    year: 2015
+  abstract: ! 'Substructural theories of truth are theories based on logics that do
+    not include the full complement of usual structural rules. Existing substructural
+    approaches fall into two main families: noncontractive approaches and nontransitive
+    approaches. This paper provides a sketch of these families, and argues for two
+    claims: first, that substructural theories are better-positioned than other theories
+    to grapple with the truth-theoretic paradoxes, and second---more tentatively---that
+    nontransitive approaches are in turn better-positioned than noncontractive approaches.'
+  title: Comparing substructural theories of truth
+  authorCat:
+    Solo: []
+  bibtag: ripley:cstt
+- aorc:
+  - Ar
+  - doiLink: 10.1002/tht3.166
+    volume: 4
+    journal: Thought
+    number: 2
+  paperUrl: ./papers/cc.pdf
+  pubData:
+    startPage: 131
+    endPage: 138
+    year: 2015
+  abstract: In this paper, I consider the connection between consequence relations
+    and closure operations. I argue that one familiar connection makes good sense
+    of some usual applications of consequence relations, and that a largeish family
+    of familiar noncontractive consequence relations cannot respect this familiar
+    connection.
+  title: Contraction and closure
+  authorCat:
+    Solo: []
+  bibtag: ripley:cc
+- aorc:
+  - Ar
+  - doiLink: ''
+    volume: 123
+    journal: Mind
+    number: 491
+  paperUrl: http://mind.oxfordjournals.org/cgi/reprint/fzu057?ijkey=nQCUytimlfdBzuz&keytype=ref
+  pubData:
+    startPage: 813
+    endPage: 828
+    year: 2014
+  abstract: ! 'In  an  approach  to  vagueness  using  the  paraconsistent logic LP,  borderline
+    cases of vague predicates are contradictory---logical gluts. In ‘Finding Tolerance
+    without Gluts’, Jc Beall argues against such an account of vagueness. He constructs
+    an alternative theory, and argues that ‘[t]he result enjoys all the virtues of  the
+    LP solution but without the gluts’. He concludes that his alternative is therefore
+    preferable to the LP solution. In what follows, we will demonstrate that this
+    is not the case: Beall’s account does not do all the things that a paraconsistent
+    solution can do. In fact, it is the other way around: the paraconsistent account
+    can do everything that Beall’s theory can do, and more. And some of the ‘more’
+    is very important. We will demonstrate this by discussing each of the three objections
+    to his own project which Beall raises and rejects, arguing that his replies fail
+    in each case. This note is not solely a reply to Beall. Several quite new points
+    emerge  in  the  discussion, clarifying the paraconsistent account.'
+  title: Tolerating gluts
+  authorCat:
+    Other:
+    - zachWeber
+    - davidRipley
+    - grahamPriest
+    - dominicHyde
+    - markColyvan
+  bibtag: wrphc:tg
+- aorc:
+  - Ch
+  - booktitle: Act-Based Conceptions of Propositional Content
+    publisher: Oxford University Press
+    editor:
+    - Friederike Moltmann
+    - Mark Textor
+  paperUrl: ./papers/bcw.pdf
+  pubData: null
+  abstract: null
+  title: Bilateralism, coherence, warrant
+  authorCat:
+    Solo: []
+  bibtag: ripley:bcw
+- aorc:
+  - Ch
+  - booktitle: Recent Trends in Philosophical Logic
+    publisher: Springer
+    editor:
+    - Roberto Ciuni
+    - Heinrich Wansing
+    - Caroline Wilkommen
+  paperUrl: ./papers/pmti.pdf
+  pubData:
+    startPage: 75
+    endPage: 85
+    year: 2014
+  abstract: null
+  title: Priest's motorbike and tolerant identity
+  authorCat:
+    CERvR: []
+  bibtag: cervr:pmti
+- aorc:
+  - Ar
+  - doiLink: 10.1007/s11245-014-9261-8
+    volume: 34
+    journal: Topoi
+    number: 1
+  paperUrl: ./papers/ag.pdf
+  pubData:
+    startPage: 25
+    endPage: 36
+    year: 2015
+  abstract: What sorts of sequent-calculus rules succeed in specifying a legitimate
+    piece of vocabulary? Following on Arthur Prior’s discussion of the connective
+    tonk, there have been a flurry of criteria  offered. Here, I step back a bit,
+    examining  the  role  of  structural  rules in an inferentialist theory of meaning,
+    and sketch a theory on which any way at all of giving left  and right sequent
+    rules  for  a piece  of vocabulary is ok. Tonk, among other things, is a full
+    citizen of coherent-idea-land.
+  title: Anything goes
+  authorCat:
+    Solo: []
+  bibtag: ripley:ag
+- aorc:
+  - Ar
+  - doiLink: 10.1007/s10992-014-9325-7
+    volume: 44
+    journal: Journal of Philosophical Logic
+    number: 4
+  paperUrl: ./papers/pive.pdf
+  pubData:
+    startPage: 375
+    endPage: 393
+    year: 2015
+  abstract: Recent experiments have shown that naive speakers find borderline contradictions
+    involving vague predicates acceptable. In "Tolerant, classical, strict", we proposed
+    a pragmatic explanation of the acceptability of borderline contradictions, building
+    on a three-valued semantics. In a reply, Alxatib et al. show, however,  that  the  pragmatic  account  predicts  the  wrong  interpretations  for  some
+    examples involving disjunction, and propose as a remedy a semantic analysis instead,
+    based on fuzzy logic. In this paper we provide an explicit global pragmatic interpretation
+    rule, based on a somewhat richer semantics, and show that with its help the problem
+    can be overcome in pragmatics after all. Furthermore, we use this pragmatic interpretation
+    rule to define a new (nonmonotonic) consequence relation and discuss some of its
+    properties.
+  title: Pragmatic interpretations of vague expressions
+  authorCat:
+    CERvR: []
+  bibtag: cervr:pive
+- aorc:
+  - Ar
+  - doiLink: 10.1007/s10992-015-9358-6
+    volume: 44
+    journal: Journal of Philosophical Logic
+    number: 6
+  paperUrl: ./papers/pl.pdf
+  pubData:
+    startPage: 771
+    endPage: 780
+    year: 2015
+  abstract: In  some  logics, anything  whatsoever  follows  from  a  contradiction;  call
+    these logics explosive. Paraconsistent logics are logics that are not explosive.
+    Paraconsistent logics have a long and fruitful history, and no doubt a long and
+    fruitful future. To give some sense of the situation, I spend Section 1 exploring
+    exactly what it takes for a logic to be paraconsistent. It will emerge that there
+    is considerable open texture to the idea. In Section 2, I give some examples of
+    techniques for developing paraconsistent logics. In Section 3, I discuss what
+    seem to me to be some promising applications of certain paraconsistent logics.
+    In fact, however, I don’t think there’s all that much to the concept ‘paraconsistent’
+    itself; the collection of paraconsistent logics is far too heterogenous to be
+    very productively dealt with under a single label. Perhaps that will emerge as
+    we go.
+  title: Paraconsistent logic
+  authorCat:
+    Solo: []
+  bibtag: ripley:pl
+- aorc:
+  - Ch
+  - booktitle: A Companion to Experimental Philosophy
+    publisher: Wiley
+    editor:
+    - Justin Sytsma
+    - Wesley Buckwalter
+  paperUrl: ./papers/xpl.pdf
+  pubData:
+    startPage: 523
+    endPage: 534
+    year: 2016
+  abstract: This paper explores the intersection  of  experimental philosophy and
+    philosophical logic. I sketch some ways in which experimental results, and empirical
+    results more broadly, can inform and have informed debates within philosophical
+    logic.
+  title: Experimental philosophical logic
+  authorCat:
+    Solo: []
+  bibtag: ripley:xpl
+- aorc:
+  - Ch
+  - booktitle: Unifying the Philosophy of Truth
+    publisher: Springer
+    editor:
+    - Theodora Achourioti
+    - Henri Galinon
+    - José Martínez Fernández
+    - Kentaro Fujimoto
+  paperUrl: ./papers/vtpc.pdf
+  pubData:
+    startPage: 409
+    endPage: 430
+    year: 2015
+  abstract: We say that a sentence A is a permissive consequence of a set X of premises
+    whenever, if all the premises in X hold up to some standard, then A holds to some
+    weaker standard. In this paper, we focus on a three-valued version of this notion,
+    which we call strict-to-tolerant consequence, and discuss its fruitfulness toward
+    a unified treatment of the paradoxes of vagueness and self-referential truth.
+    For vagueness, st-consequence supports the principle of tolerance; for truth,
+    it supports the requisite of transparency. Permissive consequence is non-transitive,
+    but this feature is argued to be an essential component to the understanding of
+    paradoxical reasoning in cases involving vagueness or self-reference.
+  title: Vagueness, truth, and permissive consequence
+  authorCat:
+    CERvR: []
+  bibtag: cervr:vtpc
+- aorc:
+  - Ch
+  - booktitle: the Oxford Handbook of Truth
+    publisher: Oxford University Press
+    editor:
+    - Michael Glanzberg
+  paperUrl: ./papers/nctt.pdf
+  pubData: null
+  abstract: null
+  title: Nonclassical theories of truth
+  authorCat:
+    Other:
+    - jcBeall
+    - davidRipley
+  bibtag: br:nctt
+- aorc:
+  - Ch
+  - booktitle: Foundations of Logical Consequence
+    publisher: Oxford University Press
+    editor:
+    - Colin Caret
+    - Ole Hjortland
+  paperUrl: ./papers/ed.pdf
+  pubData:
+    startPage: 289
+    endPage: 309
+    year: 2015
+  abstract: null
+  title: Embedding denial
+  authorCat:
+    Solo: []
+  bibtag: ripley:ed
+- aorc:
+  - Ar
+  - doiLink: 10.1007/s10849-013-9183-7
+    volume: 22
+    journal: Journal of Logic, Language, and Information
+    number: 4
+  paperUrl: ./papers/voe.pdf
+  pubData:
+    startPage: 391
+    endPage: 420
+    year: 2013
+  abstract: This paper proposes an experimental investigation of the use of vague
+    predicates in dynamic sorites. We present the results of two studies in which
+    subjects had to categorize colored squares at the borderline between two color
+    categories. Our main aim was to probe for hysteresis in the ordered transitions
+    between the respective colors, namely for the longer persistence of the initial
+    category. Our main finding is a reverse phenomenon of enhanced contrast (i.e.
+    negative hysteresis), present in two different tasks, a comparative task involving
+    two color names, and a yes/no task involving a single color name, but not found
+    in a corresponding color matching task. We propose an optimality-theoretic explanation
+    of this effect in terms of the strict-tolerant framework of Cobreros et al.'s
+    "Tolerant, classical, strict", in which borderline cases are characterized in
+    a dual manner in terms of overlap between tolerant extensions, and underlap between
+    strict extensions.
+  title: Vagueness and order effects in color categorization
+  authorCat:
+    Other:
+    - paulEgre
+    - vincentDeGardelle
+    - davidRipley
+  bibtag: egr:voe
+- aorc:
+  - Ar
+  - doiLink: 10.1093/mind/fzt110
+    volume: 122
+    journal: Mind
+    number: 488
+  paperUrl: http://mind.oxfordjournals.org/cgi/reprint/fzt110?ijkey=xGKyG7colWYSJzh&keytype=ref
+  pubData:
+    startPage: 841
+    endPage: 866
+    year: 2013
+  abstract: This paper presents and defends a way to add a transparent truth predicate
+    to classical logic, such that T(A) and A are everywhere intersubstitutable, where
+    all T-biconditionals hold, and where truth can be made compositional. A key feature
+    of our framework, called STTT (for Strict-Tolerant Transparent Truth), is that
+    it supports a non-transitive relation of consequence. At the same time, it can
+    be seen that the only failures of transitivity STTT allows for arise in paradoxical
+    cases.
+  title: Reaching transparent truth
+  authorCat:
+    CERvR: []
+  bibtag: cervr:rtt
+- aorc:
+  - Ar
+  - doiLink: 10.1007/s12133-013-0125-2
+    volume: 14
+    journal: Metaphysica
+    number: 2
+  paperUrl: ./papers/ill.pdf
+  pubData:
+    startPage: 253
+    endPage: 264
+    year: 2013
+  abstract: Arguments based on Leibniz's Law seem to show that there is no room for
+    either indefinite or contingent identity. The arguments seem to prove too much,
+    but their conclusion is hard to resist if we want to keep Leibniz's Law. We present
+    a novel approach to this issue, based on an appropriate modification of the notion
+    of logical consequence.
+  title: Identity, Leibniz's law, and nontransitive reasoning
+  authorCat:
+    CERvR: []
+  bibtag: cervr:illntr
+- aorc:
+  - Ar
+  - doiLink: ''
+    volume: 13
+    journal: Philosophers' Imprint
+    number: 5
+  paperUrl: http://quod.lib.umich.edu/cgi/p/pod/dod-idx/revising-up-strengthening-classical-logic-in-the-face.pdf?c=phimp;idno=3521354.0013.005
+  pubData:
+    startPage: 1
+    endPage: 13
+    year: 2013
+  abstract: This paper provides a defense of the full strength of classical logic,
+    in  a  certain  form,  against  those  who  would  appeal  to  semantic  paradox
+    or vagueness in an argument for a weaker logic. I will not argue that these paradoxes
+    are based on mistaken principles; the approach I  recommend  will  extend  a  familiar  formulation  of  classical  logic  by
+    including a fully transparent truth predicate and fully tolerant vague predicates.
+    It has been claimed that these principles are not compatible with classical logic;
+    I will argue, by both drawing on previous work and presenting new work in the
+    same vein, that this is not so. We can combine  classical  logic  with  these  intuitive  principles,  so  long  as  we
+    allow the result to be nontransitive. In the end, I hope the paper will help us
+    to handle familiar paradoxes within classical logic; along the way, I hope to
+    shed some light on what classical logic might be for.
+  title: Revising up
+  authorCat:
+    Solo: []
+  bibtag: ripley:ru
+- aorc:
+  - Ar
+  - doiLink: ''
+    volume: 91
+    journal: Australasian Journal of Philosophy
+    number: 1
+  paperUrl: ./papers/pafc.pdf
+  pubData:
+    startPage: 139
+    endPage: 164
+    year: 2013
+  abstract: ! 'This paper presents and motivates a new philosophical and logical approach
+    to truth and semantic paradox. It begins from an inferentialist, and particularly
+    bilateralist, theory of meaning—one which takes meaning to be constituted by assertibility
+    and deniability conditions—and shows how the usual multiple-conclusion sequent
+    calculus for classical logic can be given an inferentialist motivation, leaving
+    classical model theory as of only derivative importance. The paper then uses this
+    theory of meaning to present and motivate a logical system--—ST--—that conservatively
+    extends classical logic with a fully transparent truth predicate. This system
+    is shown to allow for classical reasoning over the full (truth-involving) vocabulary,
+    but to be non-transitive. Some special cases where transitivity does hold are
+    outlined. ST is also shown to give rise to a familiar sort of model for non-classical
+    logics: Kripke fixed points on the Strong Kleene valuation scheme. Finally, to
+    give a theory of paradoxical sentences, a distinction is drawn between two varieties
+    of assertion and two varieties of denial. On one variety, paradoxical sentences
+    cannot be either asserted or denied; on the other, they must be both asserted
+    and denied. The target theory is compared favourably to more familiar related
+    systems, and some objections are considered and responded to.'
+  title: Paradoxes and failures of cut
+  authorCat:
+    Solo: []
+  bibtag: ripley:pafc
+- aorc:
+  - Ch
+  - booktitle: ! 'Paraconsistency: Logic and Applications'
+    publisher: Springer
+    editor:
+    - Francesco Berto
+    - Edwin Mares
+    - Koji Tanaka
+  paperUrl: ./papers/sos.pdf
+  pubData:
+    startPage: 329
+    endPage: 348
+    year: 2013
+  abstract: null
+  title: Sorting out the sorites
+  authorCat:
+    Solo: []
+  bibtag: ripley:ss
+- aorc:
+  - Ar
+  - doiLink: ''
+    volume: 3
+    journal: Review of Philosophy and Psychology
+    number: 3
+  paperUrl: ./papers/nbar.pdf
+  pubData:
+    startPage: 351
+    endPage: 368
+    year: 2012
+  abstract: ! 'For some reason, participants hold agents more responsible for their
+    actions when a situation is described concretely than when the situation is described
+    abstractly. We present examples of this phenomenon, and survey some attempts to
+    explain it. We divide these attempts into two classes: affective theories and
+    cognitive theories. After criticizing both types of theories we advance our novel
+    hypothesis: that people believe that whenever a norm is violated, someone is responsible
+    for it. This belief, along with the familiar workings of cognitive dissonance
+    theory, is enough to not only explain all of the abstract/concrete paradoxes,
+    but also explains seemingly unrelated effects, like the anthropomorphization of
+    malfunctioning inanimate objects.'
+  title: Explaining the abstract/concrete paradoxes in moral psychology
+  authorCat:
+    Other:
+    - ericMandelbaum
+    - davidRipley
+  bibtag: mr:nbar
+- aorc:
+  - Ar
+  - doiLink: ''
+    volume: 189
+    journal: Synthese
+    number: 1
+  paperUrl: ./papers/sc.pdf
+  pubData:
+    startPage: 97
+    endPage: 118
+    year: 2012
+  abstract: ! 'This paper discusses two distinct strategies that have been adopted
+    to provide fine-grained propositions; that is, propositions individuated more
+    finely than sets of possible worlds. One strategy takes propositions to have internal
+    structure, while the other looks beyond possible worlds, and takes propositions
+    to be sets of circumstances, where possible worlds do not exhaust the circumstances.
+    The usual arguments for these positions turn on fineness-of-grain issues: just
+    how finely should propositions be individuated? Here, I compare the two strategies
+    with an eye to the fineness-of-grain question, arguing that when a wide enough
+    range of data is considered, we can see that a circumstance-based approach, properly
+    spelled out, outperforms a structure-based approach in answering the question.
+    (Part of this argument involves spelling out what I take to be a reasonable circumstance-based
+    approach.) An argument to the contrary, due to Soames, is also considered.'
+  title: Structures and circumstances
+  authorCat:
+    Solo: []
+  bibtag: ripley:sc
+- aorc:
+  - Ar
+  - doiLink: ''
+    volume: 100
+    journal: Studia Logica
+    number: 4
+  paperUrl: ./papers/tmcsv.pdf
+  pubData:
+    startPage: 855
+    endPage: 877
+    year: 2012
+  abstract: In a previous paper (‘Tolerant, Classical, Strict’), we investigated a
+    semantic framework to deal with the idea that vague predicates are tolerant, namely
+    that small changes do not affect the applicability of a vague predicate even if
+    large changes do.  Our approach there rests on two main ideas.  First, given a
+    classical extension of a predicate, we can define a strict and a tolerant extension
+    depending on an indifference relation associated to that predicate. Second, we
+    can use these notions of satisfaction to define mixed consequence relations that
+    capture non-transitive tolerant reasoning. Although we gave some empirical motivation
+    for the use of strict and tolerant extensions, making use of them commits us to
+    the view that classical tautologies or contradictions are not automatically valid
+    or unsatisfiable, respectively. Some philosophers might take this commitment as
+    a negative outcome of our previous proposal.  We think, however, that the general
+    ideas underlying our previous approach to vagueness can be implemented in a variety
+    of ways.  This paper explores the possibility of defining mixed notions of consequence
+    in the more classical super/sub-valuationist setting and examines to what extent
+    any of these notions captures non-transitive tolerant reasoning.
+  title: Tolerance and mixed consequence in the s'valuationist setting
+  authorCat:
+    CERvR: []
+  bibtag: cervr:tmcss
+- aorc:
+  - Ar
+  - doiLink: ''
+    volume: 5
+    journal: Review of Symbolic Logic
+    number: 2
+  paperUrl: ./papers/cecltt.pdf
+  pubData:
+    startPage: 354
+    endPage: 378
+    year: 2012
+  abstract: This paper shows how to conservatively extend a classical logic with a
+    transparent truth predicate, in the face of the paradoxes that arise as a consequence.
+    All classical inferences are preserved, and indeed extended to the full (truth-involving)
+    vocabulary. However, not all classical metainferences are preserved; in particular,
+    the resulting logical system is nontransitive. Some limits on this nontransitivity
+    are adumbrated, and two proof systems are presented and shown to be sound and
+    complete. (One proof system features admissible Cut, but the other does not.)
+  title: Conservatively extending classical logic with transparent truth
+  authorCat:
+    Solo: []
+  bibtag: ripley:cecltt
+- aorc:
+  - Ar
+  - doiLink: ''
+    volume: 41
+    journal: Journal of Philosophical Logic
+    number: 3
+  paperUrl: ./papers/ternary.pdf
+  pubData:
+    startPage: 595
+    endPage: 612
+    year: 2012
+  abstract: One of the most dominant approaches to semantics for relevant (and many
+    paraconsistent) logics is the Routley–Meyer semantics involving a ternary relation
+    on points. To some (many?), this ternary relation has seemed like a technical
+    trick devoid of an intuitively appealing philosophical story that connects it
+    up with conditionality in general. In this paper, we respond to this worry by
+    providing three different philosophical accounts of the ternary relation that
+    correspond to three conceptions of conditionality. We close by briefly discussing
+    a general conception of conditionality that may unify the three given conceptions.
+  title: On the ternary relation and conditionality
+  authorCat:
+    Other:
+    - jcBeall
+    - rossBrady
+    - michaelDunn
+    - allenHazen
+    - edwinMares
+    - robertMeyer
+    - grahamPriest
+    - gregRestall
+    - davidRipley
+    - johnSlaney
+    - richardSylvan
+  bibtag: ternary
+- aorc:
+  - Ar
+  - doiLink: ''
+    volume: 41
+    journal: Journal of Philosophical Logic
+    number: 2
+  paperUrl: http://link.springer.com/content/pdf/10.1007%2Fs10992-010-9165-z.pdf
+  pubData:
+    startPage: 347
+    endPage: 385
+    year: 2012
+  abstract: ! 'In this paper we investigate a semantics for first-order logic originally
+    proposed by R. van Rooij to account for the idea that vague predicates are tolerant,
+    that is, for the principle that if x is P, then y should be P whenever y is  similar  enough  to
+    x.  The  semantics,  which  makes  use  of  indifference relations to model similarity,
+    rests on the interaction of three notions of truth: the classical notion,  and  two  dual  notions  simultaneously  defined  in  terms
+    of it, which we call tolerant truth and strict truth. We characterize the space
+    of consequence relations definable in terms of those and discuss the kind of solution  this  gives  to  the  sorites  paradox.  We  discuss  some  applications  of
+    the  framework  to  the  pragmatics  and  psycholinguistics  of  vague  predicates,
+    in particular regarding judgments about borderline cases.'
+  title: Tolerant, classical, strict
+  authorCat:
+    CERvR: []
+  bibtag: cervr:tcs
+- aorc:
+  - Ch
+  - booktitle: Understanding Vagueness
+    publisher: College Publications
+    editor:
+    - Petr Cintula
+    - Christian G. Fermüller
+    - Lluís Godo
+    - Petr Hájek
+  paperUrl: ./papers/ii.pdf
+  pubData:
+    startPage: 41
+    endPage: 58
+    year: 2011
+  abstract: null
+  title: Inconstancy and inconsistency
+  authorCat:
+    Solo: []
+  bibtag: ripley:ii
+- aorc:
+  - Ar
+  - doiLink: ''
+    volume: 6
+    journal: Philosophy Compass
+    number: 9
+  paperUrl: ./papers/ndr.pdf
+  pubData:
+    startPage: 622
+    endPage: 629
+    year: 2011
+  abstract: ! 'At least since Frege and Geach, there has been some consensus about
+    the relation between negation, the speech act of denial, and the attitude of rejection:
+    a denial, the consensus has  had  it,  is  the  assertion  of  a  negation,  and  a  rejection  is  a  belief  in  a  negation.  Recently,
+    though, there have been notable deviations from this orthodox view. Rejectivists
+    have maintained that negation is to be explained in terms of denial or rejection,
+    rather than vice versa. Some other theorists have maintained that negation is
+    a separate phenomenon from denial, and that neither is to be explained in terms
+    of the other. In this paper, I present and consider these heterodox theories of
+    the relation between negation, denial, and rejection.'
+  title: Negation, denial, and rejection
+  authorCat:
+    Solo: []
+  bibtag: ripley:ndr
+- aorc:
+  - Ch
+  - booktitle: Vagueness in Communication
+    publisher: Springer
+    editor:
+    - Rick Nouwen
+    - Robert van Rooij
+    - Uli Sauerland
+    - Hans-Christian Schmitz
+  paperUrl: ./papers/catb.pdf
+  pubData:
+    startPage: 169
+    endPage: 188
+    year: 2011
+  abstract: null
+  title: Contradictions at the borders
+  authorCat:
+    Solo: []
+  bibtag: ripley:catb
+- aorc:
+  - Ar
+  - doiLink: ''
+    volume: 12
+    journal: Ethical Theory and Moral Practice
+    number: 5
+  paperUrl: ./papers/rbs.pdf
+  pubData:
+    startPage: 511
+    endPage: 524
+    year: 2009
+  abstract: Some theorists think that the more we get to know about the neural underpinnings
+    of our behaviors, the less likely we will be to hold people responsible for their
+    actions. This intuition has driven some to suspect that as neuroscience gains
+    insight into the neurological causes of our actions, people will cease to view
+    others as morally responsible for their actions, thus creating a troubling quandary
+    for our legal system. This paper provides empirical evidence against such intuitions.
+    Particularly, our studies of folk intuitions suggest that (1) when the causes
+    of an action are described in neurological terms, they are not found to be any
+    more exculpatory than when described in psychological terms, and (2) agents are
+    not held fully responsible even for actions that are fully neurologically caused.
+  title: Responsibility and the brain sciences
+  authorCat:
+    Other:
+    - felipeDeBrigard
+    - ericMandelbaum
+    - davidRipley
+  bibtag: dbmr:rbs
+- aorc:
+  - Ar
+  - doiLink: ''
+    volume: 64
+    journal: Analysis
+    number: 1
+  paperUrl: ./papers/ad.pdf
+  pubData:
+    startPage: 30
+    endPage: 35
+    year: 2004
+  abstract: null
+  title: Analetheism and dialetheism
+  authorCat:
+    Other:
+    - jcBeall
+    - davidRipley
+  bibtag: br:ad
