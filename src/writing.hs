@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings, TemplateHaskell, RecordWildCards #-}
 
-module Writing (writing, Piece, paperAuthorTags, paperVenue, paperYear, paperBibtex) where
+module Writing (papers, Paper, paperAuthorTags, paperVenue, paperYear, paperBibtex) where
 
 import Data.Aeson
 import Control.Applicative ((<$>), (<*>))
@@ -17,6 +17,9 @@ import Data.List (intersperse)
 
 import Data.Aeson
 import Data.Aeson.TH
+import qualified Data.Yaml.Aeson as Y
+
+import qualified Data.ByteString as BS
 
 import Authors (Author(..), authors)
 import WebsiteTools (AuthorCat(..), classify, doiToLink, sHtml)
@@ -74,12 +77,12 @@ data AorC =
   | Ch { booktitle :: Text
        , editor :: [Text]
        , publisher :: Text
-       } deriving (Show)
+       } deriving (Show, Eq)
 
 data PaperPubData = Published { year :: Int
                               , startPage :: Int
                               , endPage :: Int
-                              } deriving (Show)
+                              } deriving (Show, Eq)
               
 data Paper = Paper { title :: Text
                    , authorCat :: AuthorCat
@@ -88,8 +91,11 @@ data Paper = Paper { title :: Text
                    , abstract :: Maybe Text
                    , pubData :: Maybe PaperPubData
                    , aorc :: AorC
-                   } deriving (Show)
+                   } deriving (Show, Eq)
 
+deriveJSON defaultOptions{sumEncoding = TwoElemArray} ''AorC
+deriveJSON defaultOptions ''PaperPubData
+deriveJSON defaultOptions ''Paper
 
 --Accessors:
 
@@ -268,6 +274,15 @@ aorcFromPiece (C cha) = Ch { booktitle = booktitleC cha
                            , publisher = publisherC cha
                            }
 
+paperFile :: FilePath
+paperFile = "./src/papers.yaml"
+
+papers :: IO (Maybe [Paper])
+papers = do
+  pData <- BS.readFile paperFile
+  return (Y.decode pData)
+
+
 
 
 pieceToPaper :: Piece -> Paper
@@ -293,7 +308,7 @@ pieceToPaper p@(C cha) =
 
 -- Data
 
-
+{-
 writing :: [Piece]
 writing = [ A (Article
               "On the 'transitivity' of consequence relations"
@@ -664,3 +679,4 @@ writing = [ A (Article
               "br:ad"
               Nothing)
           ]
+-}
