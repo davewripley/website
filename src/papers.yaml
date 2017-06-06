@@ -15,6 +15,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:otocr
+  
 - aorc:
   - Ch
   - booktitle: ! 'Information Processing and Management of Uncertainty in Knowlede-Based
@@ -39,6 +40,7 @@
   authorCat:
     CERvR: []
   bibtag: cervr:cssv
+
 - aorc:
   - Ar
   - doiLink: ''
@@ -59,6 +61,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:vkc
+
 - aorc:
   - Ch
   - booktitle: ! 'Logic, Rationality, and Interaction: Proceedings of LORI V'
@@ -81,6 +84,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:tocr
+
 - aorc:
   - Ar
   - doiLink: null
@@ -97,6 +101,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:blurring
+
 - aorc:
   - Ar
   - doiLink: null
@@ -113,6 +118,7 @@
     - markColyvan
     - davidRipley
   bibtag: bcr:hmmd
+
 - aorc:
   - Ar
   - doiLink: ''
@@ -135,6 +141,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:nstntl
+
 - aorc:
   - Ar
   - doiLink: ''
@@ -158,6 +165,7 @@
     - rohanFrench
     - davidRipley
   bibtag: fr:cncr
+
 - aorc:
   - Ar
   - doiLink: 10.3998/ergo.12405314.0002.013
@@ -180,6 +188,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:cstt
+
 - aorc:
   - Ar
   - doiLink: 10.1002/tht3.166
@@ -200,6 +209,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:cc
+
 - aorc:
   - Ar
   - doiLink: ''
@@ -233,6 +243,7 @@
     - dominicHyde
     - markColyvan
   bibtag: wrphc:tg
+
 - aorc:
   - Ch
   - booktitle: Act-Based Conceptions of Propositional Content
@@ -247,6 +258,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:bcw
+
 - aorc:
   - Ch
   - booktitle: Recent Trends in Philosophical Logic
@@ -265,6 +277,7 @@
   authorCat:
     CERvR: []
   bibtag: cervr:pmti
+
 - aorc:
   - Ar
   - doiLink: 10.1007/s11245-014-9261-8
@@ -287,6 +300,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:ag
+
 - aorc:
   - Ar
   - doiLink: 10.1007/s10992-014-9325-7
@@ -312,6 +326,7 @@
   authorCat:
     CERvR: []
   bibtag: cervr:pive
+
 - aorc:
   - Ar
   - doiLink: 10.1007/s10992-015-9358-6
@@ -339,6 +354,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:pl
+
 - aorc:
   - Ch
   - booktitle: A Companion to Experimental Philosophy
@@ -359,6 +375,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:xpl
+
 - aorc:
   - Ch
   - booktitle: Unifying the Philosophy of Truth
@@ -386,6 +403,7 @@
   authorCat:
     CERvR: []
   bibtag: cervr:vtpc
+
 - aorc:
   - Ch
   - booktitle: the Oxford Handbook of Truth
@@ -401,6 +419,7 @@
     - jcBeall
     - davidRipley
   bibtag: br:nctt
+
 - aorc:
   - Ch
   - booktitle: Foundations of Logical Consequence
@@ -418,6 +437,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:ed
+
 - aorc:
   - Ar
   - doiLink: 10.1007/s10849-013-9183-7
@@ -449,6 +469,7 @@
     - vincentDeGardelle
     - davidRipley
   bibtag: egr:voe
+
 - aorc:
   - Ar
   - doiLink: 10.1093/mind/fzt110
@@ -471,6 +492,7 @@
   authorCat:
     CERvR: []
   bibtag: cervr:rtt
+
 - aorc:
   - Ar
   - doiLink: 10.1007/s12133-013-0125-2
@@ -491,6 +513,7 @@
   authorCat:
     CERvR: []
   bibtag: cervr:illntr
+
 - aorc:
   - Ar
   - doiLink: ''
@@ -517,6 +540,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:ru
+
 - aorc:
   - Ar
   - doiLink: ''
@@ -549,6 +573,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:pafc
+
 - aorc:
   - Ch
   - booktitle: ! 'Paraconsistency: Logic and Applications'
@@ -567,6 +592,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:ss
+
 - aorc:
   - Ar
   - doiLink: ''
@@ -594,6 +620,7 @@
     - ericMandelbaum
     - davidRipley
   bibtag: mr:nbar
+
 - aorc:
   - Ar
   - doiLink: ''
@@ -621,6 +648,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:sc
+
 - aorc:
   - Ar
   - doiLink: ''
@@ -652,6 +680,7 @@
   authorCat:
     CERvR: []
   bibtag: cervr:tmcss
+
 - aorc:
   - Ar
   - doiLink: ''
@@ -674,6 +703,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:cecltt
+
 - aorc:
   - Ar
   - doiLink: ''
@@ -708,6 +738,7 @@
     - johnSlaney
     - richardSylvan
   bibtag: ternary
+
 - aorc:
   - Ar
   - doiLink: ''
@@ -732,6 +763,7 @@
   authorCat:
     CERvR: []
   bibtag: cervr:tcs
+
 - aorc:
   - Ch
   - booktitle: Understanding Vagueness
@@ -751,6 +783,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:ii
+
 - aorc:
   - Ar
   - doiLink: ''
@@ -775,6 +808,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:ndr
+
 - aorc:
   - Ch
   - booktitle: Vagueness in Communication
@@ -794,6 +828,7 @@
   authorCat:
     Solo: []
   bibtag: ripley:catb
+
 - aorc:
   - Ar
   - doiLink: ''
@@ -822,6 +857,7 @@
     - ericMandelbaum
     - davidRipley
   bibtag: dbmr:rbs
+
 - aorc:
   - Ar
   - doiLink: ''
