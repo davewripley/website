@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings, TemplateHaskell, RecordWildCards #-}
 
-module Writing (papers, Paper, paperAuthorTags, paperVenue, paperYear, paperBibtex) where
+module Writing (papers, Paper(..), paperAuthorTags, paperVenue, paperYear, paperBibtex) where
 
 import Data.Aeson
 import Control.Applicative ((<$>), (<*>))

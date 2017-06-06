@@ -16,7 +16,7 @@ import Lucid.Bootstrap
 import WebsiteTools (AuthorCat(..), Parity(..), classify, listItems, pileUp, lk)
 import Links
 import Authors (Author, authors, makeAuthorLink)
-import Writing (writing, Piece, pieceTitle, pieceAuthorTags, pieceUrl, pieceVenue, pieceYear, pieceAuthorCat, pieceAbstract, bibTeXify)
+import Writing (papers, Paper(..), paperAuthorTags, paperVenue, paperYear, paperBibtex)
 import Presentations (Presentation(..), extrasMarks, presentations)
 
 
@@ -219,8 +219,8 @@ presentationBody pres = do
 searchJS :: Html ()
 searchJS = script_ [src_ "./js/search.js"] ""
 
-writingPage :: Html ()
-writingPage = pageFrom writingBody (navbarJS "writinglink" <> searchJS)
+writingPage :: [Paper] -> Html ()
+writingPage ps = pageFrom (writingBody ps) (navbarJS "writinglink" <> searchJS)
 
 searchBar :: Html ()
 searchBar = div_ [class_ "input-group"] $ do
@@ -253,39 +253,39 @@ searchReset =
 philpapersBit :: Html ()
 philpapersBit = p_ [class_ "philpapers"] ("Also see my " <> (lk "http://philpapers.org/profile/12303" "philpapers profile") <> ".")
 
-writingBody :: Html ()
-writingBody = do
+writingBody :: [Paper] -> Html ()
+writingBody ps = do
     topLabel "Writing"
     container_ [class_ "mainbits"] $ 
       row_ $ do
         div_ [class_ "col-md-3 searchbar"]
             (searchBar <> searchSort <> searchFilters <> philpapersBit)
         div_ [class_ "col-md-9 searchresults"]
-            (ul_ [class_ "writingdisplay"] (pileUp $ map makeEntry (zip (sortBy pieceSort writing) [1..])))
+            (ul_ [class_ "writingdisplay"] (pileUp $ map makeEntry (zip (sortBy pieceSort ps) [1..])))
 
-paperTitleHead :: Piece -> Html ()
+paperTitleHead :: Paper -> Html ()
 paperTitleHead p =
-  case (pieceUrl p) of
+  case (paperUrl p) of
     "" -> pt
     u  -> a_ [ href_ u
              , class_ "title-link"
              , target_ "_blank"
              ] pt
-  where pt = toHtml (pieceTitle p)
+  where pt = toHtml (title p)
 
-makeEntry :: (Piece, Int) -> Html ()
+makeEntry :: (Paper, Int) -> Html ()
 makeEntry (p, n) = 
-  let cls = "paperbubble " <> (classify $ pieceAuthorCat p)
-      auths = map makeAuthorLink (pieceAuthorTags p)
+  let cls = "paperbubble " <> (classify $ authorCat p)
+      auths = map makeAuthorLink (paperAuthorTags p)
       ci = "citation" <> (T.pack $ show n)
       ai = "abstract" <> (T.pack $ show n)
       bi = "bibtex" <> (T.pack $ show n)
-      ali1 = case pieceAbstract p of
+      ali1 = case abstract p of
                Nothing -> mempty
                Just _  ->
                  li_ [term "role" "presentation"]
                    (a_ [href_ ("#" <> ai), term "aria-controls" "abstract", term "role" "tab", term "data-toggle" "pill"] "Abstract")
-      ali2 = case pieceAbstract p of
+      ali2 = case abstract p of
                Nothing -> mempty
                Just ab ->
                  div_ [term "role" "tabpanel", class_ "tab-pane", id_ ai]
@@ -297,9 +297,9 @@ makeEntry (p, n) =
            (div_ [class_ "col-sm-11 paperinfo"] $ do
              (div_ [class_ "col-sm-10"]
                (div_ [class_ "tab-content"] $ do
-                 div_ [term "role" "tabpanel", class_ "tab-pane active", id_ ci] (p_ [class_ "pvenue"] (pieceVenue p))
+                 div_ [term "role" "tabpanel", class_ "tab-pane active", id_ ci] (p_ [class_ "pvenue"] (paperVenue p))
                  ali2
-                 div_ [term "role" "tabpanel", class_ "tab-pane", id_ bi] (p_ [class_ "bibtex"] (pre_ [class_ "bibtex"] (toHtml $ bibTeXify p)))))
+                 div_ [term "role" "tabpanel", class_ "tab-pane", id_ bi] (p_ [class_ "bibtex"] (pre_ [class_ "bibtex"] (toHtml $ paperBibtex p)))))
              (div_ [class_ "col-sm-2"]
                (ul_ [class_ "nav nav-pills", term "role" "tablist"] $ do
                  li_ [term "role" "presentation", class_ "active"]
@@ -309,9 +309,9 @@ makeEntry (p, n) =
                    (a_ [href_ ("#" <> bi), term "aria-controls" "bibtex", term "role" "tab", term "data-toggle" "pill"] "BibTeX"))))
 
 
-pieceSort :: Piece -> Piece -> Ordering
+pieceSort :: Paper -> Paper -> Ordering
 pieceSort p1 p2 =
-  case (pieceYear p1, pieceYear p2) of
+  case (paperYear p1, paperYear p2) of
     (Nothing, Nothing) -> nameSort p1 p2
     (Nothing, _)       -> LT
     (_      , Nothing) -> GT
@@ -319,7 +319,7 @@ pieceSort p1 p2 =
                             EQ -> nameSort p1 p2
                             x  -> x
   where
-    nameSort p1 p2 = (pieceTitle p1) `compare` (pieceTitle p2)
+    nameSort p1 p2 = (title p1) `compare` (title p2)
 
 
 
@@ -339,4 +339,5 @@ websiteMain = do
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "teaching.html") (renderText teachingPage)
   mpres <- presentations
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "presentations.html") (renderText . presentationPage $ maybe [] id mpres)
-  Data.Text.Lazy.IO.writeFile (dirPrefix <> "writing.html") (renderText writingPage)
+  mpapers <- papers
+  Data.Text.Lazy.IO.writeFile (dirPrefix <> "writing.html") (renderText . writingPage $ maybe [] id mpapers)
