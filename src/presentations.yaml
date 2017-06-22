@@ -8,6 +8,9 @@
   - - Handout
     - ./docs/cia-handout-apa.pdf
     - Handout
+  - - Slides
+    - ./docs/ece-slides.pdf
+    - Slides
 
 - presTitle: Towards a naive type theory
   presLocations:
