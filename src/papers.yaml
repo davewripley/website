@@ -2,6 +2,24 @@
   - Ar
   - doiLink: null
     volume: null
+    journal: Journal of Philosophical Logic
+    number: null
+  paperUrl: ./papers/woc.pdf
+  pubData: null
+  abstract: A counterpossible conditional is a counterfactual with an impossible antecedent. Common sense delivers the view that some such conditionals are true, and some are false. In recent publications, Timothy Williamson has defended the view that all are true. In this paper we defend the common sense view against Williamson’s objections.
+  title: Williamson on counterpossibles
+  authorCat:
+    Other:
+    - franzBerto
+    - rohanFrench
+    - grahamPriest
+    - davidRipley
+  bibtag: bfpr:woc
+
+- aorc:
+  - Ar
+  - doiLink: null
+    volume: null
     journal: Journal of Logic and Computation
     number: null
   paperUrl: ./papers/otocr.pdf

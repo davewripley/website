@@ -37,6 +37,9 @@ authors = M.fromList
   ,("felipeDeBrigard"
    ,Author {name = "Felipe De Brigard"
            , authorUrl = "http://www.felipedebrigard.com/"})
+  ,("franzBerto"
+   ,Author {name = "Francesco Berto"
+           , authorUrl = ""})
   ,("grahamPriest"
    ,Author {name = "Graham Priest"
            , authorUrl = "http://www.grahampriest.net"})
