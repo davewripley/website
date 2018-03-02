@@ -1,10 +1,19 @@
 - presLocations:
+  - Liars, curries, and beyond, UNAM, September 2017
+  - Workshop on philosophical logic, SADAF, August 2017
   - AAL 2017, University of Adelaide, July 2017
   - Logic and Metaphysics Workshop, CUNY Graduate Center, February 2016
   presTitle: Classical recapture via conflation
   presAuthors:
     Solo: []
-  presExtras: []
+  presExtras:
+  - - Video
+    - https://www.youtube.com/watch?v=QnYfNKyxs4A
+    - Video
+  - - Handout
+    - ./docs/crvc-handout.pdf
+    - Handout (needed with video)
+
   
 - presTitle: Slurs, negative contexts, disharmony
   presLocations:
