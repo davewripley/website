@@ -40,6 +40,15 @@ mcmpLink = lk "http://www.mcmp.philosophie.uni-muenchen.de/index.html"
 mcmpLinkFull :: Html ()
 mcmpLinkFull = mcmpLink "MCMP"
 
+monashLink :: Html () -> Html ()
+monashLink = lk "http://www.monash.edu.au"
+
+monashPhilLink :: Html () -> Html ()
+monashPhilLink = lk "http://artsonline.monash.edu.au/philosophy"
+
+monashSchoolLink :: Html () -> Html ()
+monashSchoolLink = lk "http://artsonline.monash.edu.au/sophis"
+
 openAccessLink :: Html () -> Html ()
 openAccessLink = lk "http://www.jasonmkelly.com/2013/01/27/green-gold-and-diamond-a-short-primer-on-open-access"
 

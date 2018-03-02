@@ -76,19 +76,19 @@ pageFooter =
             (table_ $ do
               (tr_ $ do
                 (td_ [class_ "contact-icon"] (span_ [class_ "fa fa-fw fa-envelope"] ""))
-                (td_ (uconnPhilLink "Department of Philosophy")))
+                (td_ (monashPhilLink "Philosophy Department")))
               (tr_ $ do
                 (td_ [class_ "contact-icon"] "")
-                (td_ (uconnLink "University of Connecticut")))
+                (td_ (monashSchoolLink "SOPHIS")))
               (tr_ $ do
                 (td_ [class_ "contact-icon"] "")
-                (td_ (p_ [class_ "address"] "101 Manchester Hall")))
+                (td_ (p_ [class_ "address"] "Building 11")))
               (tr_ $ do
                 (td_ [class_ "contact-icon"] "")
-                (td_ (p_ [class_ "address"] "344 Mansfield Rd, Unit 1054")))
+                (td_ (p_ [class_ "address"] "Monash University, VIC 3800")))
               (tr_ $ do
                 (td_ [class_ "contact-icon"] "")
-                (td_ (p_ [class_ "address"] "Storrs, CT 06269 USA"))))
+                (td_ (p_ [class_ "address"] "Australia"))))
         div_ [class_ "col-md-2"] mempty
                  
 
@@ -123,22 +123,16 @@ indexBodyText :: Html ()
 indexBodyText =
      h1_ [class_ "good-morning"] "Good morning!"
   <> p_ ("I'm David Ripley, a member of the "
-        <> uconnPhilLink "philosophy department"
-        <> " at the University of Connecticut.")
+        <> monashPhilLink "philosophy department"
+        <> " at Monash University.")
   <> p_ "My research focuses on language, logic, and the relations between them."
   <> p_ ("I'm also a member of the "
-        <> uconnLogicLink "UConn Logic Group"
-        <> " and the "
-        <> aalLink "Australasian Association for Logic.")
-  <> p_ ("I serve as an editor for two journals: the "
+        <> aalLink "Australasian Association for Logic,"
+        <> "and I serve as an editor for the "
         <> ajlLink "Australasian Journal of Logic"
         <> ", a "
         <> openAccessLink "diamond open-access"
-        <> " journal for logic of all sorts, and the "
-        <> rslLink "Review of Symbolic Logic"
-        <> ", a journal of the "
-        <> aslLink "ASL"
-        <> ".")
+        <> " journal for logic of all sorts")
   <> p_ ("You can email me at "
         <> emailLink "davewripley@gmail.com"
         <> ".")
