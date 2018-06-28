@@ -1,4 +1,16 @@
 - presLocations:
+  - Diaphora workshop, MCMP, December 2016
+  - Semantic paradox and revenge, University of Salzburg, June 2018
+  presTitle: What explains the paradoxes?
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/unity-slides-salzburg.pdf
+    - Slides
+
+
+- presLocations:
   - Liars, curries, and beyond, UNAM, September 2017
   - Workshop on philosophical logic, SADAF, August 2017
   - AAL 2017, University of Adelaide, July 2017
@@ -81,16 +93,6 @@
     Solo: []
   presExtras: []
   
-- presLocations:
-  - Diaphora workshop, MCMP, December 2016
-  presTitle: On the supposed unity of soritical and semantic paradox
-  presAuthors:
-    Solo: []
-  presExtras:
-  - - Slides
-    - ./docs/unity-slides-mcmp.pdf
-    - Slides
-
 - presLocations:
   - Alice Ambrose Lazerowitz/Thomas Tymoczko Logic Lecture, Smith College, December
     2016
