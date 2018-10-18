@@ -1,4 +1,17 @@
 - presLocations:
+  - Melbourne Logic Group, University of Melbourne, October 2018
+  presTitle: "Core type theory 1: Implication and negation"
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/ctt1-slides-melb.pdf
+    - Slides
+  - - Handout
+    - ./docs/ctt1-handout.pdf
+    - Handout
+
+- presLocations:
   - Diaphora workshop, MCMP, December 2016
   - Semantic paradox and revenge, University of Salzburg, June 2018
   presTitle: What explains the paradoxes?
