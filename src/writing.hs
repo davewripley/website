@@ -293,7 +293,7 @@ writing = [ A (Article
               "Comparing substructural theories of truth"
               "Ergo"
               Solo
-              "http://dx.doi.org/10.3998/ergo.12405314.0002.013"
+              "https://doi.org/10.3998/ergo.12405314.0002.013"
               (APD 2015 2 (Just 13) 299 328 "10.3998/ergo.12405314.0002.013")
               "ripley:cstt"
               (Just "Substructural theories of truth are theories based on logics that do not include the full complement of usual structural rules. Existing substructural approaches fall into two main families: noncontractive approaches and nontransitive approaches. This paper provides a sketch of these families, and argues for two claims: first, that substructural theories are better-positioned than other theories to grapple with the truth-theoretic paradoxes, and second---more tentatively---that nontransitive approaches are in turn better-positioned than noncontractive approaches."))

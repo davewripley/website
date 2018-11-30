@@ -41,7 +41,7 @@ lk u t = a_ [href_ u, target_ "_blank"] t
 
 doiToLink :: Text -> Html ()
 doiToLink d = lk lnk "DOI link"
-  where lnk = "http://dx.doi.org/" <> d
+  where lnk = "https://doi.org/" <> d
 
 sHtml :: (Show a, Monad m) => a -> HtmlT m ()
 sHtml = toHtml . show
