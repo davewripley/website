@@ -55,7 +55,6 @@ pageHeader =
         (ul_ [class_ "nav navbar-nav"]
                    ((li_ [class_ "writinglink"] (a_ [href_ "./writing.html"] "Writing"))
                  <> (li_ [class_ "presentationlink"] (a_ [href_ "./presentations.html"] "Presentations"))  
-                 <> (li_ [class_ "teachinglink"] (a_ [href_ "./teaching.html"] "Teaching"))
                  <> (li_ [class_ "cvlink"] (a_ [href_ "./ripleyCV.pdf", target_ "_blank"] "CV"))))
 
 pageFooter :: Html ()
@@ -68,7 +67,7 @@ pageFooter =
             (table_ $ do
               (tr_ $ do
                 (td_ [class_ "contact-icon"] (span_ [class_ "fa fa-fw fa-inbox"] ""))
-                (td_ (emailLink "davewripley@gmail.com")))op)
+                (td_ (emailLink "davewripley@gmail.com"))))
           div_ [class_ "col-md-6"]
             (table_ $ do
               (tr_ $ do
