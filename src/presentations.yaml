@@ -1,4 +1,24 @@
 - presLocations:
+  - Melbourne Logic Group, University of Melbourne, March 2019
+  - University of Sydney, March 2019
+  - Proof-Theoretic Semantics 3, Tubingen, March 2019
+  presAuthors:
+    Solo: []
+  presTitle: "Consequence-theoretic semantics and entailment"
+  presExtras:
+  - - Slides
+    - ./docs/cts-slides-sydney.pdf
+    - Slides
+
+- presLocations:
+  - University of Melbourne, March 2019
+  presTitle: "Gender, politics, and metaphysics"
+  presAuthors:
+    Other: 
+    - killripLemistery
+  presExtras: []
+
+- presLocations:
   - Melbourne Logic Group, University of Melbourne, October 2018
   presTitle: "Core type theory 1: Implication and negation"
   presAuthors:

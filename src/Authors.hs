@@ -94,4 +94,7 @@ authors = M.fromList
   ,("zachWeber"
    ,Author {name = "Zach Weber"
            , authorUrl = "https://sites.google.com/site/doctorzachweber/home"})
+  ,("stevenVerheyen"
+   ,Author {name = "Steven Verheyen"
+           ,authorUrl = "http://www.stevenverheyen.com"})
   ]

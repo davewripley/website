@@ -1,11 +1,62 @@
 - aorc:
+  - Ch
+  - booktitle: The Sorites Paradox
+    publisher: Cambridge University Press
+    editor:
+    - Sergei Oms
+    - Elia Zardini
+  title: "The sorites paradox in psychology"
+  paperUrl: ./papers/spp.pdf
+  pubData: null
+  abstract: "This chapter examines some aspects of the influence of the sorites paradox in psychology. Section 1 starts out with a brief discussion of the analysis of slippery slope arguments in the psychology of reasoning, to introduce the relevance of probabilistic considerations in that domain. We then devote most of this chapter to the analysis in psychophysics and in the psychology of concepts of the complex relationship between discrimination and categorization for items that differ very little. Section 2 emphasizes the centrality of probabilistic modeling to represent the way in which small differences between stimuli affect decisions of membership under a common category. Section 3 focuses on experimental data concerning unordered transitions between prototypes, then section 4 looks at data concerning ordered transitions between prototypes (dynamic sorites)."
+  authorCat:
+    Other:
+     - paulEgre
+     - davidRipley
+     - stevenVerheyen
+  bibtag: erv:spp
+
+- aorc:
   - Ar
   - doiLink: null
     volume: null
-    journal: Journal of Philosophical Logic
+    journal: Synthese
     number: null
-  paperUrl: ./papers/woc.pdf
+  paperUrl: ./papers/trnn.pdf
   pubData: null
+  abstract: "The principle of tolerance characteristic of vague predicates is sometimes presented as a soft rule, namely as a default which we can use in ordinary reasoning, but which requires care in order to avoid paradoxes. We focus on two ways in which the tolerance principle can be modeled in that spirit, using special consequence relations. The first approach relates tolerant reasoning to nontransitive reasoning; the second relates tolerant reasoning to nonmonotonic reasoning. We compare the two approaches and examine three specific consequence relations in relation to those, which we call: strict-to-tolerant entailment, pragmatic-to-tolerant entailment, and pragmatic-to-pragmatic entailment. The first two are nontransitive, whereas the latter two are nonmonotonic."
+  title: "Tolerant reasoning: nontransitive or nonmonotonic?"
+  authorCat:
+    CERvR: []
+  bibtag: cervr:trnn
+
+- aorc:
+  - Ar
+  - doiLink: null
+    volume: null
+    journal: Studia Logica
+    number: null
+  paperUrl: ./papers/valuations.pdf
+  pubData: null
+  abstract: "This paper considers some issues to do with valuational presentations of consequence relations, and the Galois connections between spaces of valuations and spaces of consequence relations. Some of what we present is known, and some even well-known; but much is new. The aim is a systematic overview of a range of results applicable to nonreflexive and nontransitive logics, as well as more familiar logics. We conclude by considering some connectives suggested by this approach."
+  title: "Valuations: bi, tri, and tetra"
+  authorCat:
+    Other:
+      - rohanFrench
+      - davidRipley
+  bibtag: fr:vals
+
+- aorc:
+  - Ar
+  - doiLink: null
+    volume: 47
+    journal: Journal of Philosophical Logic
+    number: 4
+  paperUrl: ./papers/woc.pdf
+  pubData:
+    startPage: 693
+    endPage: 713
+    year: 2018
   abstract: A counterpossible conditional is a counterfactual with an impossible antecedent. Common sense delivers the view that some such conditionals are true, and some are false. In recent publications, Timothy Williamson has defended the view that all are true. In this paper we defend the common sense view against Williamson’s objections.
   title: Williamson on counterpossibles
   authorCat:
@@ -18,12 +69,15 @@
 
 - aorc:
   - Ar
-  - doiLink: null
-    volume: null
+  - doiLink: 10.1093/logcom/exx039
+    volume: 28
     journal: Journal of Logic and Computation
-    number: null
+    number: 2
   paperUrl: ./papers/otocr.pdf
-  pubData: null
+  pubData:
+    startPage: 433
+    endPage: 450
+    year: 2018
   abstract: The relations logicians tend to think of as consequence relations are
     almost never transitive, at least not in the usual relation-theoretic sense of
     'transitive'. Yet it is common to hear them described as 'transitive', and to
@@ -36,7 +90,7 @@
   
 - aorc:
   - Ch
-  - booktitle: ! 'Information Processing and Management of Uncertainty in Knowlede-Based
+  - booktitle: ! 'Information Processing and Management of Uncertainty in Knowledge-Based
       Systems, Part II: Proceedings of IPMU 2016'
     publisher: Springer
     editor:
@@ -106,11 +160,14 @@
 - aorc:
   - Ar
   - doiLink: null
-    volume: null
+    volume: 59
     journal: Notre Dame Journal of Formal Logic
-    number: null
+    number: 2
   paperUrl: ./papers/blurring.pdf
-  pubData: null
+  pubData:
+    startPage: 171
+    endPage: 188
+    year: 2018
   abstract: I consider the phenomenon of conflation---treating distinct things as
     one---and develop logical tools for modeling it. These tools involve a purely
     consequence-theoretic treatment,  independent of any proof or model theory, as
@@ -123,12 +180,15 @@
 - aorc:
   - Ar
   - doiLink: null
-    volume: null
+    volume: 17
     journal: Philosophers' Imprint
-    number: null
+    number: 3
   paperUrl: ./papers/hmmd.pdf
-  pubData: null
-  abstract: null
+  pubData:
+    startPage: 1
+    endPage: 19
+    year: 2017 
+  abstract: "Standard approaches to counterfactuals in the philosophy of explanation are geared toward causal explanation. We show how to extend the counterfactual theory of explanation to non-causal cases, involving extra-mathematical explanation: the explanation of physical facts (in part) by mathematical facts. Using a structural-equation framework, we model impossible perturbations to mathematics and the resulting differences made to physical explananda in two important cases of extra-mathematical explanation. We then address some objections to our approach."
   title: How mathematics can make a difference
   authorCat:
     Other:
@@ -270,7 +330,10 @@
     - Friederike Moltmann
     - Mark Textor
   paperUrl: ./papers/bcw.pdf
-  pubData: null
+  pubData:
+    startPage: 307
+    endPage: 324
+    year: 2017
   abstract: null
   title: Bilateralism, coherence, warrant
   authorCat:
@@ -429,7 +492,10 @@
     editor:
     - Michael Glanzberg
   paperUrl: ./papers/nctt.pdf
-  pubData: null
+  pubData:
+    startPage: 739
+    endPage: 754
+    year: 2018
   abstract: null
   title: Nonclassical theories of truth
   authorCat:
