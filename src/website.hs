@@ -68,10 +68,7 @@ pageFooter =
             (table_ $ do
               (tr_ $ do
                 (td_ [class_ "contact-icon"] (span_ [class_ "fa fa-fw fa-inbox"] ""))
-                (td_ (emailLink "davewripley@gmail.com")))
-              (tr_ $ do 
-                (td_ [class_ "contact-icon"] (span_ [class_ "fa fa-fw fa-twitter"] ""))
-                (td_ (twitterLink "@davewripley"))))
+                (td_ (emailLink "davewripley@gmail.com")))op)
           div_ [class_ "col-md-6"]
             (table_ $ do
               (tr_ $ do
