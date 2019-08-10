@@ -1,12 +1,24 @@
 - presLocations:
+  - Logica, June 2019
+  - Melbourne Logic Group, University of Melbourne, October 2018
+  presTitle: "A typed term calculus for core logic"
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/ttccl-slides-logica.pdf
+    - Slides
+
+- presLocations:
+  - EXPRESS, University of Amsterdam, June 2019
   - Melbourne Logic Group, University of Melbourne, March 2019
   - University of Sydney, March 2019
   presAuthors:
     Solo: []
-  presTitle: "Consequence-theoretic semantics and entailment"
+  presTitle: "Position-theoretic semantics and entailment"
   presExtras:
   - - Slides
-    - ./docs/cts-slides-sydney.pdf
+    - ./docs/pts-slides-ams.pdf
     - Slides
 
 - presLocations:
@@ -16,19 +28,6 @@
     Other: 
     - killripLemistery
   presExtras: []
-
-- presLocations:
-  - Melbourne Logic Group, University of Melbourne, October 2018
-  presTitle: "Core type theory 1: Implication and negation"
-  presAuthors:
-    Solo: []
-  presExtras:
-  - - Slides
-    - ./docs/ctt1-slides-melb.pdf
-    - Slides
-  - - Handout
-    - ./docs/ctt1-handout.pdf
-    - Handout
 
 - presLocations:
   - Diaphora workshop, MCMP, December 2016
