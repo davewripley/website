@@ -1,4 +1,14 @@
 - presLocations:
+  - Melbourne Logic Group, November 2019
+  - SADAF, July 2019
+  presTitle: "Metainferences and the spirit of classical logic"
+  presAuthors:
+    Solo: []
+  presExtras: []
+
+- presLocations:
+  - University of Western Australia, October 2019
+  - SADAF, August 2019
   - Logica, June 2019
   - Melbourne Logic Group, University of Melbourne, October 2018
   presTitle: "A typed term calculus for core logic"
@@ -22,6 +32,7 @@
     - Slides
 
 - presLocations:
+  - AAP 2019, University of Wollongong
   - University of Melbourne, March 2019
   presTitle: "Gender, politics, and metaphysics"
   presAuthors:
