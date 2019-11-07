@@ -44,10 +44,10 @@ monashLink :: Html () -> Html ()
 monashLink = lk "http://www.monash.edu.au"
 
 monashPhilLink :: Html () -> Html ()
-monashPhilLink = lk "http://artsonline.monash.edu.au/philosophy"
+monashPhilLink = id
 
 monashSchoolLink :: Html () -> Html ()
-monashSchoolLink = lk "http://artsonline.monash.edu.au/sophis"
+monashSchoolLink = id
 
 openAccessLink :: Html () -> Html ()
 openAccessLink = lk "http://www.jasonmkelly.com/2013/01/27/green-gold-and-diamond-a-short-primer-on-open-access"

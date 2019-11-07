@@ -121,14 +121,9 @@ indexBodyText =
   <> p_ ("I'm David Ripley, a member of the "
         <> monashPhilLink "philosophy department"
         <> " at Monash University.")
-  <> p_ "My research focuses on language, logic, and the relations between them."
+  <> p_ "My research focuses on languages, logics, and the relations between them."
   <> p_ ("I'm also a member of the "
-        <> aalLink "Australasian Association for Logic,"
-        <> "and I serve as an editor for the "
-        <> ajlLink "Australasian Journal of Logic"
-        <> ", a "
-        <> openAccessLink "diamond open-access"
-        <> " journal for logic of all sorts")
+        <> aalLink "Australasian Association for Logic.")
   <> p_ ("You can email me at "
         <> emailLink "davewripley@gmail.com"
         <> ".")
