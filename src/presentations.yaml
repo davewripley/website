@@ -1,4 +1,14 @@
 - presLocations:
+  - Online Logic Supergroup, April 2020
+  presTitle: "One step is enough"
+  presAuthors:
+      Solo : []
+  presExtras:
+  - - Slides
+    - ./docs/osie-slides.pdf
+    - Slides
+
+- presLocations:
   - Melbourne Logic Group, November 2019
   - SADAF, July 2019
   presTitle: "Metainferences and the spirit of classical logic"
@@ -7,6 +17,7 @@
   presExtras: []
 
 - presLocations:
+  - UConn Logic Group, January 2020
   - University of Western Australia, October 2019
   - SADAF, August 2019
   - Logica, June 2019
@@ -16,7 +27,7 @@
     Solo: []
   presExtras:
   - - Slides
-    - ./docs/ttccl-slides-logica.pdf
+    - ./docs/ctt-slides-uconn.pdf
     - Slides
 
 - presLocations:
