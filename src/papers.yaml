@@ -2,11 +2,28 @@
   - Ar
   - doiLink: null
     volume: null
+    journal: Review of Symbolic Logic
+    number: null
+  paperUrl: ./papers/clco.pdf
+  pubData: null
+  abstract: "We present four classical theories of counterpossibles that combine modalities and counterfactuals. Two theories are anti-vacuist and forbid vacuously true counterfactuals, two are quasi-vacuist and allow counterfactuals to be vacuously true when their antecedent is not only impossible, but also inconceivable. The theories vary on how they restrict the interaction of modalities and counterfactuals. We provide a logical cartography with precise acceptable boundaries, illustrating to what extent nonvacuism about counterpossibles can be reconciled with classical logic."
+  title: "Classical counterpossibles"
+  authorCat:
+    Other:
+      - rohanFrench
+      - patrickGirard
+      - davidRipley
+  bibtag: fgr:clco
+
+- aorc:
+  - Ar
+  - doiLink: null
+    volume: null
     journal: Journal of Philosophical Logic
     number: null
   paperUrl: ./papers/imst.pdf
   pubData: null
-  abstract:
+  abstract: null
   title: "Inferences and metainferences in ST"
   authorCat:
     CERvR: []
