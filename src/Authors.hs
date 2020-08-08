@@ -103,4 +103,7 @@ authors = M.fromList
   ,("gracePaterson"
    ,Author {name = "Grace Paterson"
            ,authorUrl = "https://sites.google.com/view/gracepaterson"})
+  ,("patrickGirard"
+   ,Author {name = "Patrick Girard"
+           ,authorUrl = "https://philpeople.org/profiles/patrick-girard"})
   ]
