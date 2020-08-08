@@ -97,4 +97,10 @@ authors = M.fromList
   ,("stevenVerheyen"
    ,Author {name = "Steven Verheyen"
            ,authorUrl = "http://www.stevenverheyen.com"})
+  ,("andrewTedder"
+   ,Author {name = "Andrew Tedder"
+           ,authorUrl = "https://sites.google.com/view/andrewjtedder/home"})
+  ,("gracePaterson"
+   ,Author {name = "Grace Paterson"
+           ,authorUrl = "https://sites.google.com/view/gracepaterson"})
   ]
