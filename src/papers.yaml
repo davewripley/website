@@ -2,6 +2,37 @@
   - Ar
   - doiLink: null
     volume: null
+    journal: Journal of Philosophical Logic
+    number: null
+  paperUrl: ./papers/imst.pdf
+  pubData: null
+  abstract:
+  title: "Inferences and metainferences in ST"
+  authorCat:
+    CERvR: []
+  bibtag: cervr:imst
+
+- aorc:
+  - Ar
+  - doiLink: null
+    volume: null
+    journal: Journal of Analytic Theology
+    number: null
+  paperUrl: ./papers/qua-0-qua.pdf
+  pubData: null
+  abstract: "We present an objection to Beall and Henderson's recent paper defending a solution to the fundamental problem of conciliar Christology using qua or secundum clauses. We argue that certain claims the acceptance/rejection of which distinguish the Conciliar Christian from others fail to so distinguish on Beall and Henderson's 0-Qua view. This is because on their 0-Qua account, these claims are either acceptable both to Conciliar Christians as well as those who are not Conciliar Christians or because they are acceptable to neither."
+  title: "Qua solution, 0-Qua has problems: a response to Beall and Henderson"
+  authorCat:
+    Other:
+      - gracePaterson
+      - davidRipley
+      - andrewTedder
+  bibtag: prt:qua-0-qua
+
+- aorc:
+  - Ar
+  - doiLink: null
+    volume: null
     journal: Synthese
     number: null
   paperUrl: ./papers/ttavmt.pdf
@@ -18,10 +49,63 @@
   - Ar
   - doiLink: null
     volume: null
-    journal: Philosophia Mathematica
+    journal: Synthese
     number: null
-  paperUrl: ./papers/caem.pdf
+  paperUrl: ./papers/trnn.pdf
   pubData: null
+  abstract: "The principle of tolerance characteristic of vague predicates is sometimes presented as a soft rule, namely as a default which we can use in ordinary reasoning, but which requires care in order to avoid paradoxes. We focus on two ways in which the tolerance principle can be modeled in that spirit, using special consequence relations. The first approach relates tolerant reasoning to nontransitive reasoning; the second relates tolerant reasoning to nonmonotonic reasoning. We compare the two approaches and examine three specific consequence relations in relation to those, which we call: strict-to-tolerant entailment, pragmatic-to-tolerant entailment, and pragmatic-to-pragmatic entailment. The first two are nontransitive, whereas the latter two are nonmonotonic."
+  title: "Tolerant reasoning: nontransitive or nonmonotonic?"
+  authorCat:
+    CERvR: []
+  bibtag: cervr:trnn
+
+- aorc:
+  - Ch
+  - booktitle: The Logica Yearbook 2019
+    publisher: College Publications
+    editor:
+    - Igor Sedlár
+    - Martin Blicha
+  title: "Strong normalization in core type theory"
+  paperUrl: ./papers/snctt.pdf
+  pubData:
+    startPage: 111
+    endPage: 130
+    year: 2020
+  abstract: "Thie paper presents a novel typed term calculus and reduction relation for it, and proves that the reduction relation is strongly normalizing---that there are no infinite reduction sequences. The calculus bears a close relation to the implication-negation fragment of core logic, and so is called 'core type theory'."
+  authorCat:
+    Solo: []
+  bibtag: ripley:snctt
+
+- aorc:
+  - Ch
+  - booktitle: The Oxford Handbook of Negation
+    publisher: Oxford University Press
+    editor:
+    - Viviane Déprez
+    - M. Teresa Espinal
+  title: "Denial"
+  paperUrl: ./papers/denial.pdf
+  pubData:
+    startPage: 47
+    endPage: 57
+    year: 2020
+  abstract: "Denial is something we do; it is a speech act. Negation, on the other hand, is a particular lexical item. Despite being very different kinds of things, denial and negation certainly seem to have something to do with each other. There's something negative about them both. This negative aspect, whatever it is, unifies denial and negation across these categories. There are a range of theories about the relationships between negation and denial. This chapter aims to give a brief overview of these theories, and to indicate some of the reasons for and against each."
+  authorCat:
+    Solo: []
+  bibtag: ripley:denial
+
+- aorc:
+  - Ar
+  - doiLink: 10.1093/philmat/nkz023
+    volume: 28
+    journal: Philosophia Mathematica
+    number: 1
+  paperUrl: ./papers/caem.pdf
+  pubData:
+    startPage: 1
+    endPage: 34
+    year: 2020
   abstract: "Our goal in this paper is to extend counterfactual accounts of scientific explanation to mathematics. Our focus, in particular, is on intra-mathematical explanations: explanations of one mathematical fact in terms of another. We offer a basic counterfactual theory of intra-mathematical explanations, before modelling the explanatory structure of a test case using counterfactual machinery. We finish by considering the application of counterpossibles to mathematical explanation, and explore a second test case along these lines."
   title: "A counterfactual approach to explanation in mathematics"
   authorCat:
@@ -40,7 +124,10 @@
     - Elia Zardini
   title: "The sorites paradox in psychology"
   paperUrl: ./papers/spp.pdf
-  pubData: null
+  pubData:
+    startPage: 263
+    endPage: 286
+    year: 2019
   abstract: "This chapter examines some aspects of the influence of the sorites paradox in psychology. Section 1 starts out with a brief discussion of the analysis of slippery slope arguments in the psychology of reasoning, to introduce the relevance of probabilistic considerations in that domain. We then devote most of this chapter to the analysis in psychophysics and in the psychology of concepts of the complex relationship between discrimination and categorization for items that differ very little. Section 2 emphasizes the centrality of probabilistic modeling to represent the way in which small differences between stimuli affect decisions of membership under a common catopen egory. Section 3 focuses on experimental data concerning unordered transitions between prototypes, then section 4 looks at data concerning ordered transitions between prototypes (dynamic sorites)."
   authorCat:
     Other:
@@ -48,20 +135,6 @@
      - davidRipley
      - stevenVerheyen
   bibtag: erv:spp
-
-- aorc:
-  - Ar
-  - doiLink: null
-    volume: null
-    journal: Synthese
-    number: null
-  paperUrl: ./papers/trnn.pdf
-  pubData: null
-  abstract: "The principle of tolerance characteristic of vague predicates is sometimes presented as a soft rule, namely as a default which we can use in ordinary reasoning, but which requires care in order to avoid paradoxes. We focus on two ways in which the tolerance principle can be modeled in that spirit, using special consequence relations. The first approach relates tolerant reasoning to nontransitive reasoning; the second relates tolerant reasoning to nonmonotonic reasoning. We compare the two approaches and examine three specific consequence relations in relation to those, which we call: strict-to-tolerant entailment, pragmatic-to-tolerant entailment, and pragmatic-to-pragmatic entailment. The first two are nontransitive, whereas the latter two are nonmonotonic."
-  title: "Tolerant reasoning: nontransitive or nonmonotonic?"
-  authorCat:
-    CERvR: []
-  bibtag: cervr:trnn
 
 - aorc:
   - Ar
@@ -532,7 +605,7 @@
     startPage: 739
     endPage: 754
     year: 2018
-  abstract: null
+  abstract: "This chapter attempts to give a brief overview of non-classical(-logic) theories of truth."
   title: Nonclassical theories of truth
   authorCat:
     Other:
@@ -989,7 +1062,7 @@
     startPage: 30
     endPage: 35
     year: 2004
-  abstract: null
+  abstract: "Graham Priest argues that dialethism alone avoids familiar revenge problems, and in this respect enjoys expressive virtues that rival theories lack. In this paper we present a rival theory---analetheism---that seems to enjoy precisely the expressive virtues that dialetheism enjoys. Analetheism, for us, is the thesis that some sentences lack truth value, coupled with the willingness to assert such sentences."
   title: Analetheism and dialetheism
   authorCat:
     Other:
