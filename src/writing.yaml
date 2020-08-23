@@ -1,0 +1,40 @@
+- tag: Paper
+  title: Ptitle
+  authorCat:
+    Solo: []
+  writingUrl: url
+  bibtag: btag
+  abstract: abs
+  year: 1995
+  startPage: 1
+  endPage: 23
+  journal: journal
+  volume: 3
+  number: 6
+  doi: null
+
+- tag: Chapter
+  title: Ctitle
+  authorCat:
+    Solo: []
+  writingUrl: url
+  bibtag: btag
+  abstract: abs
+  year: null
+  startPage: 23
+  endPage: 45
+  booktitle: Anthology 5
+  editor:
+    - Ed Itor
+    - Edi Tor
+  publisher: Poopy
+
+- tag: Book
+  title: Btitle
+  authorCat:
+    CERvR: []
+  writingUrl: url
+  bibtag: tag
+  abstract: abs
+  year: 2500
+  publisher: Rapacious Bastard

@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings, TemplateHaskell, RecordWildCards #-}
 
-module Writing (papers, Paper(..), paperAuthorTags, paperVenue, paperYear, paperBibtex) where
+module Writing (pieces, WritingPiece(..), wpAuthorTags, wpVenue, wpBibtex) where
 
 import Data.Aeson
 import Control.Applicative ((<$>), (<*>))
@@ -10,7 +10,7 @@ import qualified Data.Text as T
 import Data.ByteString.Lazy (readFile, ByteString)
 import Data.Map (Map)
 import qualified Data.Map as M
-import Data.Maybe (fromJust)
+import Data.Maybe (fromJust, catMaybes)
 import Lucid
 import Data.Monoid ((<>), mempty, mconcat)
 import Data.List (intersperse)
@@ -24,42 +24,65 @@ import qualified Data.ByteString as BS
 import Authors (Author(..), authors)
 import WebsiteTools (AuthorCat(..), classify, doiToLink, sHtml)
 
-data AorC =
-    Ar { journal :: Text
-       , volume :: Maybe Int
-       , number :: Maybe Int
-       , doiLink :: Maybe Text
-       }
-  | Ch { booktitle :: Text
-       , editor :: [Text]
-       , publisher :: Text
-       } deriving (Show, Eq)
+data YamlTest = YT { str :: Text } deriving (Eq, Show)
 
-data PaperPubData = Published { year :: Int
-                              , startPage :: Int
-                              , endPage :: Int
-                              } deriving (Show, Eq)
-              
-data Paper = Paper { title :: Text
-                   , authorCat :: AuthorCat
-                   , paperUrl :: Text
-                   , bibtag :: Text
-                   , abstract :: Maybe Text
-                   , pubData :: Maybe PaperPubData
-                   , aorc :: AorC
-                   } deriving (Show, Eq)
+data WritingPiece =
+      Paper { title :: Text
+            , authorCat :: AuthorCat
+            , writingUrl :: Text
+            , bibtag :: Text
+            , abstract :: Maybe Text
+            , year :: Maybe Int
+            , startPage :: Maybe Int
+            , endPage :: Maybe Int
+            , journal :: Text
+            , volume :: Maybe Int
+            , number :: Maybe Int
+            , doi :: Maybe Text
+            }
+   |  Chapter { title :: Text
+              , authorCat :: AuthorCat
+              , writingUrl :: Text
+              , bibtag :: Text
+              , abstract :: Maybe Text
+              , year :: Maybe Int
+              , startPage :: Maybe Int
+              , endPage :: Maybe Int
+              , booktitle :: Text
+              , editor :: [Text]
+              , publisher :: Text
+              }
+   |  Book { title :: Text
+           , authorCat :: AuthorCat
+           , writingUrl :: Text
+           , bibtag :: Text
+           , abstract :: Maybe Text
+           , year :: Maybe Int
+           , publisher :: Text
+           }
+   deriving (Show, Eq)
 
-deriveJSON defaultOptions{sumEncoding = TwoElemArray} ''AorC
-deriveJSON defaultOptions ''PaperPubData
-deriveJSON defaultOptions ''Paper
+
+deriveJSON defaultOptions ''WritingPiece
+deriveJSON defaultOptions ''YamlTest
+
 
 --Accessors:
+
+yrSpEp :: WritingPiece -> Maybe (Int, Int, Int)
+yrSpEp (Paper{..}) = case (catMaybes [year, startPage, endPage]) of
+  [yr, sp, ep] -> Just (yr, sp, ep)
+  _            -> Nothing
+yrSpEp (Chapter{..}) = case (catMaybes [year, startPage, endPage]) of
+  [yr, sp, ep] -> Just (yr, sp, ep)
+  _            -> Nothing
+yrSpEp (Book{..}) = Nothing
 
 getAuth :: Text -> Author
 getAuth tg = fromJust (M.lookup tg authors)
 
-paperAuthorTags :: Paper -> [Text]
-paperAuthorTags p = case authorCat p of
+wpAuthorTags :: WritingPiece -> [Text]
+wpAuthorTags p = case authorCat p of
                       Solo     -> ["davidRipley"]
                       CERvR    -> [ "pabloCobreros"
                                   , "paulEgre"
@@ -68,44 +91,28 @@ paperAuthorTags p = case authorCat p of
                                   ]
                       Other as -> as
 
-paperYear :: Paper -> Maybe Int
-paperYear = (fmap year) . pubData
-
-paperVenue :: Paper -> Html ()
-paperVenue p = case (aorc p) of
-  a@(Ar{..}) -> (i_ (toHtml $ journal)) <> ", " <> t
-    where
-      t = case pubData p of
-        Nothing -> "forthcoming."
-        (Just pd) -> vol <> num <> ":"
-                     <> (sHtml $ startPage pd)
-                     <> "-"
-                     <> (sHtml $ endPage pd)
-                     <> ", "
-                     <> (sHtml $ year pd)
-                     <> "."
-                     where
-                       vol = case volume of
-                               Nothing -> mempty
-                               Just v  -> sHtml v
-                       num = case number of
-                               Nothing -> mempty
-                               Just n  -> "(" <> sHtml n <> ")"
-  c@(Ch{..}) -> "In " <> (i_ (toHtml $ booktitle))
-                      <> ", ed "
-                      <> (toHtml $ mconcat (intersperse ", " $ editor))
-                      <> ". "
-                      <> t
-    where
-      t = case pubData p of
-        Nothing -> "Forthcoming."
-        (Just pd) -> "Pages "
-                     <> (sHtml $ startPage pd)
-                     <> "-"
-                     <> (sHtml $ endPage pd)
-                     <> ", "
-                     <> (sHtml $ year pd)
-                     <> "."
+wpVenue :: WritingPiece -> Html ()
+wpVenue p@(Paper{..}) = (i_ $ toHtml journal) <> ", " <> t
+  where t = case (yrSpEp p) of
+              Just (yr, sp, ep) -> vol <> num <> ":"
+                                <> (sHtml sp) <> "-"
+                                <> (sHtml ep) <> ", "
+                                <> (sHtml yr) <> "."
+                                where
+                                  vol = maybe mempty sHtml volume
+                                  num = maybe mempty (\n -> "(" <> sHtml n <> ")") number
+              Nothing -> "forthcoming."
+wpVenue c@(Chapter{..}) = "In " <> (i_ $ toHtml booktitle)
+                                <> ", ed "
+                                <> (toHtml $ mconcat (intersperse ", " $ editor))
+                                <> ". " <> t
+  where t = case (yrSpEp c) of
+              Just (yr, sp, ep) -> "Pages "
+                                <> (sHtml sp) <> "-"
+                                <> (sHtml ep) <> ", "
+                                <> (sHtml yr) <> "."
+              Nothing -> "Forthcoming."
+wpVenue Book{..} = maybe "Forthcoming." (\y -> (sHtml y) <> ".") year
 
 authname :: Text -> Maybe Text
 authname t = name <$> M.lookup t authors
@@ -116,8 +123,8 @@ getText m =
     Just t -> t
     Nothing -> mempty
 
-bibTeXauths :: Paper -> Text
-bibTeXauths = btChars . T.intercalate " and " . map (getText . authname) . paperAuthorTags
+bibTeXauths :: WritingPiece -> Text
+bibTeXauths = btChars . T.intercalate " and " . map (getText . authname) . wpAuthorTags
 
 btChars :: Text -> Text
 btChars = T.concatMap cleanup
@@ -133,73 +140,65 @@ btChars = T.concatMap cleanup
 write :: Show a => a -> Text
 write = T.pack . show
 
-paperBibtex :: Paper -> Text
-paperBibtex p = case aorc p of
-  a@(Ar{..}) -> T.concat $
-    [ "@article{"
-    , bibtag p
-    , ",\n   author = {"
-    , bibTeXauths p
-    , "},\n   title = {"
-    , title p
-    , "},\n   journal = {"
-    , journal
-    , "},\n   "
-    ] ++ rest ++
-    [ "}\n" ]
-    where
-      rest = case pubData p of
-        Nothing -> [ "note = {Forthcoming}\n" ]
-        (Just pd) ->
-          [ "year = {"
-          , write (year pd)
-          , "},\n   volume = {"
-          , vol
-          , "},\n   number = {"
-          , nmb
-          , "},\n   pages = {"
-          , (write $ startPage pd) <> "--" <> (write $ endPage pd)
-          , "}\n"
-          ]
-      vol = case volume of
-              Nothing -> mempty
-              Just v  -> write v
-      nmb = case number of
-              Nothing -> mempty
-              Just n  -> write n
-  c@(Ch{..}) -> T.concat $
-    [ "@incollection{"
-    , bibtag p
-    , ",\n   author = {"
-    , bibTeXauths p
-    , "},\n   title = {"
-    , title p
-    , "},\n   booktitle = {"
-    , booktitle
-    , "},\n   editor = {"
-    , btChars . T.intercalate " and " $ editor
-    , "},\n   publisher = {"
-    , publisher
-    , "},\n   "
-    ] ++ rest ++
-    [ "}\n" ]
-    where
-      rest = case pubData p of
-        Nothing -> [ "note = {Forthcoming}\n" ]
-        (Just pd) ->
-          [ "year = {"
-          , write (year pd)
-          , "},\n   pages = {"
-          , (write $ startPage pd) <> "--" <> (write $ endPage pd)
-          , "}\n"
-          ]
+wpBibtex :: WritingPiece -> Text
+wpBibtex p@(Paper{..}) = T.concat $
+  [ "@article{", bibtag
+  , ",\n   author = {", bibTeXauths p
+  , "},\n   title = {", title
+  , "},\n   journal = {", journal
+  , "},\n   "
+  ] ++ rest ++
+  [ "}\n" ]
+  where 
+    rest = case (yrSpEp p) of
+             Just (yr, sp, ep) -> [ "year = {" , write yr
+                                  , "},\n   volume = {", vol
+                                  , "},\n   number = {", nmb
+                                  , "},\n   pages = {"
+                                  , (write sp) <> "--" <> (write ep)
+                                  , "}\n"
+                                  ]
+             Nothing -> [ "note = {Forthcoming}\n" ]
+    vol = maybe mempty write volume
+    nmb = maybe mempty write number
+wpBibtex c@(Chapter{..}) = T.concat $
+  [ "@incollection{", bibtag
+  , ",\n   author = {", bibTeXauths c
+  , "},\n   title = {", title
+  , "},\n   booktitle = {", booktitle
+  , "},\n   editor = {"
+  , btChars . T.intercalate " and " $ editor
+  , "},\n   publisher = {", publisher
+  , "},\n   "
+  ] ++ rest ++
+  [ "}\n" ]
+  where 
+    rest = case (yrSpEp c) of
+             Just (yr, sp, ep) -> [ "year = {", write yr
+                                  , "},\n   pages = {"
+                                  , (write sp) <> "--" <> (write ep)
+                                  , "}\n"
+                                  ]
+             Nothing -> [ "note = {Forthcoming}\n" ]
+wpBibtex b@(Book{..}) = T.concat $
+  [ "@book{", bibtag
+  , ",\n   author = {", bibTeXauths b
+  , "},\n   title = {", title
+  , "},\n   publisher = {", publisher
+  , "},\n   "
+  ] ++ rest ++
+  [ "}\n" ]
+  where
+    rest = case year of
+             Just yr -> [ "year = {", write yr, "}\n" ]
+             Nothing -> [ "note = {Forthcoming}\n" ]
 
-paperFile :: FilePath
-paperFile = "./src/papers.yaml"
+wpFile :: FilePath
+wpFile = "./src/writing.yaml"
 
-papers :: IO (Maybe [Paper])
-papers = do
-  pData <- BS.readFile paperFile
+pieces :: IO (Maybe [WritingPiece])
+pieces = do
+  pData <- BS.readFile wpFile
   return (Y.decode pData)
 
 

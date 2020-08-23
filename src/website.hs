@@ -16,7 +16,7 @@ import Lucid.Bootstrap
 import WebsiteTools (AuthorCat(..), Parity(..), classify, listItems, pileUp, lk)
 import Links
 import Authors (Author, authors, makeAuthorLink)
-import Writing (papers, Paper(..), paperAuthorTags, paperVenue, paperYear, paperBibtex)
+import Writing (pieces, WritingPiece(..), wpAuthorTags, wpVenue, wpBibtex)
 import Presentations (Presentation(..), extrasMarks, presentations)
 
 
@@ -204,7 +204,7 @@ presentationBody pres = do
 searchJS :: Html ()
 searchJS = script_ [src_ "./js/search.js"] ""
 
-writingPage :: [Paper] -> Html ()
+writingPage :: [WritingPiece] -> Html ()
 writingPage ps = pageFrom (writingBody ps) (navbarJS "writinglink" <> searchJS)
 
 searchBar :: Html ()
@@ -238,7 +238,7 @@ searchReset =
 philpapersBit :: Html ()
 philpapersBit = p_ [class_ "philpapers"] ("Also see my " <> (lk "http://philpapers.org/profile/12303" "philpapers profile") <> ".")
 
-writingBody :: [Paper] -> Html ()
+writingBody :: [WritingPiece] -> Html ()
 writingBody ps = do
     topLabel "Writing"
     container_ [class_ "mainbits"] $ 
@@ -248,9 +248,9 @@ writingBody ps = do
         div_ [class_ "col-md-9 searchresults"]
             (ul_ [class_ "writingdisplay"] (pileUp $ map makeEntry (zip (sortBy pieceSort ps) [1..])))
 
-paperTitleHead :: Paper -> Html ()
+paperTitleHead :: WritingPiece -> Html ()
 paperTitleHead p =
-  case (paperUrl p) of
+  case (writingUrl p) of
     "" -> pt
     u  -> a_ [ href_ u
              , class_ "title-link"
@@ -258,10 +258,10 @@ paperTitleHead p =
              ] pt
   where pt = toHtml (title p)
 
-makeEntry :: (Paper, Int) -> Html ()
+makeEntry :: (WritingPiece, Int) -> Html ()
 makeEntry (p, n) = 
   let cls = "paperbubble " <> (classify $ authorCat p)
-      auths = map makeAuthorLink (paperAuthorTags p)
+      auths = map makeAuthorLink (wpAuthorTags p)
       ci = "citation" <> (T.pack $ show n)
       ai = "abstract" <> (T.pack $ show n)
       bi = "bibtex" <> (T.pack $ show n)
@@ -282,9 +282,9 @@ makeEntry (p, n) =
            (div_ [class_ "col-sm-11 paperinfo"] $ do
              (div_ [class_ "col-sm-10"]
                (div_ [class_ "tab-content"] $ do
-                 div_ [term "role" "tabpanel", class_ "tab-pane active", id_ ci] (p_ [class_ "pvenue"] (paperVenue p))
+                 div_ [term "role" "tabpanel", class_ "tab-pane active", id_ ci] (p_ [class_ "pvenue"] (wpVenue p))
                  ali2
-                 div_ [term "role" "tabpanel", class_ "tab-pane", id_ bi] (p_ [class_ "bibtex"] (pre_ [class_ "bibtex"] (toHtml $ paperBibtex p)))))
+                 div_ [term "role" "tabpanel", class_ "tab-pane", id_ bi] (p_ [class_ "bibtex"] (pre_ [class_ "bibtex"] (toHtml $ wpBibtex p)))))
              (div_ [class_ "col-sm-2"]
                (ul_ [class_ "nav nav-pills", term "role" "tablist"] $ do
                  li_ [term "role" "presentation", class_ "active"]
@@ -294,9 +294,9 @@ makeEntry (p, n) =
                    (a_ [href_ ("#" <> bi), term "aria-controls" "bibtex", term "role" "tab", term "data-toggle" "pill"] "BibTeX"))))
 
 
-pieceSort :: Paper -> Paper -> Ordering
+pieceSort :: WritingPiece -> WritingPiece -> Ordering
 pieceSort p1 p2 =
-  case (paperYear p1, paperYear p2) of
+  case (year p1, year p2) of
     (Nothing, Nothing) -> nameSort p1 p2
     (Nothing, _)       -> LT
     (_      , Nothing) -> GT
@@ -324,5 +324,5 @@ websiteMain = do
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "teaching.html") (renderText teachingPage)
   mpres <- presentations
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "presentations.html") (renderText . presentationPage $ maybe [] id mpres)
-  mpapers <- papers
-  Data.Text.Lazy.IO.writeFile (dirPrefix <> "writing.html") (renderText . writingPage $ maybe [] id mpapers)
+  mpieces <- pieces
+  Data.Text.Lazy.IO.writeFile (dirPrefix <> "writing.html") (renderText . writingPage $ maybe [] id mpieces)
