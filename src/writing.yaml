@@ -211,7 +211,7 @@
   abstract: The relations logicians tend to think of as consequence relations are
     almost never transitive, at least not in the usual relation-theoretic sense of
     'transitive'. Yet it is common to hear them described as 'transitive', and to
-    see rules impose to ensure 'transitivity' of these relations. This paper attempts
+    see rules imposed to ensure 'transitivity' of these relations. This paper attempts
     to clarify the situation.
   title: On the 'transitivity' of consequence relations
   authorCat:
