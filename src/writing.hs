@@ -110,9 +110,11 @@ wpVenue c@(Chapter{..}) = "In " <> (i_ $ toHtml booktitle)
               Just (yr, sp, ep) -> "Pages "
                                 <> (sHtml sp) <> "-"
                                 <> (sHtml ep) <> ", "
+                                <> (toHtml publisher) <> " "
                                 <> (sHtml yr) <> "."
-              Nothing -> "Forthcoming."
-wpVenue Book{..} = maybe "Forthcoming." (\y -> (sHtml y) <> ".") year
+              Nothing -> (toHtml publisher) <> " forthcoming."
+wpVenue Book{..} = (toHtml publisher) <> " "
+                                      <> (maybe "forthcoming." (\y -> (sHtml y) <> ".") year)
 
 authname :: Text -> Maybe Text
 authname t = name <$> M.lookup t authors
