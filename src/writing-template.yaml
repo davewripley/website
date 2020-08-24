@@ -1,0 +1,42 @@
+- tag: Paper
+  title: ptitle
+  authorCat:
+    Solo: []
+  writingUrl: url
+  bibtag: btag
+  abstract: abs
+  year: 1995
+  startPage: 1
+  endPage: 23
+  journal: journal
+  volume: 3
+  number: 6
+  doi: null
+
+- tag: Chapter
+  title: ctitle
+  authorCat:
+    Other:
+      - samBaron
+      - davidRipley
+  writingUrl: url
+  bibtag: btag
+  abstract: null
+  year: null
+  startPage: null
+  endPage: null
+  booktitle: Anthology 5
+  editor:
+    - Ed Itor
+    - Edi Tor
+  publisher: Poopy
+
+- tag: Book
+  title: btitle
+  authorCat:
+    CERvR: []
+  writingUrl: url
+  bibtag: tag
+  abstract: abs
+  year: 2500
+  publisher: Rapacious Bastard
