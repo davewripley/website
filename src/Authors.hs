@@ -106,4 +106,7 @@ authors = M.fromList
   ,("patrickGirard"
    ,Author {name = "Patrick Girard"
            ,authorUrl = "https://philpeople.org/profiles/patrick-girard"})
+  ,("michaelGlanzberg"
+   ,Author {name = "Michael Glanzberg"
+           ,authorUrl = "https://michaelglanzberg.org/"})
   ]
