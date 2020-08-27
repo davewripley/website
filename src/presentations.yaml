@@ -1,4 +1,14 @@
 - presLocations:
+  - SADAF, August 2020
+  presTitle: "A toolkit for metainferential logics"
+  presAuthors:
+      Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/atmi-slides.pdf
+    - Slides
+
+- presLocations:
   - Online Logic Supergroup, April 2020
   presTitle: "One step is enough"
   presAuthors:
