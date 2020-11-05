@@ -1,4 +1,14 @@
 - presLocations:
+  - Applied Proof Theory Workshop, University of Melbourne, November 2020
+  presTitle: " General elimination and catamorphisms"
+  presAuthors:
+      Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/gec-slides.pdf
+    - Slides
+
+- presLocations:
   - SADAF, August 2020
   presTitle: "A toolkit for metainferential logics"
   presAuthors:
