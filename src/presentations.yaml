@@ -375,7 +375,7 @@
   presExtras:
   - - Video
     - https://itunes.apple.com/itunes-u/id654728467
-    - Video (no. 38)
+    - Video (no. 55)
   - - Handout
     - ./docs/cncr_handout.pdf
     - Handout (needed with video)
@@ -484,7 +484,7 @@
   presExtras:
   - - Video
     - https://itunes.apple.com/us/itunes-u/mcmp-mathematical-philosophy/id439913748
-    - Video (no. 59)
+    - Video (no. 213)
 
 - presLocations:
   - Universiteit Gent, July 2012
@@ -528,13 +528,13 @@
 
 - presLocations:
   - MCMP, August 2011
-  presTitle: Tonk, tolerance, and nontransitivity
+  presTitle: Tonk, nontransitivity, and tolerance
   presAuthors:
     Solo: []
   presExtras:
   - - Video
     - https://itunes.apple.com/itunes-u/id439913748
-    - Video (no. 211)
+    - Video (no. 109)
 
 - presLocations:
   - ESSLLI 2011, August 2011
