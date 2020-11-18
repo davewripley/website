@@ -29,13 +29,29 @@ topLabel lab = container_ (h1_ [class_ "toplabel"] lab)
 htmlHeadBits :: Html ()
 htmlHeadBits = meta_ [charset_ "utf-8"]
                <> meta_ [httpEquiv_ "X-UA-Compatible", content_ "IE=edge"]
-               <> meta_ [name_ "viewport", content_ "width=device-width, intial-scale=1"]
+               <> meta_ [name_ "viewport"
+                        , content_ "width=device-width, intial-scale=1"]
                <> meta_ [name_ "description", content_ "David Ripley's website"]
                <> meta_ [name_ "author", content_ "David Ripley"]
                <> title_ "David Ripley"
                <> link_ [rel_ "stylesheet", href_ "./css/bootstrap.min.css"]
-               <> link_ [rel_ "stylesheet", href_ "./font-awesome-4.3.0/css/font-awesome.min.css"]
+               <> link_ [rel_ "stylesheet"
+                        , href_ "./font-awesome-4.3.0/css/font-awesome.min.css"]
                <> link_ [rel_ "stylesheet", href_ "./css/ripley.css"]
+               <> link_ [rel_ "apple-touch-icon"
+                        , sizes_ "180x180"
+                        , href_ "./apple-touch-icon.png"]
+               <> link_ [rel_ "icon"
+                        , type_ "image/png"
+                        , sizes_ "32x32"
+                        , href_ "./favicon-32x32.png"]
+               <> link_ [rel_ "icon"
+                        , type_ "image/png"
+                        , sizes_ "16x16"
+                        , href_ "./favicon-16x16.png"]
+               <> link_ [rel_ "manifest"
+                        , href_ "./site.webmanifest"]
+
 
 
 pageHeader :: Html ()
