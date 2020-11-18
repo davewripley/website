@@ -13,7 +13,7 @@ import System.Directory (createDirectoryIfMissing)
 import Lucid
 import Lucid.Bootstrap
 
-import WebsiteTools (AuthorCat(..), Parity(..), classify, listItems, pileUp, lk)
+import WebsiteTools (AuthorCat(..), classify, listItems, pileUp, lk)
 import Links
 import Authors (Author, authors, makeAuthorLink)
 import Writing (pieces, WritingPiece(..), wpAuthorTags, wpVenue, wpBibtex)
@@ -144,42 +144,6 @@ indexBodyText =
         <> emailLink "davewripley@gmail.com"
         <> ".")
 
-
---SECTION: teaching page
-
-teachingPage :: Html ()
-teachingPage = pageFrom teachingBody (navbarJS "teachinglink")
-
-classRow :: Parity -> Html () -> Html () -> [Html ()] -> Html ()
-classRow par classNum className semesters =
-  row_ [class_ (classify par)] $ do
-    div_ [class_ "col-md-2"] (p_ [class_ "talktitle"] classNum)
-    div_ [class_ "col-md-5"] (p_ [class_ "talktitle"] className)
-    div_ [class_ "col-md-5"] (ul_ (listItems [] semesters))
-
-classes :: [(Html (), Html (), [Html ()])]
-classes = [("Phil 1102", "Philosophy and logic", ["Spring 2016"
-                                                 ,"Fall 2014"
-                                                 ,"Spring 2013"
-                                                 ])
-          ,("Phil 1105", "Philosophy of religion", ["Fall 2015"
-                                                   ,"Fall 2013"
-                                                   ])
-          ,("Phil 2210", "Metaphysics and epistemology", ["Fall 2013"])
-          ,("Phil 2211Q", "Symbolic Logic I", ["Spring 2016"])
-          ,("Phil 3241", "Philosophy of language", ["Fall 2015"])
-          ,("Phil 5344", "Seminar in philosophical logic", ["Spring 2014"])
-          ,("Phil 5397", "Seminar in probability", ["Fall 2014"])
-          ]
-
-teachingBody :: Html ()
-teachingBody =  
-  div_ [class_ "mainbits"] $
-       topLabel "Teaching"
-    <> (container_ $ pileUp (zipWith ($) rowCycle classes))
-  where
-    rowCycle = cycle [uncurry3 (classRow Odd), uncurry3 (classRow Even)]
-    uncurry3 f = \(a,b,c) -> f a b c
 
 --SECTION: presentation page
 
@@ -337,7 +301,6 @@ websiteMain :: IO ()
 websiteMain = do
   System.Directory.createDirectoryIfMissing True dirPrefix
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "index.html") (renderText indexPage)
-  Data.Text.Lazy.IO.writeFile (dirPrefix <> "teaching.html") (renderText teachingPage)
   mpres <- presentations
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "presentations.html") (renderText . presentationPage $ maybe [] id mpres)
   mpieces <- pieces
