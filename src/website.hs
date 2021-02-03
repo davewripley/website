@@ -289,7 +289,17 @@ pieceSort p1 p2 =
 
 
   
+--SECTION: valuations page
 
+valuationsPage :: Html ()
+valuationsPage = pageFrom valuationsBody (navbarJS "indexlink")
+
+valuationsBody :: Html ()
+valuationsBody =
+  div_ [id_ "valuations-app"] $ do
+      script_ [src_ "./js/valuations.js"] ""
+      script_ [] "var app = Elm.Main.init({node: document.getElementById(\"valuations-app\")});"
+    
 
 
 --SECTION: generation
@@ -305,3 +315,4 @@ websiteMain = do
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "presentations.html") (renderText . presentationPage $ maybe [] id mpres)
   mpieces <- pieces
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "writing.html") (renderText . writingPage $ maybe [] id mpieces)
+  Data.Text.Lazy.IO.writeFile (dirPrefix <> "valuations.html") (renderText valuationsPage)
