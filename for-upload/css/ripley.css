@@ -1,7 +1,12 @@
+:root {
+    font-size: 16px;
+}
+
 body {
     /* color: #245B78; */
     color: #333333;
     background-color: #e7eee7;
+    font-size: 1rem;
 }
 
 .footer a {
