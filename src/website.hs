@@ -89,7 +89,11 @@ pageHeader =
                  <> (li_ [class_ "presentationlink nav-item"] 
                          (a_ [ class_ "nav-link"
                              , href_ "./presentations.html"
-                             ] "Presentations"))  
+                             ] "Presentations"))
+                 <> (li_ [class_ "emulink nav-item"]
+                         (a_ [ class_ "nav-link"
+                             , href_ "./emu.html"
+                             ] "EMU"))  
                  <> (li_ [class_ "cvlink nav-item"] 
                          (a_ [ class_ "nav-link"
                              , href_ "./ripleyCV.pdf"
@@ -358,16 +362,17 @@ pieceSort p1 p2 =
 
 
   
---SECTION: valuations page
+--SECTION: exercises page
 
-valuationsPage :: Html ()
-valuationsPage = pageFrom valuationsBody (navbarJS "indexlink")
+exercisePage :: Html ()
+exercisePage = pageFrom exerciseBody (navbarJS "emulink")
 
-valuationsBody :: Html ()
-valuationsBody =
-  div_ [id_ "valuations-app"] $ do
-      script_ [src_ "./js/valuations.js"] ""
-      script_ [] "var app = Elm.Main.init({node: document.getElementById(\"valuations-app\")});"
+exerciseBody :: Html ()
+exerciseBody = do
+  topLabel "EMU: Exercises for Model Understandingness"
+  div_ [id_ "emu-app"] $ do
+      script_ [src_ "./js/emu.js"] ""
+      script_ [] "var app = Elm.Main.init({node: document.getElementById(\"emu-app\")});"
     
 
 
@@ -384,4 +389,4 @@ websiteMain = do
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "presentations.html") (renderText . presentationPage $ maybe [] id mpres)
   mpieces <- pieces
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "writing.html") (renderText . writingPage $ maybe [] id mpieces)
-  Data.Text.Lazy.IO.writeFile (dirPrefix <> "valuations.html") (renderText valuationsPage)
+  Data.Text.Lazy.IO.writeFile (dirPrefix <> "emu.html") (renderText exercisePage)
