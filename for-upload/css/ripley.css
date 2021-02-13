@@ -13,6 +13,10 @@ body {
     color: #007700;
 }
 
+.snail {
+    line-height: 110%;
+}
+
 .navbar {
     border-radius: 0px;
     background-color: #333333;
