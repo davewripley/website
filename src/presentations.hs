@@ -57,10 +57,10 @@ extrasMarks p
 presFile :: FilePath
 presFile = "./src/presentations.yaml"
 
-presentations :: IO (Maybe [Presentation])
+presentations :: IO (Either Y.ParseException [Presentation])
 presentations = do
   pData <- BS.readFile presFile
-  return (Y.decode pData)
+  return (Y.decodeEither' pData)
 
 {-
 presentations :: [Presentation]

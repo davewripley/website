@@ -386,7 +386,7 @@ websiteMain = do
   System.Directory.createDirectoryIfMissing True dirPrefix
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "index.html") (renderText indexPage)
   mpres <- presentations
-  Data.Text.Lazy.IO.writeFile (dirPrefix <> "presentations.html") (renderText . presentationPage $ maybe [] id mpres)
+  Data.Text.Lazy.IO.writeFile (dirPrefix <> "presentations.html") (renderText . presentationPage $ either (const []) id mpres)
   mpieces <- pieces
-  Data.Text.Lazy.IO.writeFile (dirPrefix <> "writing.html") (renderText . writingPage $ maybe [] id mpieces)
+  Data.Text.Lazy.IO.writeFile (dirPrefix <> "writing.html") (renderText . writingPage $ either (const []) id mpieces)
   Data.Text.Lazy.IO.writeFile (dirPrefix <> "emu.html") (renderText exercisePage)

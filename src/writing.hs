@@ -198,10 +198,10 @@ wpBibtex b@(Book{..}) = T.concat $
 wpFile :: FilePath
 wpFile = "./src/writing.yaml"
 
-pieces :: IO (Maybe [WritingPiece])
+pieces :: IO (Either Y.ParseException [WritingPiece])
 pieces = do
   pData <- BS.readFile wpFile
-  return (Y.decode pData)
+  return (Y.decodeEither' pData)
 
 
         
