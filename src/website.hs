@@ -64,18 +64,37 @@ htmlHeadBits = meta_ [charset_ "utf-8"]
 
 pageHeader :: Html ()
 pageHeader =
-  nav_ [class_ "navbar navbar-expand-lg navbar-dark"] $
+  nav_ [class_ "navbar navbar-expand-sm navbar-dark"] $
     div_ [class_ "container-fluid"] $ do
-      div_ [class_ "navbar-header"] $ (do        
-        a_ [ class_ "navbar-brand indexlink"
+      a_ [ class_ "navbar-brand indexlink"
            , id_ "indexlink-id"
            , href_ "./index.html"
-           ] "David Ripley")
-      div_ [id_ "dr-headmenu"]
-        (ul_ [class_ "nav"]
-                   ((li_ [class_ "writinglink nav-item"] (a_ [class_ "nav-link", href_ "./writing.html"] "Writing"))
-                 <> (li_ [class_ "presentationlink nav-item"] (a_ [class_ "nav-link", href_ "./presentations.html"] "Presentations"))  
-                 <> (li_ [class_ "cvlink nav-item"] (a_ [class_ "nav-link", href_ "./ripleyCV.pdf", target_ "_blank"] "CV"))))
+           ] "David Ripley"
+      button_ [ class_ "navbar-toggler"
+              , type_ "button"
+              , term "data-bs-toggle" "collapse"
+              , term "data-bs-target" "#dr-headmenu"
+              , term "aria-controls" "dr-headmenu"
+              , term "aria-expanded" "false"
+              , term "aria-lable" "Toggle navigation"
+              ] (span_ [class_ "navbar-toggler-icon"] "")
+      div_ [ id_ "dr-headmenu"
+           , class_ "collapse navbar-collapse"
+           ]
+           (ul_ [class_ "navbar-nav me-auto mb-2 mb-sm-0"]
+                   ((li_ [class_ "writinglink nav-item"] 
+                         (a_ [ class_ "nav-link"
+                             , href_ "./writing.html"
+                             ] "Writing"))
+                 <> (li_ [class_ "presentationlink nav-item"] 
+                         (a_ [ class_ "nav-link"
+                             , href_ "./presentations.html"
+                             ] "Presentations"))  
+                 <> (li_ [class_ "cvlink nav-item"] 
+                         (a_ [ class_ "nav-link"
+                             , href_ "./ripleyCV.pdf"
+                             , target_ "_blank"
+                             ] "CV"))))
 
 pageFooter :: Html ()
 pageFooter =
@@ -278,14 +297,14 @@ makeEntry (p, n) =
                                     ]
                                     (p_ [class_ "abstract"] (toHtml ab))
   in li_ [class_ cls] $ do
-         p_ [class_ "ptitle"] (paperTitleHead p)
-         p_ [class_ "pauthors"] (mconcat $ intersperse ", " auths)
-         div_ [class_ "row"]
-           (div_ [class_ "col-sm-11 paperinfo"] $ do
+         div_ [class_ "row"] $ do
+           p_ [class_ "ptitle"] (paperTitleHead p)
+           p_ [class_ "pauthors"] (mconcat $ intersperse ", " auths)
+           div_ [class_ "col paperinfo"] $ do
                 nav_ [] (div_ [ class_ "nav nav-tabs"
-                            , id_ ("nav-tab-" <> nt)
-                            , role_ "tablist"
-                            ] $ do
+                              , id_ ("nav-tab-" <> nt)
+                              , role_ "tablist"
+                              ] $ do
                                 button_ [ class_ "nav-link active"
                                         , id_ (ci <> "-tab")
                                         , term "data-bs-toggle" "tab"
@@ -304,7 +323,8 @@ makeEntry (p, n) =
                                         , role_ "tab"
                                         , term "aria-controls" bi
                                         , term "aria-selected" "false"
-                                        ] "BibTeX")
+                                        ] "BibTeX"
+                        )
                 div_ [class_ "tab-content"] $ do
                      div_ [ role_ "tabpanel"
                           , class_ "tab-pane active"
@@ -319,7 +339,7 @@ makeEntry (p, n) =
                           , term "aria-labelledby" (bi <> "-pill")
                           ] 
                           (p_ [class_ "bibtex"] (pre_ [class_ "bibtex"] (toHtml $ wpBibtex p)))
-           )
+           
              
 
 

@@ -1,9 +1,10 @@
+/* Overall styling */
+
 :root {
     font-size: 16px;
 }
 
 body {
-    /* color: #245B78; */
     color: #333333;
     background-color: #e7eee7;
     font-size: 1rem;
@@ -11,6 +12,29 @@ body {
 
 .footer a {
     color: #007700;
+}
+
+.footer {
+    margin: 40px;
+    padding: 20px;
+    background-color: #bbbbbb;
+    border-radius: 20px;
+}
+
+.lastmod {
+    text-align: center;
+    padding: 20px;
+    margin: 30px;
+}
+
+.address {
+    padding:0px;
+    margin:0px;
+}
+
+.contact-icon {
+    padding-right:10px;
+    vertical-align: top;
 }
 
 .snail {
@@ -34,10 +58,59 @@ body {
     padding-bottom: 20px;
 }
 
+#dr-headmenu li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#dr-headmenu a {
+    padding: 5px 15px;
+    color: #9d9d9d;
+}
+
+#dr-headmenu li.active {
+    background-color: #080808;
+}
+
+#dr-headmenu li.active > a {
+    color: #ffffff;
+}
+
+#dr-headmenu a:hover {
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-brand {
+    color: #9d9d9d;
+}
+
+#indexlink-id:hover {
+    color: #ffffff;
+}
+
+.nav-tabs .nav-link {
+    color: #9d9d9d;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #333333;
+    color: #e7eee7;
+    border-color: #e7eee7;
+}
+
+/* Index page stuff */
+
 .good-morning {
     margin-top: 0px;
     padding-top: 0px;
 }
+
+.splashimg {
+    width: 100%;
+}
+
+
+/* Writing page stuff */
 
 .writingcat {
     padding-bottom: 20px;
@@ -49,9 +122,13 @@ body {
     text-align: center;
 }
 
+.searchcheck {
+    padding: 0px;
+    margin: 0px;
+}
 
-.talktitle {
-    font-size : large;
+.writingdisplay {
+    list-style-type: none;
 }
 
 .ptitle {
@@ -63,65 +140,6 @@ body {
 
 .pauthors {
     margin-bottom: 5px;
-}
-
-.extra-marks {
-/*    background-color: #cccccc; */
-    border-radius: 10px;
-    padding-bottom: 10px;
-}
-
-.extra-marks a {
-    color: #333333;
-}
-
-
-.splashimg {
-    width: 100%;
-}
-
-.footer {
-    margin: 40px;
-    padding: 20px;
-    background-color: #bbbbbb;
-    border-radius: 20px;
-}
-
-.lastmod {
-    text-align: center;
-    padding: 20px;
-    margin: 30px;
-}
-
-.odd {
-    padding-top: 5px;
-    background-color: #dddddd;
-    border-radius: 5px;
-}
-
-.even {
-    padding-top: 5px;
-    border-radius: 5px;
-}
-
-.address {
-    padding:0px;
-    margin:0px;
-}
-
-.contact-icon {
-    padding-right:10px;
-    vertical-align: top;
-}
-
-
-.searchcheck {
-    padding: 0px;
-    margin: 0px;
-}
-
-.writingdisplay {
-    list-style-type: none;
 }
 
 .paperbubble {
@@ -152,6 +170,65 @@ body {
 
 .filterhead {
     margin-bottom: 0px;
+}
+
+.searchbar {
+    margin-bottom: 50px;
+}
+
+.also-see {
+    margin-top: 30px;
+}
+
+pre {
+    margin: 0px;
+}
+
+.bibtex {
+    background-color: #e7eee7;
+    color: #333333;
+    border-radius: 5px;
+    padding-left: 1rem;
+}
+
+.abstract {
+    background-color: #e7eee7;
+    color: #333333;
+    border-radius: 5px;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+}
+
+.paperinfo {
+    background-color: #444444;
+    border-radius : 10px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.tab-content {
+    margin-top: 10px;
+}
+
+#cervr-info {
+    color: #00aa00;
+}
+
+/* Presentation page stuff */
+
+
+.extra-marks {
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+
+.extra-marks a {
+    color: #333333;
 }
 
 .talktitle {
@@ -205,44 +282,8 @@ body {
     color: #008800;
 }
 
-.searchbar {
-    margin-bottom: 50px;
-}
 
-.also-see {
-    margin-top: 30px;
-}
-
-pre {
-    margin: 0px;
-}
-
-.bibtex {
-    background-color: #e7eee7;
-    color: #333333;
-    border-radius: 5px;
-    padding-left: 1rem;
-}
-
-.abstract {
-    background-color: #e7eee7;
-    color: #333333;
-    border-radius: 5px;
-    padding-left: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-right: 1rem;
-}
-
-.paperinfo {
-    background-color: #444444;
-    border-radius : 10px;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
+/* Exercises page stuff */
 
 div.chunk {
     padding: 10px;
@@ -251,50 +292,5 @@ div.chunk {
     border-radius: 5px;
 }
 
-nav li {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
 
-nav a {
-    padding: 5px 15px;
-    color: #9d9d9d;
-}
 
-nav li.active {
-    background-color: #080808;
-}
-
-nav li.active > a {
-    color: #ffffff;
-}
-
-nav a:hover {
-    color: #ffffff;
-}
-
-.navbar-dark .navbar-brand {
-    color: #9d9d9d;
-}
-
-#indexlink-id:hover {
-    color: #ffffff;
-}
-
-.nav-tabs .nav-link {
-    color: #9d9d9d;
-}
-
-.nav-tabs .nav-link.active {
-    background-color: #333333;
-    color: #e7eee7;
-    border-color: #e7eee7;
-}
-
-.tab-content {
-    margin-top: 10px;
-}
-
-#cervr-info {
-    color: #00aa00;
-}
