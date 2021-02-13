@@ -196,7 +196,7 @@ writingPage ps = pageFrom (writingBody ps) (navbarJS "writinglink" <> searchJS <
 
 searchBar :: Html ()
 searchBar = div_ [class_ "input-group"] $ do
-  (span_ [class_ "input-group-addon"] (span_ [class_ "fa fa-search"] ""))
+  (span_ [class_ "input-group-text"] (span_ [class_ "fa fa-search"] ""))
   (input_ [class_ "form-control", id_ "title-search-box", type_ "text", placeholder_ "Title search"])
 
 searchSort :: Html ()
@@ -208,7 +208,8 @@ searchFilters = div_ $ do
   (form_ [action_ ""] $ do
     (p_ [class_ "searchcheck"] $ (input_ [type_ "checkbox", name_ "check-solo"]) <> " Just Dave")
     (p_ [class_ "searchcheck"] $ (input_ [type_ "checkbox", name_ "check-cervr"]) <> " CERvR "
-      <> (a_ [ (term "tabindex") "0"
+      <> (a_ [ id_ "cervr-info"
+             , (term "tabindex") "0"
              , (term "data-bs-toggle") "popover"
              , (term "data-bs-trigger") "hover"
              , title_ "CERvR is:"
@@ -222,8 +223,13 @@ searchReset =
   button_ [class_ "btn btn-default", term "role" "button"]
     (span_ [class_ "fa fa-asterisk"] "" <> " Show all")
 
-philpapersBit :: Html ()
-philpapersBit = p_ [class_ "philpapers"] ("Also see my " <> (lk "http://philpapers.org/profile/12303" "philpapers profile") <> ".")
+alsoSeeBit :: Html ()
+alsoSeeBit = p_ [class_ "also-see"] 
+                ("Also see my " 
+                    <> (lk "https://philpapers.org/profile/12303" "philpapers profile") 
+                    <> " or my "
+                    <> (lk "https://orcid.org/0000-0002-3356-0771" "ORCID page")
+                    <> ".")
 
 writingBody :: [WritingPiece] -> Html ()
 writingBody ps = do
@@ -231,7 +237,7 @@ writingBody ps = do
     container_ [class_ "mainbits"] $ 
       row_ $ do
         div_ [class_ "col-md-3 searchbar"]
-            (searchBar <> searchSort <> searchFilters <> philpapersBit)
+            (searchBar <> searchSort <> searchFilters <> alsoSeeBit)
         div_ [class_ "col-md-9 searchresults"]
             (ul_ [class_ "writingdisplay"] (pileUp $ map makeEntry (zip (sortBy pieceSort ps) [1..])))
 
