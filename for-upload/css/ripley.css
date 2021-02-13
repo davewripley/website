@@ -15,13 +15,16 @@ body {
 
 .navbar {
     border-radius: 0px;
+    background-color: #333333;
 }
 
 .mainbits a {
+    margin-top: 20px;
     color: #00aa00;
 }
 
 .toplabel {
+    margin-top: 20px;
     padding-bottom: 20px;
 }
 
@@ -141,7 +144,8 @@ body {
 }
 
 .talktitle {
-    line-height: 100%;
+    line-height: 120%;
+    font-size: 1.3rem;
 }
 
 
@@ -161,8 +165,7 @@ body {
     background-color: #333333;
     border-radius: 20px;
     margin-bottom: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 20px;
 }
 
 
@@ -220,14 +223,26 @@ div.chunk {
     border-radius: 5px;
 }
 
-.nav > li > a, {
+nav a {
     padding: 5px 15px;
+    color: #e7eee7;
 }
 
-.nav > li > a:hover {
+nav a:hover {
     background-color: #e7eee7;
     color: #333333;
 }
+
+.navbar-dark .navbar-brand {
+    color: #e7eee7;
+}
+
+#indexlink-id:hover {
+    background-color: #e7eee7;
+    color: #333333;
+}
+
+
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
     color: #eeeeee;

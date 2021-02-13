@@ -34,7 +34,11 @@ htmlHeadBits = meta_ [charset_ "utf-8"]
                <> meta_ [name_ "description", content_ "David Ripley's website"]
                <> meta_ [name_ "author", content_ "David Ripley"]
                <> title_ "David Ripley"
-               <> link_ [rel_ "stylesheet", href_ "./css/bootstrap.min.css"]
+               <> link_ [ href_ "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
+                        , rel_ "stylesheet" 
+                        , integrity_ "sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" 
+                        , crossorigin_ "anonymous"
+                        ]
                <> link_ [rel_ "stylesheet"
                         , href_ "./font-awesome-4.3.0/css/font-awesome.min.css"]
                <> link_ [rel_ "stylesheet", href_ "./css/ripley.css"]
@@ -56,22 +60,18 @@ htmlHeadBits = meta_ [charset_ "utf-8"]
 
 pageHeader :: Html ()
 pageHeader =
-  nav_ [class_ "navbar navbar-inverse"] $
+  nav_ [class_ "navbar navbar-expand-lg navbar-dark"] $
     div_ [class_ "container-fluid"] $ do
-      div_ [class_ "navbar-header"] $ (do
-        button_ [ type_ "button"
-                , class_ "navbar-toggle collapsed"
-                , (term "data-toggle") "collapse"
-                , (term "data-target") "#dr-headmenu"
-                , (term "aria-expanded") "false"
-                ]
-          (span_ [class_ "sr-only"] "Toggle navigation" <> mconcat (replicate 3 (span_ [class_ "icon-bar"] "")))
-        a_ [class_ "navbar-brand indexlink", href_ "./index.html"] "David Ripley")
-      div_ [class_ "collapse navbar-collapse", id_ "dr-headmenu"]
-        (ul_ [class_ "nav navbar-nav"]
-                   ((li_ [class_ "writinglink"] (a_ [href_ "./writing.html"] "Writing"))
-                 <> (li_ [class_ "presentationlink"] (a_ [href_ "./presentations.html"] "Presentations"))  
-                 <> (li_ [class_ "cvlink"] (a_ [href_ "./ripleyCV.pdf", target_ "_blank"] "CV"))))
+      div_ [class_ "navbar-header"] $ (do        
+        a_ [ class_ "navbar-brand indexlink"
+           , id_ "indexlink-id"
+           , href_ "./index.html"
+           ] "David Ripley")
+      div_ [id_ "dr-headmenu"]
+        (ul_ [class_ "nav"]
+                   ((li_ [class_ "writinglink nav-item"] (a_ [class_ "nav-link", href_ "./writing.html"] "Writing"))
+                 <> (li_ [class_ "presentationlink nav-item"] (a_ [class_ "nav-link", href_ "./presentations.html"] "Presentations"))  
+                 <> (li_ [class_ "cvlink nav-item"] (a_ [class_ "nav-link", href_ "./ripleyCV.pdf", target_ "_blank"] "CV"))))
 
 pageFooter :: Html ()
 pageFooter =
