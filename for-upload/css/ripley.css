@@ -219,14 +219,19 @@ pre {
 
 .bibtex {
     background-color: #e7eee7;
+    color: #333333;
     border-radius: 5px;
+    padding-left: 1rem;
 }
 
 .abstract {
     background-color: #e7eee7;
     color: #333333;
-    padding: 10px;
     border-radius: 5px;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
 }
 
 .paperinfo {
