@@ -161,12 +161,13 @@ presRow :: Presentation -> Html ()
 presRow p =
   row_ [class_ "presentation-row"] $ do
     div_ [class_ "col-md-10 pres-bubble"] $ do
-        div_ [class_ "col-md-5"]
-            ((p_ [class_ "talktitle"] (toHtml $ presTitle p))
-             <> presentationAuthors (presAuthors p))
-        div_ [class_ "col-md-7"]
-             (ul_ [class_ "presentation-venue"]
-             (listItems [class_ "presentation-venue"] (map toHtml $ presLocations p)))
+        row_ [] $ do 
+            div_ [class_ "col-md-5"]
+                 ((p_ [class_ "talktitle"] (toHtml $ presTitle p))
+                    <> presentationAuthors (presAuthors p))
+            div_ [class_ "col-md-7"]
+                 (ul_ [class_ "presentation-venue"]
+                      (listItems [class_ "presentation-venue"] (map toHtml $ presLocations p)))
     extrasMarks p
 
 
