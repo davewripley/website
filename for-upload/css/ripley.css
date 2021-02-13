@@ -292,5 +292,6 @@ div.chunk {
     border-radius: 5px;
 }
 
-
-
+div.oblang {
+    font-family: "Courier New", Courier, monospace;
+}
