@@ -39,6 +39,10 @@ htmlHeadBits = meta_ [charset_ "utf-8"]
                         , integrity_ "sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" 
                         , crossorigin_ "anonymous"
                         ]
+               <> script_ [ src_ "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" 
+                          , integrity_ "sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" 
+                          , crossorigin_ "anonymous"
+                          ] ""
                <> link_ [rel_ "stylesheet"
                         , href_ "./font-awesome-4.3.0/css/font-awesome.min.css"]
                <> link_ [rel_ "stylesheet", href_ "./css/ripley.css"]
@@ -107,7 +111,6 @@ pageFooter =
 scriptImports :: Html ()
 scriptImports = do
   script_ [src_ "./js/jquery-2.1.3.min.js"] ""
-  script_ [src_ "./js/bootstrap.min.js"] ""
 
 pageFrom :: Html () -> Html() -> Html ()
 pageFrom bod scrip = doctypehtml_
@@ -243,36 +246,72 @@ makeEntry :: (WritingPiece, Int) -> Html ()
 makeEntry (p, n) = 
   let cls = "paperbubble " <> (classify $ authorCat p)
       auths = map makeAuthorLink (wpAuthorTags p)
-      ci = "citation" <> (T.pack $ show n)
-      ai = "abstract" <> (T.pack $ show n)
-      bi = "bibtex" <> (T.pack $ show n)
-      ali1 = case abstract p of
-               Nothing -> mempty
-               Just _  ->
-                 li_ [term "role" "presentation"]
-                   (a_ [href_ ("#" <> ai), term "aria-controls" "abstract", term "role" "tab", term "data-toggle" "pill"] "Abstract")
-      ali2 = case abstract p of
-               Nothing -> mempty
-               Just ab ->
-                 div_ [term "role" "tabpanel", class_ "tab-pane", id_ ai]
-                   (p_ [class_ "abstract"] (toHtml ab))
+      nt = T.pack $ show n
+      ci = "citation" <> nt
+      ai = "abstract" <> nt
+      bi = "bibtex" <> nt
+      atab = case abstract p of
+                    Nothing -> mempty
+                    Just _  -> button_ [ class_ "nav-link"
+                                       , id_ (ai <> "-tab")
+                                       , term "data-bs-toggle" "tab"
+                                       , term "data-bs-target" ("#" <> ai)
+                                       , type_ "button"
+                                       , role_ "tab"
+                                       , term "aria-controls" ai
+                                       , term "aria-selected" "false"
+                                       ] "Abstract"
+      apane = case abstract p of
+                    Nothing -> mempty
+                    Just ab -> div_ [ role_ "tabpanel"
+                                    , class_ "tab-pane"
+                                    , id_ ai
+                                    ]
+                                    (p_ [class_ "abstract"] (toHtml ab))
   in li_ [class_ cls] $ do
          p_ [class_ "ptitle"] (paperTitleHead p)
          p_ [class_ "pauthors"] (mconcat $ intersperse ", " auths)
          div_ [class_ "row"]
            (div_ [class_ "col-sm-11 paperinfo"] $ do
-             (div_ [class_ "col-sm-10"]
-               (div_ [class_ "tab-content"] $ do
-                 div_ [term "role" "tabpanel", class_ "tab-pane active", id_ ci] (p_ [class_ "pvenue"] (wpVenue p))
-                 ali2
-                 div_ [term "role" "tabpanel", class_ "tab-pane", id_ bi] (p_ [class_ "bibtex"] (pre_ [class_ "bibtex"] (toHtml $ wpBibtex p)))))
-             (div_ [class_ "col-sm-2"]
-               (ul_ [class_ "nav nav-pills", term "role" "tablist"] $ do
-                 li_ [term "role" "presentation", class_ "active"]
-                   (a_ [href_ ("#" <> ci), term "aria-controls" "citation", term "role" "tab", term "data-toggle" "pill"] "Citation")
-                 ali1
-                 li_ [term "role" "presentation"]
-                   (a_ [href_ ("#" <> bi), term "aria-controls" "bibtex", term "role" "tab", term "data-toggle" "pill"] "BibTeX"))))
+                nav_ [] (div_ [ class_ "nav nav-tabs"
+                            , id_ ("nav-tab-" <> nt)
+                            , role_ "tablist"
+                            ] $ do
+                                button_ [ class_ "nav-link active"
+                                        , id_ (ci <> "-tab")
+                                        , term "data-bs-toggle" "tab"
+                                        , term "data-bs-target" ("#" <> ci)
+                                        , type_ "button"
+                                        , role_ "tab"
+                                        , term "aria-controls" ci
+                                        , term "aria-selected" "true"
+                                        ] "Citation"
+                                atab
+                                button_ [ class_ "nav-link"
+                                        , id_ (bi <> "-tab")
+                                        , term "data-bs-toggle" "tab"
+                                        , term "data-bs-target" ("#" <> bi)
+                                        , type_ "button"
+                                        , role_ "tab"
+                                        , term "aria-controls" bi
+                                        , term "aria-selected" "false"
+                                        ] "BibTeX")
+                div_ [class_ "tab-content"] $ do
+                     div_ [ role_ "tabpanel"
+                          , class_ "tab-pane active"
+                          , id_ ci
+                          , term "aria-labelledby" (ci <> "-pill")
+                          ] 
+                          (p_ [class_ "pvenue"] (wpVenue p))
+                     apane
+                     div_ [ role_ "tabpanel"
+                          , class_ "tab-pane"
+                          , id_ bi
+                          , term "aria-labelledby" (bi <> "-pill")
+                          ] 
+                          (p_ [class_ "bibtex"] (pre_ [class_ "bibtex"] (toHtml $ wpBibtex p)))
+           )
+             
 
 
 pieceSort :: WritingPiece -> WritingPiece -> Ordering

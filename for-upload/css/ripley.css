@@ -206,8 +206,13 @@ body {
     margin-top: 30px;
 }
 
+pre {
+    margin: 0px;
+}
+
 .bibtex {
     background-color: #e7eee7;
+    border-radius: 5px;
 }
 
 .abstract {
@@ -254,8 +259,12 @@ nav a:hover {
 }
 
 
-
-.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
-    color: #eeeeee;
+.nav-tabs .nav-link.active {
     background-color: #333333;
+    color: #e7eee7;
+    border-color: #e7eee7;
+}
+
+.tab-content {
+    margin-top: 10px;
 }
