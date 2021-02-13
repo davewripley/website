@@ -188,8 +188,11 @@ presentationBody pres = do
 searchJS :: Html ()
 searchJS = script_ [src_ "./js/search.js"] ""
 
+popoverJS :: Html ()
+popoverJS = script_ [src_ "./js/popover.js"] ""
+
 writingPage :: [WritingPiece] -> Html ()
-writingPage ps = pageFrom (writingBody ps) (navbarJS "writinglink" <> searchJS)
+writingPage ps = pageFrom (writingBody ps) (navbarJS "writinglink" <> searchJS <> popoverJS)
 
 searchBar :: Html ()
 searchBar = div_ [class_ "input-group"] $ do
@@ -206,11 +209,11 @@ searchFilters = div_ $ do
     (p_ [class_ "searchcheck"] $ (input_ [type_ "checkbox", name_ "check-solo"]) <> " Just Dave")
     (p_ [class_ "searchcheck"] $ (input_ [type_ "checkbox", name_ "check-cervr"]) <> " CERvR "
       <> (a_ [ (term "tabindex") "0"
-             , (term "data-toggle") "popover"
-             , (term "data-trigger") "hover"
+             , (term "data-bs-toggle") "popover"
+             , (term "data-bs-trigger") "hover"
              , title_ "CERvR is:"
-             , (term "data-html") "true"
-             , (term "data-content") "Pablo Cobreros, <br> Paul Egré, <br> David Ripley, <br> Robert van Rooij"
+             , (term "data-bs-html") "true"
+             , (term "data-bs-content") "Pablo Cobreros, <br> Paul Egré, <br> David Ripley, <br> Robert van Rooij"
              ] "[?]"))
     (p_ [class_ "searchcheck"] $ (input_ [type_ "checkbox", name_ "check-other"]) <> " Other combinations"))
 
