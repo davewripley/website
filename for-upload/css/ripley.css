@@ -296,6 +296,15 @@ div.oblang {
     font-family: "Courier New", Courier, monospace;
 }
 
+div.sentence-display {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;    
+    margin-left: 10px;
+    max-width: 90%;
+}
+
 .task label {
     background-color: #333333;
     color: #e7eee7;
