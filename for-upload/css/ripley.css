@@ -296,6 +296,10 @@ div.oblang {
     font-family: "Courier New", Courier, monospace;
 }
 
+p.oblang {
+    font-family: "Courier New", Courier, monospace;
+}
+
 div.sentence-display {
     border: 1px solid black;
     border-radius: 5px;
