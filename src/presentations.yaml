@@ -1,7 +1,17 @@
 - presLocations:
+  - University of Queensland, March 2021
+  presTitle: "Dialogue and structural rules"
+  presAuthors:
+      Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/dsr-slides.pdf
+    - Slides
+
+- presLocations:
   - Applied Proof Theory Workshop, University of Melbourne, November 2020
   - Melbourne Formalisms Group, October 2020
-  presTitle: " General elimination and catamorphisms"
+  presTitle: "General elimination and catamorphisms"
   presAuthors:
       Solo: []
   presExtras:
