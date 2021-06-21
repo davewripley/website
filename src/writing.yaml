@@ -33,20 +33,20 @@
 
 - tag: Paper
   doi: null
-  volume: null
+  volume: 8
   journal: Journal of Analytic Theology
   number: null
   writingUrl: ./papers/qua-0-qua.pdf
-  year: null
-  startPage: null
-  endPage: null
+  year: 2020
+  startPage: 405
+  endPage: 411
   abstract: "We present an objection to Beall and Henderson's recent paper defending a solution to the fundamental problem of conciliar Christology using qua or secundum clauses. We argue that certain claims the acceptance/rejection of which distinguish the Conciliar Christian from others fail to so distinguish on Beall and Henderson's 0-Qua view. This is because on their 0-Qua account, these claims are either acceptable both to Conciliar Christians as well as those who are not Conciliar Christians or because they are acceptable to neither."
   title: "Qua solution, 0-Qua has problems: a response to Beall and Henderson"
   authorCat:
     Other:
+      - andrewTedder
       - gracePaterson
       - davidRipley
-      - andrewTedder
   bibtag: prt:qua-0-qua
 
 - tag: Paper
