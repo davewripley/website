@@ -1,6 +1,21 @@
 - tag: Paper
   doi: null
   volume: null
+  journal: Journal of Philosophical Logic
+  number: null
+  writingUrl: ./papers/osie.pdf
+  year: null
+  startPage: null
+  endPage: null
+  abstract: null
+  title: "One step is enough"
+  authorCat:
+    Solo: []
+  bibtag: ripley:osie
+
+- tag: Paper
+  doi: null
+  volume: null
   journal: Review of Symbolic Logic
   number: null
   writingUrl: ./papers/clco.pdf
