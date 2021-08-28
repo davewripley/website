@@ -1,4 +1,16 @@
 - presLocations:
+  - Buenos Aires Logic Group Workshop, August 2021
+  - Applied Proof Theory Workshop, University of Melbourne, November 2020
+  - Melbourne Formalisms Group, October 2020
+  presTitle: "General elimination isn't general enough"
+  presAuthors:
+      Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/geige-slides.pdf
+    - Slides
+      
+- presLocations:
   - University of Queensland, March 2021
   presTitle: "Dialogue and structural rules"
   presAuthors:
@@ -6,17 +18,6 @@
   presExtras:
   - - Slides
     - ./docs/dsr-slides.pdf
-    - Slides
-
-- presLocations:
-  - Applied Proof Theory Workshop, University of Melbourne, November 2020
-  - Melbourne Formalisms Group, October 2020
-  presTitle: "General elimination and catamorphisms"
-  presAuthors:
-      Solo: []
-  presExtras:
-  - - Slides
-    - ./docs/gec-slides.pdf
     - Slides
 
 - presLocations:
