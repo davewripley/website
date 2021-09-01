@@ -165,7 +165,10 @@ indexBodyText =
         <> " at Monash University.")
   <> p_ "My research focuses on languages, logics, and the relations between them."
   <> p_ ("I'm also a member of the "
-        <> aalLink "Australasian Association for Logic.")
+        <> aalLink "Australasian Association for Logic"
+        <> " and the "
+        <> mlfcLink "Monash Laboratory for the Foundations of Computing"
+        <> ".")
   <> p_ ("You can email me at "
         <> emailLink "davewripley@gmail.com"
         <> ".")

@@ -49,6 +49,12 @@ monashPhilLink = id
 monashSchoolLink :: Html () -> Html ()
 monashSchoolLink = id
 
+mlfcLink :: Html () -> Html ()
+mlfcLink = lk "https://www.monash.edu/it/mlfc"
+
+mlfcLinkFull :: Html ()
+mlfcLinkFull = mlfcLink "MLFC"
+
 openAccessLink :: Html () -> Html ()
 openAccessLink = lk "http://www.jasonmkelly.com/2013/01/27/green-gold-and-diamond-a-short-primer-on-open-access"
 
