@@ -8,7 +8,7 @@ import Data.Text (Text)
 import WebsiteTools (lk)
 
 aalLink :: Html () -> Html ()
-aalLink = lk "http://aal.ltumathstats.com"
+aalLink = lk "http://aalogic.org"
 
 aalLinkFull :: Html ()
 aalLinkFull = aalLink "AAL"
