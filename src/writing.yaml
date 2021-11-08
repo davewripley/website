@@ -65,14 +65,14 @@
   bibtag: prt:qua-0-qua
 
 - tag: Paper
-  doi: null
-  volume: null
+  doi: 10.1007/s11229-019-02447-8
+  volume: 198
   journal: Synthese
-  number: null
+  number: 22
   writingUrl: ./papers/ttavmt.pdf
-  year: null
-  startPage: null
-  endPage: null
+  year: 2021
+  startPage: 5291
+  endPage: 5313
   abstract: "We investigage two different broad traditions in abstract valuational model theory for nontransitive and nonreflexive logics. The first of these traditions makes heavy use of the natural Galois connection between sets of (many-valued) valuations and sets of arguments. The other, originating with work by Grzegorz Malinowski on nonreflexive logics, and best systematized in (Blasio et al 2017), lets sets of arguments determine a more restricted set of valuations. After giving a systematic discussion of these two different traditions, we turn to looking at the ways in which we might try to compare two sets of valuations determining the same set of arguments."
   title: "Two traditions in abstract valuational model theory"
   authorCat:
