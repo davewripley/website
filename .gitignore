@@ -2,3 +2,4 @@ for-upload/
 .stack-work/
 dist-newstyle/
 !for-upload/css/ripley.css
+.DS_Store
