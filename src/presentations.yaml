@@ -1,4 +1,14 @@
 - presLocations:
+  - Australian Catholic University, March 2022
+  presTitle: "Plumwood on classical and relevant logics"
+  presAuthors:
+      Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/pcrl-slides.pdf
+    - Slides
+
+- presLocations:
   - Nossal High School, December 2021
   presTitle: "Dogmatism is good, actually"
   presAuthors:
