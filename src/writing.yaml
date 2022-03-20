@@ -15,13 +15,13 @@
 
 - tag: Paper
   doi: 10.1017/S1755020319000637
-  volume: null
+  volume: 15
   journal: Review of Symbolic Logic
-  number: null
+  number: 1
   writingUrl: ./papers/clco.pdf
-  year: null
-  startPage: null
-  endPage: null
+  year: 2022
+  startPage: 259
+  endPage: 275
   abstract: "We present four classical theories of counterpossibles that combine modalities and counterfactuals. Two theories are anti-vacuist and forbid vacuously true counterfactuals, two are quasi-vacuist and allow counterfactuals to be vacuously true when their antecedent is not only impossible, but also inconceivable. The theories vary on how they restrict the interaction of modalities and counterfactuals. We provide a logical cartography with precise acceptable boundaries, illustrating to what extent nonvacuism about counterpossibles can be reconciled with classical logic."
   title: "Classical counterpossibles"
   authorCat:
