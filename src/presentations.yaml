@@ -1,5 +1,16 @@
 - presLocations:
+  - PLEXUS opening conference, Lisbon, May 2023
+  presTitle: "Inconsistent mathematics in Isabelle"
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/imi-slides-lis.pdf
+    - Slides
+
+- presLocations:
   - Australian Catholic University, March 2022
+  - Hong Kong and Lingnan Universities, April 2022
   presTitle: "Plumwood on classical and relevant logics"
   presAuthors:
       Solo: []
