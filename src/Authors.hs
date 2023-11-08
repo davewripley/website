@@ -109,4 +109,10 @@ authors = M.fromList
   ,("michaelGlanzberg"
    ,Author {name = "Michael Glanzberg"
            ,authorUrl = "https://michaelglanzberg.org/"})
+  ,("emmaVanDijk"
+   ,Author {name = "Emma van Dijk"
+           ,authorUrl = ""})
+  ,("julianGutierrez"
+   ,Author {name = "Julian Gutierrez"
+           ,authorUrl = "https://research.monash.edu/en/persons/julian-gutierrez-santiago"})
   ]

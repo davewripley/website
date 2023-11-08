@@ -1,13 +1,31 @@
 - tag: Paper
   doi: null
-  volume: null
-  journal: Journal of Philosophical Logic
-  number: null
-  writingUrl: ./papers/osie.pdf
-  year: null
-  startPage: null
-  endPage: null
+  volume: 52
+  journal: Bulletin of Symbolic Logic
+  number: 2
+  writingUrl: ./papers/ctt.pdf
+  year: 2023
+  startPage: 145
+  endPage: 186
   abstract: null
+  title: "Core type theory"
+  authorCat:
+    Other:
+      - emmaVanDijk
+      - davidRipley
+      - julianGutierrez
+  bibtag: vdrg:ctt
+
+- tag: Paper
+  doi: null
+  volume: 51
+  journal: Journal of Philosophical Logic
+  number: 6
+  writingUrl: ./papers/osie.pdf
+  year: 2021
+  startPage: 1233
+  endPage: 1259
+  abstract: "The recent development and exploration of mixed metainferential logics is a breakthrough in our understanding of nontransitive and nonreflexive logics. Moreover, this exploration poses a new challenge to theorists like me, who have appealed to similarities to classical logic in defending the logic ST, since some mixed metainferential logics seem to bear even more similarities to classical logic than ST does. There is a whole ST-based hierarchy, of which ST itself is only the first step, that seems to become more and more classical at each level. I think this seeming is misleading: for certain purposes, anyhow, metainferential hierarchies give us no reason to move on from ST. ST is indeed only the first step on a grand metainferential adventure; but one step is enough. This paper aims to explain and defend that claim. Along the way, I take the opportunity also to develop some formal tools and results for thinking about metainferential logics more generally."
   title: "One step is enough"
   authorCat:
     Solo: []
@@ -32,15 +50,15 @@
   bibtag: fgr:clco
 
 - tag: Paper
-  doi: null
-  volume: null
+  doi: 10.1007/s10992-020-09560-x
+  volume: 49
   journal: Journal of Philosophical Logic
-  number: null
+  number: 6
   writingUrl: ./papers/imst.pdf
-  year: null
-  startPage: null
-  endPage: null
-  abstract: null
+  year: 2020
+  startPage: 1057
+  endPage: 1077
+  abstract: "In a recent paper, Barrio, Tajer and Rosenblatt establish a correspondence between metainferences holding in the strict-tolerant logic of transparent truth ST+ and inferences holding in the logic of paradox LP+. They argue that LP+ is ST+’s external logic and they question whether ST+’s solution to the semantic paradoxes is fundamentally different from LP+’s. Here we establish that by parity of reasoning, ST+ can be related to LP+’s dual logic K3+. We clarify the distinction between internal and external logic and argue that while ST+’s nonclassicality can be granted, its self-dual character does not tie it to LP+ more closely than to K3+."
   title: "Inferences and metainferences in ST"
   authorCat:
     CERvR: []
@@ -82,14 +100,14 @@
   bibtag: fr:ttavmt
 
 - tag: Paper
-  doi: null
-  volume: null
+  doi: 10.1007/s11229-017-1584-8
+  volume: 199
   journal: Synthese
   number: null
   writingUrl: ./papers/trnn.pdf
-  year: null
-  startPage: null
-  endPage: null
+  year: 2021
+  startPage: 681
+  endPage: 705
   abstract: "The principle of tolerance characteristic of vague predicates is sometimes presented as a soft rule, namely as a default which we can use in ordinary reasoning, but which requires care in order to avoid paradoxes. We focus on two ways in which the tolerance principle can be modeled in that spirit, using special consequence relations. The first approach relates tolerant reasoning to nontransitive reasoning; the second relates tolerant reasoning to nonmonotonic reasoning. We compare the two approaches and examine three specific consequence relations in relation to those, which we call: strict-to-tolerant entailment, pragmatic-to-tolerant entailment, and pragmatic-to-pragmatic entailment. The first two are nontransitive, whereas the latter two are nonmonotonic."
   title: "Tolerant reasoning: nontransitive or nonmonotonic?"
   authorCat:
@@ -107,7 +125,7 @@
   startPage: 111
   endPage: 130
   year: 2020
-  abstract: "Thie paper presents a novel typed term calculus and reduction relation for it, and proves that the reduction relation is strongly normalizing---that there are no infinite reduction sequences. The calculus bears a close relation to the implication-negation fragment of core logic, and so is called 'core type theory'."
+  abstract: "This paper presents a novel typed term calculus and reduction relation for it, and proves that the reduction relation is strongly normalizing---that there are no infinite reduction sequences. The calculus bears a close relation to the implication-negation fragment of core logic, and so is called 'core type theory'."
   authorCat:
     Solo: []
   bibtag: ripley:snctt

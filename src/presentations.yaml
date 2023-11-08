@@ -1,11 +1,33 @@
 - presLocations:
+  - AAL 2023, University of Queensland, November 2023
   - PLEXUS opening conference, Lisbon, May 2023
   presTitle: "Inconsistent mathematics in Isabelle"
   presAuthors:
     Solo: []
   presExtras:
   - - Slides
-    - ./docs/imi-slides-lis.pdf
+    - ./docs/imi-slides-short.pdf
+    - Slides
+
+- presLocations:
+  - XII workshop on philosophical logic, Buenos Aires, July 2023
+  - Bradyfest, Melbourne, August 2018
+  presTitle: Containment and analyticity
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/ca-slides-ba.pdf
+    - Slides
+
+- presLocations:
+  - CLMPST, Buenos Aires, July 2023
+  presTitle: "Liar, curry, sorites: how many paradoxes?"
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/hmp-slides-clmpst.pdf
     - Slides
 
 - presLocations:
