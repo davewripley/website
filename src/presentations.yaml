@@ -1,4 +1,44 @@
 - presLocations:
+  - Monash Department Workshop, November 2024
+  presTitle: "Implicit assertion and drawing conclusions"
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/iadc-slides-monash.pdf
+    - Slides
+    
+- presLocations:
+  - Buenos Aires Workshop on Logic, May 2024
+  - Brisbane Logic Workshop, April 2024
+  - Melbourne Logic Workshop, December 2023
+  presTitle: "Probabilistic consequence relations"
+  presAuthors:
+    Other:
+      - paulEgre
+      - davidRipley
+  presExtras:
+  - - Slides
+    - ./docs/pcr-slides-brisbane.pdf
+    - Slides
+  - - Video
+    - https://www.youtube.com/watch?v=RsAJ_CZNV2M
+    - Video
+
+- presLocations:
+  - Second Third Workshop, Edmonton, May 2024
+  presTitle: "Recapture, ambiguity, and conflation"
+  presAuthors:
+    Solo: []
+  presExtras:
+  - - Slides
+    - ./docs/rac-slides-edmonton.pdf
+    - Slides
+  - - Handout
+    - ./docs/rac-handout-edmonton.pdf
+    - Handout
+
+- presLocations:
   - AAL 2023, University of Queensland, November 2023
   - PLEXUS opening conference, Lisbon, May 2023
   presTitle: "Inconsistent mathematics in Isabelle"
